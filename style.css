@@ -1,9 +1,46 @@
-<script>
-// Fetch and insert the footer content
-fetch('header.html')
-    .then(response => response.text())
-    .then(html => {
-        document.getElementById('headerPlaceholder').innerHTML = html;
-    })
-    .catch(error => console.error('Error fetching header:', error));
-</script>
+/*..........................................login , register page................................................*/
+input[type=text],input[type=password],input[type=email]{
+    padding: 14px 14px;
+    margin: 8px 8px;
+    border-radius: 10px;
+    width: 100%;
+    font-size: 15px;
+}
+
+select{
+    padding: 14px 14px;
+    margin: 8px 8px;
+    border-radius: 10px;
+    width: 110%;
+    font-size: 15px;
+}
+
+input[type=submit]{
+    font-size: 15px;
+    color: rgb(2, 2, 22) 255, 255;
+    padding: 14px 14px;
+    margin: 8px 8px;
+    border-radius: 10px;
+    width: 50%;
+}
+    
+input[type=submit]:hover {
+    background-color: #2618c4;
+    color: rgb(255, 255, 255);
+}
+
+.form{
+    text-align: center;
+    font-size: 19px;
+    background-color: rgba(2, 0, 68, 0.4); 
+    
+    padding-top: 5%;
+    padding-bottom:5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 20%;
+    position: absolute;
+      top: 10%;
+      left: 10%;
+}
+ 
