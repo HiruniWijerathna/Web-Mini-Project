@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <style>
+        body{
+           background-image: url(photo/login.jpg);
+           background-size:cover;
+        }
+    </style>
+    <script src="script.js"></script>
+
+    <div id="headerPlaceholder"></div>
+
+    <div class="container">
+        <div class="form">
+
+  <h1>Registration</h1>
+  <form action="/register" method="post">
+    
+        
+    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    <br>
+    
+    <select type="category" placeholder="Cotegory" required>
+        <option value="omal User ">Nomal User</option>
+        <option value="Snake Catchers">Snake Catchers</option>
+        <option value="Ceterinarian / Animal Specialist">Ceterinarian / Animal Specialist</option>
+        <option value="Animal Organization">Animal Organization</option>
+       </select>
+    <br>
+    
+    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+    <br>
+    
+    <input type="password" id="repassword" name="repassword" placeholder="Enter your Re-Password" required>
+    <br>
+    <input type="submit" value="Register">
+    <br>
+
+    <p>You have an account? <a href="login.html">Login</a></p>
+  </form>
+</div>
+</div>
+
+  <div id="footerPlaceholder"></div>
+
+</body>
+</html>
