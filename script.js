@@ -12,7 +12,7 @@ function includeHeader() {
 }
 
 // Call the includeFooter function when the DOM content is loaded
-document.addEventListener('DOMContentLoaded', includeheader);
+document.addEventListener('DOMContentLoaded', includeHeader);
 
 // Function to include the footer content
 function includeFooter() {
