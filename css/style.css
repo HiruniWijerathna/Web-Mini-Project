@@ -1,0 +1,345 @@
+/*.......................... header........................... */
+/* Logo styling */
+.logo {
+    max-width: 150px;
+    /* Set the maximum width */
+    max-height: 70px;
+    /* Set the maximum height */
+}
+
+.nav-link {
+    color: white;
+    font-size: 18px;
+    /* Adjust the font size as needed */
+    margin-right: 25px;
+    /* Adjust the value as needed */
+
+}
+
+.nav-link:hover {
+    color: #2636e8;
+}
+
+.btn-custom {
+    color: #080433;
+    /* Set text color to white */
+    font-size: 16px;
+    /* Adjust font size as needed */
+    font-weight: 600;
+    padding: 10px 20px;
+    /* Adjust padding as needed */
+    background-color: #DAF1F5;
+}
+
+.btn-custom:hover {
+    background-color: #080433;
+}
+.border-bottom {
+    margin-bottom: 0rem !important;
+}
+
+
+
+
+/* CSS for Carousel begin*/
+/* Custom CSS */
+
+#myCarousel {
+    height: 400px;
+    /* Adjust the height as needed */
+}
+
+.carousel-indicators button {
+    width: 15px;
+    /* Adjust the width of indicators as needed */
+    height: 15px;
+    /* Adjust the height of indicators as needed */
+}
+
+.carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-right: 15%;
+    margin-bottom: 0rem;
+    margin-left: 15%;
+}
+
+.carousel-inner .carousel-item {
+    height: 400px;
+    /* Adjust the height of carousel items as needed */
+}
+
+.carousel-inner .carousel-item svg {
+    width: 100%;
+    /* Make the placeholder image fill the item */
+    height: 100%;
+    /* Make the placeholder image fill the item */
+}
+
+.carousel-caption {
+    top: 50%;
+    /* Position the caption in the middle */
+    transform: translateY(-50%);
+    /* Adjust for vertical alignment */
+}
+
+.carousel-caption h1 {
+    font-size: 2rem;
+    /* Adjust the font size of headline */
+}
+
+.carousel-caption p {
+    font-size: 1.2rem;
+    /* Adjust the font size of text */
+}
+
+.carousel-caption .btn {
+    font-size: 1.5rem;
+    /* Adjust the font size of button */
+}
+
+/* Custom CSS for carousel height */
+#myCarousel.carousel {
+    height: 500px;
+    /* Set initial height */
+}
+
+/* For smaller screens, adjust height */
+@media (max-width: 768px) {
+    #myCarousel.carousel {
+        height: 300px;
+        /* Set height for smaller screens */
+    }
+}
+
+/* Adjust image size to fill carousel */
+#myCarousel.carousel .carousel-inner .carousel-item img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+#myCarousel.carousel {
+    height: auto;
+}
+
+.py-5 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+
+.my-5 {
+    /* margin-top: 3rem !important; */
+    margin-bottom: 5rem !important;
+}
+
+.carousel-caption h1 {
+    font-size: 2.5rem;
+    /* Adjust font size as needed */
+    font-weight: 700;
+}
+
+.carousel-caption p {
+    font-size: 1.5rem;
+    /* Adjust font size as needed */
+    font-weight: 500;
+}
+
+/* Override button color */
+.btn-primary-join {
+    background-color: #080433;
+    border-color: #4739df;
+    font-weight: 600;
+    font-size: 20px;
+    color: #FFFFFF;
+}
+
+/* Override button hover color */
+.btn-primary-join:hover {
+    background-color: #DAF1F5;
+    border-color: #080433;
+    color: #080433;
+}
+
+
+
+
+
+/* CSS for service */
+
+.col-lg-3 {
+    text-align: center;
+    /* Center align content */
+    padding: 20px;
+    /* Add padding for spacing */
+}
+
+h2.fw-normal {
+    font-size: 1.5rem;
+    /* Adjust the font size */
+
+}
+
+.col-lg-3 {
+    text-align: center;
+    padding-top: 60px;
+}
+
+/* CSS for hover effect */
+.service-item {
+    transition: transform 0.3s ease-in-out;
+}
+
+.service-item:hover {
+    transform: scale(1.05);
+
+    /*background-color: #080433;*/
+}
+
+.btn btn-secondary:hover {
+    cursor: pointer;
+
+}
+
+/* About */
+.about-text {
+    font-size: 1.5rem;
+    /* Adjust the font size as needed */
+    font-weight: 400 !important;
+}
+
+
+/* CSS for footer */
+/* Footer Social Icons */
+footer .nav a {
+    color: #080433 !important;
+    /* Icon color */
+}
+
+/* Footer Social Icons Hover */
+footer .nav a:hover {
+    color: #2636e8 !important;
+    /* Hover icon color */
+}
+
+/* Footer Social Icons (Twitter, Instagram, Facebook) */
+footer .nav .text-body-secondary {
+    color: #FFFFFF !important;
+    /* Text color */
+    font-weight: 100;
+}
+
+.text-white .descrip {
+    color: white;
+    font-weight: 100;
+}
+
+.descrip {
+    color: white;
+    font-weight: 100;
+}
+
+
+
+/*..........................................login , register page................................................*/
+/* ..........login form............ */
+
+.login-body{
+    margin-top: 0rem;
+}
+#login_form {
+    
+    height: 500px;
+    background-color: rgba(2, 0, 68, 0.4);
+    background-blend-mode: darken;
+    border-radius: 2px;
+    opacity: 0.9; 
+    /* margin: 10 10 10 10px; */
+    padding-top: 5%;
+    padding-bottom:5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    overflow: hidden;
+    max-width: 400px; /* Limiting the width of the form */
+    margin-top: 50px;
+    margin-bottom: 100px;
+    
+    margin-left: 50px;
+    margin-right: auto; /* Centering the form horizontally */
+}
+
+
+.login-h1 {
+    font-size: 40px;
+    text-align: center; /* Aligning the heading to the center */
+}
+
+.form-floating {
+    margin-bottom: 15px; /* Adding space between form inputs */
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.login_button  {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+.login_button:hover{
+    cursor: pointer;
+    background-color: #080433;
+    color: #ffffff;
+}
+.forgot-password-link {
+    display: block; /* Make the link a block element */
+    margin-top: 10px; /* Add space between the link and the button */
+}
+
+.img {
+    margin-top: 10px; 
+    text-align: center;
+    font-size: 30px;
+}
+
+.img img {
+    margin: 0 5px; /* Add space between social media icons */
+}
+
+/* ...............register form................. */
+
+#register_form {
+    width: 500px;
+    height: 600px;
+    background-color: rgba(2, 0, 68, 0.4);
+    background-blend-mode: darken;
+    border-radius: 2px;
+    opacity: 0.9; 
+    /* margin: 10 10 10 10px; */
+    padding-top: 5%;
+    padding-bottom:5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    overflow: hidden;
+    max-width: 400px; /* Limiting the width of the form */
+    margin-top: 50px;
+    margin-bottom: 100px;
+    
+    margin-left: 50px;
+    margin-right: auto; /* Centering the form horizontally */
+}
+
+
