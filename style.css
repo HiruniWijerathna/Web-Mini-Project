@@ -121,3 +121,42 @@ input[type=submit]:hover {
     padding-bottom: 5%;
     width: 80%;
 }
+
+/*.......... manage profile.....*/
+
+.detailpart{
+    text-align: center;
+    font-size: 19px;
+    
+    
+    padding-top: 5%;
+    padding-bottom:5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    width:40%;
+    position: absolute;
+     
+      left: 40%;
+}
+
+textarea{
+    width: 100%;
+}
+
+#descriptionPart{
+    text-align: center;
+    font-size: 19px;
+    background-color: rgb(0, 0, 51); 
+    color: white;
+    font-size: 30px;
+    
+    padding-top: 5%;
+    padding-bottom:5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    width:25%;
+    height:80%;
+    position: absolute;
+     
+      left: 0%;
+}
