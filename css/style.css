@@ -412,5 +412,21 @@ footer .nav .text-body-secondary {
     padding-bottom: 5%;
     width: 80%;
 }
+.button-cont1 {
+    width: 17%;
+    margin: 4% ;
+    position:absolute;   
+    left:25%;
+    top: 20%;
+}
 
-
+.button-cont2 {
+    width: 17%;
+    margin: 4% ;
+    position:absolute;   
+    right: 25%;
+    top: 20%;
+}
+.button-cont1 button, .button-cont2 button{
+    border-radius: 20px;
+}
