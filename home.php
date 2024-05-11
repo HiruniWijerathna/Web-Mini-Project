@@ -12,8 +12,31 @@
     <link rel="stylesheet" href="css\style.css">
   </head>
   <body style="background-color: #DAF1F5;">
+   <!--.......................... Header................................ -->
+   <!-- <div id="header"></div> -->
    <!-- Header -->
-   <div id="header"></div>
+ <div class="container-fluid px-4 border-bottom shadow-bottom" style="background-color: #080433">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom ">
+      <div class="col-md-3 mb-2 mb-md-0">
+        <a href="home.php" class="d-inline-flex link-body-emphasis text-decoration-none">
+            <img src="image/logo.png" alt="Your Logo" class="logo">
+        </a>
+      </div>
+
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="home.php#myCarousel" class="nav-link px-2 link-secondary">Home</a></li>
+        <li><a href="home.php#services" class="nav-link px-2">Services</a></li>
+        <li><a href="home.php#about" class="nav-link px-2">About</a></li>
+        <li><a href="contact.php" class="nav-link px-2">Contact</a></li>
+      </ul>
+
+      <div class="col-md-3 text-end">
+        <button type="button" class="btn btn-outline-primary me-4 btn-custom" onclick="window.location.href='register.php';">Register</button>
+        <button type="button" class="btn btn-primary btn-custom" onclick="window.location.href='login.php';">Login</button>
+      </div>
+    </header>
+  </div>
+<!-- ......................................header end ...............................-->
    
     <!-- carousel Section -->
 
@@ -30,7 +53,7 @@
               <div class="carousel-caption text-start">
                 <h1>Discover New Friends!</h1>
                 <p class="opacity-75">Explore a world of amazing creatures with BeastBuddy.</p>
-                <button type="button" class="btn btn-primary-join btn-lg px-4 gap-3 text-floating" onclick="window.location.href='login.html';">Join with us</button>
+                <button type="button" class="btn btn-primary-join btn-lg px-4 gap-3 text-floating" onclick="window.location.href='login.php';">Join with us</button>
               </div>
             </div>
           </div>
@@ -64,7 +87,7 @@
       </div>
 
   <!-- serveces section -->
-<div class="container-fluid py-5">
+<div id="services" class="container-fluid py-5">
     <h1 class="display-5 fw-bold text-body-emphasis" style="text-align: center;">Services</h1>
 
     <div class="row">
@@ -87,7 +110,7 @@
                 <image href="image\vet.jpeg" width="140" height="140" fill="var(--bs-secondary-color)" />
             </svg>
             <h2 class="fw-normal"></h2>
-            <p><a class="btn btn-secondary" href="#">Veterinary advice »</a></p>
+            <p><a class="btn btn-secondary" href="veterinary_advice.html">Veterinary advice »</a></p>
         </div><!-- /.col-lg-3 -->
         <div class="col-lg-3 service-item">
             <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
@@ -113,18 +136,68 @@
 </div>
 
 <!-- About -->
-<div class="px-4 py-5 my-5 text-center">
+<div id="about" class="px-4 py-5 my-5 text-center">
     <h1 class="display-5 fw-bold text-body-emphasis">About</h1>
     <div class="col-lg-8 mx-auto py-3">
       <p class="lead mb-4 about-text">Certainly! Creating a platform that connects concerned individuals, local authorities, animal welfare organizations, and volunteers can make a big difference for animals in distress worldwide. Let's work together to improve animal welfare!</p>
     </div>
   </div>
 
-<!-- Footer -->
-<div id="footer"></div>
+<!--...................... Footer............................................. -->
+<!-- <div id="footer"></div> -->
 
 <!-- Load Combined JavaScript -->
-<script src="js/includeContent.js"></script>
+<!-- <script src="js/includeContent.js"></script> -->
+<!-- Footer -->
+
+<div class="container-fluid   px-4   " style="background-color: #080433">
+    <footer class="py-1">
+        <div class="row flex-lg-row-align-items-center g-5 " style="background-color: #080433">
+
+            <div class="col-md-4 offset-md-1 mb-5">
+                <form>
+                    <div class="text-white">
+                        <h5>BeastBuddy</h5>
+                        <p class="descrip">Dedicated to saving lives, one paw at a time. <br>Our passionate team
+                            connects animals with loving homes, making a difference in the world of animal rescue.</p>
+                    </div>
+                </form>
+            </div>
+
+            <!-- <div class="col mb-3"> </div> -->
+
+            <div class="col-6 col-md-3 mb-5">
+                <h5 class="text-white">Follow Us On</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="https://www.facebook.com/" class="nav-link p-0 text-body-secondary">Facebook</a></li>
+                    <li class="nav-item mb-2"><a href="https://www.whatsapp.com/" class="nav-link p-0 text-body-secondary">Whatsapp</a></li>
+                    <li class="nav-item mb-2"><a href="https://www.instagram.com/" class="nav-link p-0 text-body-secondary">Instagram</a></li>
+                    <li class="nav-item mb-2"><a href="https://www.youtube.com/" class="nav-link p-0 text-body-secondary">Youtube</a></li>
+                </ul>
+            </div>
+
+            <!-- <div class="col mb-3"></div> -->
+
+            <div class="col-6 col-md-2 mb-5">
+                <h5 class="text-white">Quick Links</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="home.php#myCarousel" class="nav-link p-0 text-body-secondary">Home</a></li>
+                    <li class="nav-item mb-2"><a href="home.php#services" class="nav-link p-0 text-body-secondary">Service</a></li>
+                    <li class="nav-item mb-2"><a href="home.php#about" class="nav-link p-0 text-body-secondary">About</a></li>
+                </ul>
+            </div>
+
+            <!-- <div class="col mb-3"> </div> -->
+
+            <div class="d-flex flex-column flex-sm-row justify-content-center  border-top">
+                <p class="descrip">© 2024 BeastBuddy, Inc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+
+<!-- ........................footer end ..................................-->
 
           
 
@@ -132,6 +205,9 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+
+
+    
 </body>
 
 </html>

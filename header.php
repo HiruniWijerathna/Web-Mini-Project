@@ -1,3 +1,5 @@
+ <html>
+ <body>
  <!-- Header -->
  <div class="container-fluid px-4 border-bottom shadow-bottom" style="background-color: #080433">
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom ">
@@ -15,8 +17,13 @@
       </ul>
 
       <div class="col-md-3 text-end">
-        <button type="button" class="btn btn-outline-primary me-4 btn-custom" onclick="window.location.href='register.html';">Register</button>
-        <button type="button" class="btn btn-primary btn-custom" onclick="window.location.href='login.html';">Login</button>
+        <button type="button" class="btn btn-outline-primary me-4 btn-custom" onclick="window.location.href='register.php';">Register</button>
+        <button type="button" class="btn btn-primary btn-custom" onclick="window.location.href='login.php';">Login</button>
       </div>
     </header>
   </div>
+
+  </body> 
+  </html>
+
+

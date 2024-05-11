@@ -13,8 +13,33 @@
 <body class="login-body" style="background-image: url('image/login.jpg'); background-size: cover;">
 
     <!-- Load the header -->
-    <div id="header"></div>
-    <script src="js/includeContent.js"></script>
+    <!-- <div id="header"></div>
+    <script src="js/includeContent.js"></script> -->
+    <!-- Header -->
+ <div class="container-fluid px-4 border-bottom shadow-bottom" style="background-color: #080433">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom ">
+      <div class="col-md-3 mb-2 mb-md-0">
+        <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+            <img src="image/logo.png" alt="Your Logo" class="logo">
+        </a>
+      </div>
+
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
+        <li><a href="#" class="nav-link px-2">Services</a></li>
+        <li><a href="#" class="nav-link px-2">About</a></li>
+        <li><a href="#" class="nav-link px-2">Contact</a></li>
+      </ul>
+
+      <div class="col-md-3 text-end">
+        <button type="button" class="btn btn-outline-primary me-4 btn-custom" onclick="window.location.href='register.php';">Register</button>
+        <button type="button" class="btn btn-primary btn-custom" onclick="window.location.href='login.php';">Login</button>
+      </div>
+    </header>
+  </div>
+
+
+    <!-- header end -->
 
     <!-- login form -->
     <form id="login_form" action="login_process.php" method="post">
@@ -52,8 +77,58 @@
     </form>
 
     <!-- Load the footer -->
-    <div id="footer"></div>
-    <script src="js/includeFooter.js"></script>
+    <!-- <div id="footer"></div>
+    <script src="js/includeFooter.js"></script> -->
+<!-- Footer -->
+
+<div class="container-fluid   px-4   " style="background-color: #080433">
+    <footer class="py-1">
+        <div class="row flex-lg-row-align-items-center g-5 " style="background-color: #080433">
+
+            <div class="col-md-4 offset-md-1 mb-5">
+                <form>
+                    <div class="text-white">
+                        <h5>BeastBuddy</h5>
+                        <p class="descrip">Dedicated to saving lives, one paw at a time. <br>Our passionate team
+                            connects animals with loving homes, making a difference in the world of animal rescue.</p>
+                    </div>
+                </form>
+            </div>
+
+            <!-- <div class="col mb-3"> </div> -->
+
+            <div class="col-6 col-md-3 mb-5">
+                <h5 class="text-white">Follow Us On</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Facebook</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Whatsapp</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Intagram</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Youtube</a></li>
+                </ul>
+            </div>
+
+            <!-- <div class="col mb-3"></div> -->
+
+            <div class="col-6 col-md-2 mb-5">
+                <h5 class="text-white">Quick Links</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Service</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                </ul>
+            </div>
+
+            <!-- <div class="col mb-3"> </div> -->
+
+            <div class="d-flex flex-column flex-sm-row justify-content-center  border-top">
+                <p class="descrip">© 2024 BeastBuddy, Inc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+
+    <!-- footer end -->
 
 </body>
 </html>
