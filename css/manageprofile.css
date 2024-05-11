@@ -1,66 +1,124 @@
-/*.......... manage profile.....*/
-input[type=text],input[type=password],input[type=email]{
+/* CSS for header */
+.logo {
+    max-width: 150px;
+    max-height: 70px;
+}
+
+.nav-link {
+    color: white;
+    font-size: 18px;
+    margin-right: 25px;
+}
+
+.nav-link:hover {
+    color: #2636e8;
+}
+
+.btn-custom {
+    color: #080433;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 20px;
+    background-color: #DAF1F5;
+}
+
+.btn-custom:hover {
+    background-color: #080433;
+}
+
+.border-bottom {
+    margin-bottom: 0rem !important;
+}
+
+/* ...................................CSS for footer......................... */
+
+
+footer .nav a {
+    color: #080433 !important;
+}
+
+footer .nav a:hover {
+    color: #2636e8 !important;
+}
+
+footer .nav .text-body-secondary {
+    color: #FFFFFF !important;
+    font-weight: 100;
+}
+
+.text-white .descrip {
+    color: white;
+    font-weight: 100;
+}
+
+.descrip {
+    color: white;
+    font-weight: 100;
+}
+
+/*............................. CSS for manage profile ................................*/
+
+
+input[type=text], input[type=password], input[type=email] {
     padding: 14px 14px;
-    margin: 8px 8px;
+    margin: 8px 0;
     border-radius: 10px;
     width: 100%;
     font-size: 15px;
 }
-.detailpart{
-    text-align: center;
-    font-size: 19px;
-    
-    
-    padding-top: 5%;
-    padding-bottom:5%;
-    padding-left: 5%;
-    padding-right: 5%;
-    width:40%;
-    position: absolute;
-     
-      left: 40%;
-}
 
-textarea{
+textarea {
     width: 100%;
 }
 
-#descriptionPart{
+.detailpart, #descriptionPart {
     text-align: center;
     font-size: 19px;
-    background-color: rgb(0, 0, 51); 
+    background-color: rgb(0, 0, 51);
     color: white;
-    font-size: 30px;
-    
-    padding-top: 5%;
-    padding-bottom:5%;
-    padding-left: 5%;
-    padding-right: 5%;
-    width:25%;
-    height:80%;
-    position: absolute;
-     
-      left: 0%;
+    padding: 5%;
+    width: 100%;
 }
 
-input[type=submit]{
+#descriptionPart {
+    width: 80%;
+    height: 100%;
+    position: relative;
+    left: 0%;
+    padding-top: 100px;
+}
+
+input[type=submit] {
     font-size: 15px;
-    color: rgb(2, 2, 22) 255, 255;
+    color: rgb(2, 2, 22);
     padding: 14px 14px;
-    margin: 8px 8px;
+    margin: 8px 0;
     border-radius: 10px;
     width: 50%;
 }
-    
+
 input[type=submit]:hover {
     background-color: #2618c4;
     color: rgb(255, 255, 255);
 }
-.active{
+
+.active {
     padding: 5%;
-    
 }
 
-#butin{
+#butin {
     border-radius: 50%;
 }
+
+/* Custom styles for image preview */
+#preview {
+    max-width: 600px;
+    margin-top: 10px;
+    border-radius: 50%;
+}
+
+/* Hide upload input initially */
+#uploadInput {
+    display: none;
+}
+
