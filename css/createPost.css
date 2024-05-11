@@ -1,0 +1,127 @@
+
+
+input[type=text]{
+    padding: 14px 14px;
+    margin: 8px 0;
+    border-radius: 10px;
+    width: 90%;
+    font-size: 15px;
+    background-color: rgb(133, 217, 234);
+    
+}
+
+#discription{
+    height: 50%;
+}
+
+input[type=ctext]{
+    padding: 14px 14px;
+    margin: 8px 0;
+    border-radius: 10px;
+    width: 17%;
+    font-size: 15px;
+    background-color: rgb(255, 255, 255);
+   
+}
+
+h1{
+    text-align: center;  
+}
+
+select{
+    padding: 14px 14px;
+    margin: 8px 0;
+    border-radius: 10px;
+    width: 19%;
+    font-size: 15px;  
+    background-color: rgb(255, 255, 255);
+}
+
+form{
+    background-color: #080433;
+    text-align: center;
+    background-color: rgb(0, 0, 51);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    position:absolute;   
+    left:20%;
+
+    padding: 2%;
+    border-radius: 2%;
+   
+}
+
+       
+textarea {
+    width: 90%;
+    background-color: rgb(133, 217, 234);
+    border-radius: 2%;
+    
+}
+
+#descriptionPart{
+    text-align: center;  
+}
+
+
+input[type=submit] {
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+    padding: 14px 14px;
+    margin: 8px 0;
+    border-radius: 10px;
+    width: 20%;
+    background-color: #1f10c4;
+    text-align: center;
+    
+  
+
+}
+
+input[type=submit]:hover {
+    background-color: #e40a0a;
+    color: rgb(255, 255, 255);
+}
+
+
+/* Custom styles for image preview */
+#preview {
+    border-radius: 2%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+#uploadInput{
+    border-radius: 2%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#countrySelect{
+    position:absolute;   
+    left:20%;
+   
+}
+
+#city{
+    position:absolute;   
+    left:42%;
+   
+}
+
+#floatingCategory{
+    position:relative;   
+    left:65%;
+
+   
+}
+
+
+
+
+
