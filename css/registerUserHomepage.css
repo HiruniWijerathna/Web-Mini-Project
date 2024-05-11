@@ -1,0 +1,68 @@
+/* ........... registed user home page ................ */
+
+.button-container1 {
+    width: 17%;
+    margin: 4% ;
+    position:absolute;   
+    left:10%;
+    top: 50%;
+}
+
+.button-container2 {
+    width: 17%;
+    margin: 4% ;
+    position:absolute;   
+    left:37.5%;
+    top: 50%;
+}
+
+.button-container3 {
+    width: 17%;
+    margin: 4% ;
+    position:absolute;   
+    left:65%;
+    top: 50%;
+}
+
+.button-container4 {
+    width: 17%;
+    margin: 4% ;
+    position:absolute;   
+    left:10%;
+    top: 100%;
+}
+
+.button-container5 {
+    width: 17%;
+    margin: 4% ;
+    position:absolute;   
+    left:37.5%;
+    top: 100%;
+}
+
+.button-container6 {
+    width: 17%;
+    margin: 4% ;
+    position:absolute;   
+    left:65%;
+    top: 100%;
+}
+  
+.button-container1 button, .button-container2 button, .button-container3 button, .button-container4 button, .button-container5 button, .button-container6 button {
+   border-radius: 20px;
+}
+
+.serbutt {
+    background-color: #0b002f;
+    color: white;
+    font-size: 20px;
+    padding-bottom: 10%;
+       
+}
+
+#bservice{
+    border-radius: 20%;
+    padding-top: 10%;
+    padding-bottom: 5%;
+    width: 80%;
+}
