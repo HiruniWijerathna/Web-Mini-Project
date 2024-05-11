@@ -86,7 +86,7 @@
 
         <button class="login_button btn-primary w-100 py-2" type="submit">Register</button>
         
-        <a href="forgot_password_page.php" class="forgot-password-link">Forgot password?</a>
+        <!-- <a href="forgot_password_page.php" class="forgot-password-link">Forgot password?</a> -->
 
         
         <p class="mt-3 mb-0">You have an account? <a href="login.php">Login here</a></p>
