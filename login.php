@@ -19,16 +19,16 @@
  <div class="container-fluid px-4 border-bottom shadow-bottom" style="background-color: #080433">
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom ">
       <div class="col-md-3 mb-2 mb-md-0">
-        <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+        <a href="home.php" class="d-inline-flex link-body-emphasis text-decoration-none">
             <img src="image/logo.png" alt="Your Logo" class="logo">
         </a>
       </div>
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
-        <li><a href="#" class="nav-link px-2">Services</a></li>
-        <li><a href="#" class="nav-link px-2">About</a></li>
-        <li><a href="#" class="nav-link px-2">Contact</a></li>
+        <li><a href="home.php#myCarousel" class="nav-link px-2 link-secondary">Home</a></li>
+        <li><a href="home.php#services" class="nav-link px-2">Services</a></li>
+        <li><a href="home.php#about" class="nav-link px-2">About</a></li>
+        <li><a href="contact.php" class="nav-link px-2">Contact</a></li>
       </ul>
 
       <div class="col-md-3 text-end">
@@ -57,9 +57,9 @@
 
         <button class="login_button btn-primary w-100 py-2" type="submit">Login</button>
         
-        <a href="#" class="forgot-password-link">Forgot password?</a>
+        <a href="forgot_password_page.php" class="forgot-password-link">Forgot password?</a>
         
-        <p class="mt-3 mb-0">Don't have an account? <a href="register.html">Register here</a></p>
+        <p class="mt-3 mb-0">Don't have an account? <a href="register.php">Register here</a></p>
 
         <div class="form-floating">
             <h3 class="img">
@@ -100,10 +100,10 @@
             <div class="col-6 col-md-3 mb-5">
                 <h5 class="text-white">Follow Us On</h5>
                 <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Facebook</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Whatsapp</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Intagram</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Youtube</a></li>
+                    <li class="nav-item mb-2"><a href="https://www.facebook.com/" class="nav-link p-0 text-body-secondary">Facebook</a></li>
+                    <li class="nav-item mb-2"><a href="https://www.whatsapp.com/" class="nav-link p-0 text-body-secondary">Whatsapp</a></li>
+                    <li class="nav-item mb-2"><a href="https://www.instagram.com/" class="nav-link p-0 text-body-secondary">Intagram</a></li>
+                    <li class="nav-item mb-2"><a href="https://www.youtube.com/" class="nav-link p-0 text-body-secondary">Youtube</a></li>
                 </ul>
             </div>
 
@@ -112,9 +112,9 @@
             <div class="col-6 col-md-2 mb-5">
                 <h5 class="text-white">Quick Links</h5>
                 <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Service</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                    <li class="nav-item mb-2"><a href="home.php#myCarousel" class="nav-link p-0 text-body-secondary">Home</a></li>
+                    <li class="nav-item mb-2"><a href="home.php#services" class="nav-link p-0 text-body-secondary">Service</a></li>
+                    <li class="nav-item mb-2"><a href="home.php#about" class="nav-link p-0 text-body-secondary">About</a></li>
                 </ul>
             </div>
 
