@@ -52,7 +52,7 @@
             <div class="container">
               <div class="carousel-caption text-start">
                 <h1 style="color: black">Welcome to the BeastBuddy Community 🌍🌿🐾</h1>
-                <p class="opacity-75" >Explore, connect, and share your love for creatures big and small - BeastBuddy! 🐾</p>
+                <p class="opacity-75" style="color: yellow">Explore, connect, and share your love for creatures big and small - BeastBuddy! 🐾</p>
                 </div>
             </div>
           </div>
