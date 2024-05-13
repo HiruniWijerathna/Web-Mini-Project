@@ -73,7 +73,7 @@
         <div class="col-md-4">
             <!-- <a href="manageProfile.php" class="button-link"> -->
                 <button class="serbutt" onclick="window.location.href='manageProfile.php';">
-                    <img src="image/ManageProfileLogo.png" alt="ManageProfileLogo" width="30%" id="bservice"> <br>Read Organization post
+                    <img src="image/readOrganitionPostImage.png" alt="ManageProfileLogo" width="30%" id="bservice"> <br>Read Organization post
                 </button>
             <!-- </a> -->
         </div>
@@ -81,7 +81,7 @@
         <div class="col-md-4">
             <!-- <a href="readPost.php" class="button-link"> -->
                 <button class="serbutt" onclick="window.location.href='readPost.php';">
-                    <img src="image/ReadPost.jpeg" alt="ReadPost" width="30%" id="bservice"> <br>Organization Profile
+                    <img src="image/OrganizationProfilrImage.png" alt="ReadPost" width="30%" id="bservice"> <br>Organization Profile
                 </button>
             <!-- </a> -->
         </div>
