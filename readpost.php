@@ -54,9 +54,10 @@
             }
 
             // Fetch posts from the database
-            $sql = "SELECT posts.post_id, posts.title, posts.content, posts.location, users.username 
-                    FROM posts 
-                    INNER JOIN users ON posts.user_id = users.user_id";
+$sql = "SELECT posts.post_id, posts.title, posts.content, posts.location, posts.image, users.username 
+FROM posts 
+INNER JOIN users ON posts.user_id = users.user_id";
+
 
             $result = $conn->query($sql);
 
@@ -66,7 +67,8 @@
                 while ($row = $result->fetch_assoc()) {
                     echo "<div class='col-md-6 mb-4'>
                             <div class='card'>
-                                <img src='display_image.php?post_id=" . $row['post_id'] . "' class='card-img-top' alt='Post Image'>
+                            <img src='uploads/" . $row['image'] . "' class='card-img-top' alt='Post Image'>
+
                                 <div class='card-body'>
                                     <h5 class='card-title'>" . $row["title"] . "</h5>
                                     <p class='card-text'>" . $row["content"] . "</p>
