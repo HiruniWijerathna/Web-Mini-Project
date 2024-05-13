@@ -49,7 +49,8 @@
     <!-- header end -->
 
     <!-- register form -->
-    <form id="register_form" action="register_process.php" method="post" style="height: 700px;">
+    <form id="register_form" action="register_setup.php" method="post" style="height: 700px;">
+
 
         <h1 class="login-h1">Register</h1>
 
