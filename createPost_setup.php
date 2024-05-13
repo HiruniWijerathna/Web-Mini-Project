@@ -46,7 +46,7 @@ $stmt->bind_param("isssss", $user_id, $title, $category, $about, $image, $locati
 // Execute the statement
 if ($stmt->execute() === TRUE) {
     // Post created successfully, redirect to home.php or post details page
-    header("Location: home.php"); // Change this to the appropriate page
+    header("Location: readpost.php"); // Change this to the appropriate page
     exit();
 } else {
     // Error in creating post, redirect back to createPost.php
