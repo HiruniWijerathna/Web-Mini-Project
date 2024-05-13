@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="css\style.css">
-    <link rel="stylesheet" href="css/registerUserHomepage.css">
+    <link rel="stylesheet" href="css/animal_Organization.css">
     
 </head>
 <body style="background-color: rgb(173, 220, 241);">
@@ -48,11 +48,11 @@
        
         <div class="carousel-inner">
           <div class="carousel-item active hover-item" >
-            <img src="image\registerUserHomePageImage.jpg" class="d-block w-100" alt="Image 2">
+            <img src="image\OrganizationMainImage.jpg" class="d-block w-100" alt="Image 2">
             <div class="container">
               <div class="carousel-caption text-start">
-                <h1 style="color: black">Welcome to the BeastBuddy Community 🌍🌿🐾</h1>
-                <p class="opacity-75" style="color: yellow">Explore, connect, and share your love for creatures big and small - BeastBuddy! 🐾</p>
+                <h1 style="color: black">Animal Organizations🐾</h1>
+                <p class="opacity-75" style="color:black">You can join these organizations to save animals</p>
                 </div>
             </div>
           </div>
@@ -63,7 +63,7 @@
        <!-- serveces section -->
 
        <div>
-        <h2><center>Now, you can</center></h2>
+       
 
     </div>
 
@@ -77,10 +77,11 @@
                 </button>
             <!-- </a> -->
         </div>
+       
         <div class="col-md-4">
-            <!-- <a href="createPost.php" class="button-link"> -->
-                <button class="serbutt" onclick="window.location.href='createPost.php';">
-                    <img src="image/createPostLogo.jpg" alt="createPostLogo" width="30%" id="bservice"> <br>Organization Profile
+            <!-- <a href="readPost.php" class="button-link"> -->
+                <button class="serbutt" onclick="window.location.href='readPost.php';">
+                    <img src="image/ReadPost.jpeg" alt="ReadPost" width="30%" id="bservice"> <br>Organization Profile
                 </button>
             <!-- </a> -->
         </div>
