@@ -48,7 +48,7 @@
        
         <div class="carousel-inner">
           <div class="carousel-item active hover-item" >
-            <img src="image\OrganizationMainImage.jpg" class="d-block w-100" alt="Image 2">
+            <img src="image/VeterinaryDetailsMAinImage.jpg" class="d-block w-100" alt="Image 2">
             <div class="container">
               <div class="carousel-caption text-start">
                 <h1 style="color: black">Animal Organizations🐾</h1>
@@ -73,7 +73,7 @@
         <div class="col-md-4">
             <!-- <a href="manageProfile.php" class="button-link"> -->
                 <button class="serbutt" onclick="window.location.href='manageProfile.php';">
-                    <img src="image/readOrganitionPostImage.png" alt="ManageProfileLogo" width="30%" id="bservice"> <br>Read Organization post
+                    <img src="image/VeterinaryDetailsPostReadImage.jpg" alt="ManageProfileLogo" width="30%" id="bservice"> <br>Read Organization post
                 </button>
             <!-- </a> -->
         </div>
@@ -81,7 +81,7 @@
         <div class="col-md-4">
             <!-- <a href="readPost.php" class="button-link"> -->
                 <button class="serbutt" onclick="window.location.href='readPost.php';">
-                    <img src="image/OrganizationProfilrImage.png" alt="ReadPost" width="30%" id="bservice"> <br>Organization Profile
+                    <img src="image/VeterinaryDetailsProfilImage.jpg" alt="ReadPost" width="30%" id="bservice"> <br>Organization Profile
                 </button>
             <!-- </a> -->
         </div>
