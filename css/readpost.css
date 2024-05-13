@@ -1,0 +1,185 @@
+/*.......................... header........................... */
+/* Logo styling */
+.logo {
+    max-width: 150px;
+    /* Set the maximum width */
+    max-height: 70px;
+    /* Set the maximum height */
+}
+
+.nav-link {
+    color: white;
+    font-size: 18px;
+    /* Adjust the font size as needed */
+    margin-right: 25px;
+    /* Adjust the value as needed */
+
+}
+
+.nav-link:hover {
+    color: #2636e8;
+}
+
+.btn-custom {
+    color: #080433;
+    /* Set text color to white */
+    font-size: 16px;
+    /* Adjust font size as needed */
+    font-weight: 600;
+    padding: 10px 20px;
+    /* Adjust padding as needed */
+    background-color: #DAF1F5;
+}
+
+.btn-custom:hover {
+    background-color: #080433;
+}
+.border-bottom {
+    margin-bottom: 0rem !important;
+}
+
+/* ................................CSS for footer............................ */
+/* Footer Social Icons */
+footer .nav a {
+    color: #080433 !important;
+    /* Icon color */
+}
+
+/* Footer Social Icons Hover */
+footer .nav a:hover {
+    color: #2636e8 !important;
+    /* Hover icon color */
+}
+
+/* Footer Social Icons (Twitter, Instagram, Facebook) */
+footer .nav .text-body-secondary {
+    color: #FFFFFF !important;
+    /* Text color */
+    font-weight: 100;
+}
+
+.text-white .descrip {
+    color: white;
+    font-weight: 100;
+}
+
+.descrip {
+    color: white;
+    font-weight: 100;
+}
+/* CSS for displaying posts */
+/* Card styling */
+.card {
+    border: none;
+    /* Remove border */
+}
+
+/* Card title */
+.card-title {
+    font-weight: bold;
+    color: #080433;
+}
+
+/* Card body */
+.card-body {
+    padding: 1.25rem;
+}
+
+/* Card text */
+.card-text {
+    margin-bottom: 0.75rem;
+    color: #2636e8;
+    font-weight: bold;
+}
+
+/* Card image */
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Card footer */
+.card-footer {
+    background-color: #3c8fe2;
+    border-top: none;
+}
+
+/* Small text */
+.small {
+    font-size: 0.875rem;
+}
+
+/* Hide overflow content */
+.overflow-hidden {
+    overflow: hidden;
+}
+
+/* Center the card */
+.center-card {
+    margin: 0 auto;
+}
+
+/* Margin bottom */
+.mb-4 {
+    margin-bottom: 1.5rem !important;
+}
+/* CSS for displaying posts */
+/* Card styling */
+.post-card {
+    border: none;
+    /* Remove border */
+}
+
+/* Card title */
+.post-card .card-title {
+    font-weight: bold;
+    color: #080433;
+}
+
+/* Card body */
+.post-card .card-body {
+    padding: 1.25rem;
+}
+
+/* Card text */
+.post-card .card-text {
+    margin-bottom: 0.75rem;
+    color: #2636e8;
+    font-weight: bold;
+}
+
+/* Card image */
+.post-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Card footer */
+.post-card .card-footer {
+    background-color: #3c8fe2;
+    border-top: none;
+}
+
+/* Small text */
+.post-card .small {
+    font-size: 0.875rem;
+}
+
+/* Hide overflow content */
+.post-card .overflow-hidden {
+    overflow: hidden;
+}
+
+/* Center the card */
+.post-card .center-card {
+    margin: 0 auto;
+}
+
+/* Margin bottom */
+.post-card .mb-4 {
+    margin-bottom: 1.5rem !important;
+}
+.mt-5 {
+    margin-top: 3rem !important;
+    margin-bottom: 50px;
+}

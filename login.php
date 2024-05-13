@@ -42,7 +42,7 @@
     <!-- header end -->
 
     <!-- login form -->
-    <form id="login_form" action="login_process.php" method="post">
+    <form id="login_form" action="login_setup.php" method="post">
         <h1 class="login-h1">Login</h1>
 
         <div class="form-floating">
