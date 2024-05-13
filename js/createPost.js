@@ -34,7 +34,6 @@ var countries = [
 // Function to populate the dropdown with a list of countries
 function populateCountries() {
     var selectElement = document.getElementById("countrySelect");
-    // Loop through the array of countries and add them as options to the dropdown
     for (var i = 0; i < countries.length; i++) {
         var option = document.createElement("option");
         option.text = countries[i];
@@ -46,8 +45,7 @@ function populateCountries() {
 // Call the populateCountries function when the page loads
 window.onload = populateCountries;
 
-//add photo
-
+// Function to preview uploaded image
 function previewImage(event) {
     var preview = document.getElementById('preview');
     var uploadInput = document.getElementById('uploadInput');
@@ -56,11 +54,22 @@ function previewImage(event) {
     uploadInput.style.display = "none";
 }
 
+// Function to remove uploaded photo
 function removePhoto() {
     var preview = document.getElementById('preview');
     var uploadInput = document.getElementById('uploadInput');
-    
     preview.src = "image/addphotoLogo.jpg";
     uploadInput.value = ""; // Clear the selected file
     uploadInput.style.display = "block";
+}
+
+// Function to validate form before submission
+function validateForm() {
+    var title = document.getElementById('title').value;
+    var description = document.getElementById('about').value;
+    if (title.trim() === '' || description.trim() === '') {
+        alert('Title and Description cannot be empty');
+        return false;
+    }
+    return true;
 }
