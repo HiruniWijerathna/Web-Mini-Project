@@ -73,7 +73,7 @@
         <div class="col-md-4">
             <!-- <a href="manageProfile.php" class="button-link"> -->
                 <button class="serbutt" onclick="window.location.href='manageProfile.php';">
-                    <img src="image/readOrganitionPostImage.png" alt="ManageProfileLogo" width="30%" id="bservice"> <br>Read Organization post
+                    <img src="image/readOrganitionPostImage.png" alt="ManageProfileLogo" width="30%" id="bservice"> <br>Read Organization Post
                 </button>
             <!-- </a> -->
         </div>
