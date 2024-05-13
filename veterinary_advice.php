@@ -51,8 +51,8 @@
             <img src="image/VeterinaryDetailsMAinImage.jpg" class="d-block w-100" alt="Image 2">
             <div class="container">
               <div class="carousel-caption text-start">
-                <h1 style="color: black">Animal Organizations🐾</h1>
-                <p class="opacity-75" style="color:black">You can join these organizations to save animals</p>
+                <h1 style="color: black">Veterinary Details🏥</h1>
+                <p class="opacity-75" style="color:black">Get medical advice for your animals from veterinarians themselves</p>
                 </div>
             </div>
           </div>
@@ -73,7 +73,7 @@
         <div class="col-md-4">
             <!-- <a href="manageProfile.php" class="button-link"> -->
                 <button class="serbutt" onclick="window.location.href='manageProfile.php';">
-                    <img src="image/VeterinaryDetailsPostReadImage.jpg" alt="ManageProfileLogo" width="30%" id="bservice"> <br>Read Organization post
+                    <img src="image/VeterinaryDetailsPostReadImage.jpg" alt="ManageProfileLogo" width="30%" id="bservice"> <br>Read Medical Post
                 </button>
             <!-- </a> -->
         </div>
@@ -81,7 +81,7 @@
         <div class="col-md-4">
             <!-- <a href="readPost.php" class="button-link"> -->
                 <button class="serbutt" onclick="window.location.href='readPost.php';">
-                    <img src="image/VeterinaryDetailsProfilImage.jpg" alt="ReadPost" width="30%" id="bservice"> <br>Organization Profile
+                    <img src="image/VeterinaryDetailsProfilImage.jpg" alt="ReadPost" width="30%" id="bservice"> <br>Veterinary Profile
                 </button>
             <!-- </a> -->
         </div>
