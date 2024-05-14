@@ -50,10 +50,10 @@
             <div>
                 <select class="form-select" name="category" id="floatingCategory">
                     <option selected disabled>Select Category</option>
-                    <option value="category1">Normal User</option>
-                    <option value="category2">Veterinarian</option>
-                    <option value="category3">Snake Catcher</option>
-                    <option value="category4">Animal Organization</option>
+                    <option value="category1">Pet Search & Rescue</option>
+                    <option value="category2">Vet Updates</option>
+                    <option value="category3">Snake Updates</option>
+                    <option value="category4">Community Events</option>
                 </select>
             </div>
         </div>
