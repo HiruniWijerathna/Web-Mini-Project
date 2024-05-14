@@ -99,7 +99,7 @@
                 <image href="image\ReadPost.jpeg" width="140" height="140" fill="var(--bs-secondary-color)" />
             </svg>
             <h2 class="fw-normal " ></h2>
-            <p><a class="btn btn-secondary" href="#">Read post »</a></p>
+            <p><a class="btn btn-secondary" href="readpost.php">Read post »</a></p>
 
         </div><!-- /.col-lg-3 -->
         <div class="col-lg-3 service-item">
@@ -110,7 +110,7 @@
                 <image href="image\vet.jpeg" width="140" height="140" fill="var(--bs-secondary-color)" />
             </svg>
             <h2 class="fw-normal"></h2>
-            <p><a class="btn btn-secondary" href="veterinary_advice.html">Veterinary advice »</a></p>
+            <p><a class="btn btn-secondary" href="veterinary_advice.php">Veterinary advice »</a></p>
         </div><!-- /.col-lg-3 -->
         <div class="col-lg-3 service-item">
             <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
@@ -120,7 +120,7 @@
                 <image href="image\animalOrganization.jpeg" width="140" height="140" fill="var(--bs-secondary-color)" />
             </svg>
             <h2 class="fw-normal"></h2>
-            <p><a class="btn btn-secondary" href="#">Animal Organization »</a></p>
+            <p><a class="btn btn-secondary" href="animal_Organization.php">Animal Organization »</a></p>
         </div><!-- /.col-lg-3 -->
         <div class="col-lg-3 service-item">
             <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
@@ -130,7 +130,7 @@
                 <image href="image\snakeinfor.jpeg" width="140" height="140" fill="var(--bs-secondary-color)" />
             </svg>
             <h2 class="fw-normal"></h2>
-            <p><a class="btn btn-secondary" href="#">Snake Information »</a></p>
+            <p><a class="btn btn-secondary" href="snakeInformation.php">Snake Information »</a></p>
         </div>
     </div>
 </div>
