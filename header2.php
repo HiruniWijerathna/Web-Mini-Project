@@ -1,5 +1,14 @@
+   <!--.......................... Header................................ -->
+   <?php
+session_start(); // Start the session
 
-
+// Check if the username is set in the session
+if (isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
+} else {
+    $username = ''; // Set default username if not set
+}
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -14,7 +23,7 @@
     <link rel="stylesheet" href="css\style.css">
   </head>
   <body style="background-color: #DAF1F5;">
-   <!--.......................... Header................................ -->
+
    <!-- <div id="header"></div> -->
    <!-- Header -->
  <div class="container-fluid px-4 border-bottom shadow-bottom" style="background-color: #080433">

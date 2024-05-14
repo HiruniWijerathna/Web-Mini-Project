@@ -1,0 +1,99 @@
+.logo {
+    max-width: 150px;
+    max-height: 70px;
+}
+
+.nav-link {
+    color: white;
+    font-size: 18px;
+    margin-right: 25px;
+}
+
+.nav-link:hover {
+    color: #2636e8;
+    
+}
+
+.btn-custom {
+    color: #080433;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 20px;
+    background-color: #DAF1F5;
+}
+
+.btn-custom:hover {
+    background-color: #080433;
+   
+}
+
+.serbutt {
+    background-color: #080433;
+    color: white;
+    font-size: 22px;
+    padding-bottom: 10%;   
+    border-radius: 20px;  
+}
+.serbutt:hover {
+    background-color: #1a0042; /* Change to desired color on hover */
+    
+    
+}
+
+#bservice {
+    border-radius: 20%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    width: 80%;
+}
+
+
+
+
+
+
+footer .nav a {
+    color: #080433 !important;
+}
+
+footer .nav a:hover {
+    color: #2636e8 !important;
+}
+
+footer .nav .text-body-secondary {
+    color: #FFFFFF !important;
+    font-weight: 100;
+}
+
+.text-white .descrip {
+    color: white;
+    font-weight: 100;
+}
+
+.descrip {
+    color: white;
+    font-weight: 100;
+}
+
+footer {
+    background-color: #080433;
+    color: white;
+    padding: 20px 0;
+    width: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+.mt-4 {
+    margin-top: 1.5rem !important;
+    margin-bottom: 100px;
+}
+@media (min-width: 1200px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 900px;
+    }
+}
