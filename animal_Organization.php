@@ -88,8 +88,8 @@ if (isset($_SESSION['username'])) {
         </div>
        
         <div class="col-md-4">
-            <!-- <a href="Organizational_Details.html" class="button-link"> -->
-                <button class="serbutt" onclick="window.location.href='Organizational_Details.html';">
+            <!-- <a href="Organizational_Details.php" class="button-link"> -->
+                <button class="serbutt" onclick="window.location.href='Organizational_Details.php';">
                     <img src="image/OrganizationProfilrImage.png" alt="ReadPost" width="30%" id="bservice"> <br>Organization Profile
                 </button>
             <!-- </a> -->
