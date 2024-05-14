@@ -14,32 +14,44 @@
 </head>
 <body style="background-color: rgb(173, 220, 241);">
 
-    <!-- Header -->
-    <div class="container-fluid px-4 border-bottom shadow-bottom" style="background-color: #080433">
-        <header class="d-flex flex-wrap align-items-center justify-content-between py-3 mb-0 border-bottom">
-            <div class="col-md-3 mb-2 mb-md-0">
-                <a href="home.php" class="d-inline-flex link-body-emphasis text-decoration-none">
-                    <img src="image/logo.png" alt="Your Logo" class="logo">
-                </a>
-            </div>
+      <!--.......................... Header................................ -->
+      <?php
+session_start(); // Start the session
 
-            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="home.php#myCarousel" class="nav-link px-4 link-secondary">Home</a></li>
-        <li><a href="home.php#services" class="nav-link px-4">Services</a></li>
-        <li><a href="home.php#about" class="nav-link px-4">About</a></li>
-        <li><a href="contact.php" class="nav-link px-4">Contact</a></li>
-            </ul>
+// Check if the username is set in the session
+if (isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
+} else {
+    $username = ''; // Set default username if not set
+}
+?>
 
-            <!-- <div class="col-md-3 text-end">
-              -->
-           
-            
-                <!-- <button type="button" class="btn btn-outline-primary me-4 btn-custom" onclick="window.location.href='register.php';">Register</button>
-                <button type="button" class="btn btn-primary btn-custom" onclick="window.location.href='login.php';">Login</button> -->
-            <!-- </div> -->
-        </header>
-    </div>
-    <!-- End Header -->
+   <!-- <div id="header"></div> -->
+   <!-- Header -->
+ <div class="container-fluid px-4 border-bottom shadow-bottom" style="background-color: #080433">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom ">
+      <div class="col-md-3 mb-2 mb-md-0">
+        <a href="home.php" class="d-inline-flex link-body-emphasis text-decoration-none">
+            <img src="image/logo.png" alt="Your Logo" class="logo">
+        </a>
+      </div>
+
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="home.php#myCarousel" class="nav-link px-2">Home</a></li>
+        <li><a href="home.php#services" class="nav-link px-2">Services</a></li>
+        <li><a href="home.php#about" class="nav-link px-2">About</a></li>
+        <li><a href="contact.php" class="nav-link px-2">Contact</a></li>
+      </ul>
+
+      <div class="col-md-3 text-end">
+      <p id="hh" style="color:White;  font-size: 18px">👋 Hi, <?php echo $username; ?></p>
+        
+      </div>
+   
+  </div>
+<!-- ......................................header end ...............................-->
+
+
 
    
     <!-- carousel Section -->
@@ -93,14 +105,14 @@
         </div>
         <div class="col-md-4">
             <!-- <a href="veterinaryAdvice.php" class="button-link"> -->
-                <button class="serbutt" onclick="window.location.href='veterinaryAdvice.php';">
+                <button class="serbutt" onclick="window.location.href='veterinary_advice.php';">
                     <img src="image/vet.jpeg" alt="vet" width="30%" id="bservice"> <br>Veterinary Advice
                 </button>
             <!-- </a> -->
         </div>
         <div class="col-md-4">
             <!-- <a href="animalOrganization.php" class="button-link"> -->
-                <button class="serbutt" onclick="window.location.href='animalOrganization.php';">
+                <button class="serbutt" onclick="window.location.href='animal_Organization.php';">
                     <img src="image/animalOrganization.jpeg" alt="animalOrganization" width="30%" id="bservice"> <br>Animal Organization
                 </button>
             <!-- </a> -->
