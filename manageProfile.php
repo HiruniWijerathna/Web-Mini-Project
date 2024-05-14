@@ -62,8 +62,8 @@ if (isset($_SESSION['username'])) {
         <div class="col-md-6">
             <div id="descriptionPart">
                 <!-- <h3>Add Your Photo</h3> -->
-                <input type="file" id="uploadInput" accept="image/*" onchange="previewImage(event)">
-                <button onclick="removePhoto()">Remove Photo</button>
+                <!-- <input type="file" id="uploadInput" accept="image/*" onchange="previewImage(event)">
+                <button onclick="removePhoto()">Remove Photo</button> -->
                 <img id="preview" src="image/profilePhotoLogo.jpg" alt="Preview Image">
                 <p><span id="displayText"></span> <span id="displaText"></span></p>
             </div>
@@ -71,23 +71,37 @@ if (isset($_SESSION['username'])) {
 
         <!-- Profile Settings --> 
       
-        <div class="col-md-6" style="margin-top: 100px; margin-bottom: 100px;">
-            <div class="detailpart">
+        <div class="col-md-6" style="margin-top: 100px; margin-bottom: 100px;"> 
+            <div class="detailpart"> 
                 <h2>Profile Setting</h2>
-                <form action="/action">
+                <form action="manageprofile_setup.php" method="post" enctype="multipart/form-data">
                     <input type="text" id="fname" name="firstname" placeholder="First Name" onkeyup="updateText()">
                     <br>
                     <input type="text" id="lname" name="lastname" placeholder="Last Name" onkeyup="updatText()">
                     <br>
                     <input type="text" id="phone" name="phone" placeholder="Phone Number">
                     <br>
-                    <input type="text" id="country" name="country" placeholder="Country">
+                    <input type="text" id="location" name="location" placeholder="location">
                     <br>
-                    <input type="text" id="state" name="state" placeholder="State">
+                    <div class="form-floating">
+            <select class="form-select" id="floatingCategory" name="category" required>
+                <option selected disabled>Select your role</option>
+                <option value="Normal User">Normal User</option>
+                <option value="Veterinarian">Veterinarian</option>
+                <option value="Snake Catcher">Snake Catcher</option>
+                <option value="Animal Organization">Animal Organization</option>
+            </select>
+            <label for="floatingCategory">Category</label>
+        </div>
                     <br>
                     <textarea id="about" name="about" placeholder="Write something about yourself.." rows="4"></textarea>
-                    <br>
+                    <br><br>
+                    <label>Add your photo</label>
+                    <input type="file" id="profile_img" name="profile_image" accept="image/*" placeholder="Profile_img">
+                    
+                    <br><br>
                     <input type="submit" value="Save">
+                    
                 </form>
             </div>
         </div>
