@@ -105,7 +105,7 @@ if (isset($_SESSION['username'])) {
         </div>
         <div class="col-md-4">
             <!-- <a href="veterinaryAdvice.php" class="button-link"> -->
-                <button class="serbutt" onclick="window.location.href='veterinaryAdvice.php';">
+                <button class="serbutt" onclick="window.location.href='veterinary_advice.php';">
                     <img src="image/vet.jpeg" alt="vet" width="30%" id="bservice"> <br>Veterinary Advice
                 </button>
             <!-- </a> -->
