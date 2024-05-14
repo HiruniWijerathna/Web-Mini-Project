@@ -71,16 +71,16 @@
 <div class="container mt-4">
     <div class="row gx-4 gy-4">
         <div class="col-md-4">
-            <!-- <a href="manageProfile.php" class="button-link"> -->
-                <button class="serbutt" onclick="window.location.href='manageProfile.php';">
+            <!-- <a href="readSnakeInformation.php" class="button-link"> -->
+                <button class="serbutt" onclick="window.location.href='readSnakeInformation.php';">
                     <img src="image/readSnakePostImage.jpg" alt="ManageProfileLogo" width="30%" id="bservice"> <br>Read Snake Post
                 </button>
             <!-- </a> -->
         </div>
        
         <div class="col-md-4">
-            <!-- <a href="readPost.php" class="button-link"> -->
-                <button class="serbutt" onclick="window.location.href='readPost.php';">
+            <!-- <a href="Snake_Catchers_Details.html" class="button-link"> -->
+                <button class="serbutt" onclick="window.location.href='Snake_Catchers_Details.html';">
                     <img src="image/SnakecatchersProfileImage.jpg" alt="ReadPost" width="30%" id="bservice"> <br>Snake Catchers Profile
                 </button>
             <!-- </a> -->
