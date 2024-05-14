@@ -71,13 +71,19 @@ footer .nav .text-body-secondary {
 /* Card styling */
 .card {
     border: none;
+    background-color: #eef7fd; /* Light gray background */
+    padding: 1.25rem;
+    border-style: solid;
+
     /* Remove border */
 }
 
 /* Card title */
 .card-title {
     font-weight: bold;
-    color: #080433;
+    color: #241784;
+    font-size: 27px;
+    text-align: center;
 }
 
 /* Card body */
@@ -88,14 +94,19 @@ footer .nav .text-body-secondary {
 /* Card text */
 .card-text {
     margin-bottom: 0.75rem;
-    color: #2636e8;
+    color: #01032b;
     font-weight: bold;
+    font-size: 18px;
+
 }
 
 /* Card image */
 .card-img-top {
-    height: 200px;
+    height: 500px;
     object-fit: cover;
+    border-style: solid;
+    width: 99%;
+   
 }
 
 /* Card footer */
@@ -183,3 +194,23 @@ footer .nav .text-body-secondary {
     margin-top: 3rem !important;
     margin-bottom: 50px;
 }
+
+
+.card {
+    /* Base styles for the card */
+  }
+  
+  .card-red {
+    background-color: rgb(248, 233, 233);
+    color: white;
+  }
+  
+  .card-blue {
+    background-color: rgb(228, 228, 250);
+    color: white;
+  }
+  
+  .card-green {
+    background-color: rgb(221, 250, 235);
+    color: white;
+  }
