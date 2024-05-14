@@ -15,23 +15,41 @@
     
     </head>
     <body style="background-color: #DAF1F5;">
-        <!--Navigation bar-->
-        <div class="container-fluid px-4 border-bottom shadow-bottom" style="background-color: #080433">
-            <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom ">
-              <div class="col-md-3 mb-2 mb-md-0">
-                <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
-                <img src="image/logo.png" alt="Your Logo" class="logo">
-                </a>
-              </div>
+    <?php
+session_start(); // Start the session
+
+// Check if the username is set in the session
+if (isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
+} else {
+    $username = ''; // Set default username if not set
+}
+?>
+
+   <!-- <div id="header"></div> -->
+   <!-- Header -->
+ <div class="container-fluid px-4 border-bottom shadow-bottom" style="background-color: #080433">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom ">
+      <div class="col-md-3 mb-2 mb-md-0">
+        <a href="home.php" class="d-inline-flex link-body-emphasis text-decoration-none">
+            <img src="image/logo.png" alt="Your Logo" class="logo">
+        </a>
+      </div>
+
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="home.php#myCarousel" class="nav-link px-2">Home</a></li>
+        <li><a href="home.php#services" class="nav-link px-2">Services</a></li>
+        <li><a href="home.php#about" class="nav-link px-2">About</a></li>
+        <li><a href="contact.php" class="nav-link px-2">Contact</a></li>
+      </ul>
+
+      <div class="col-md-3 text-end">
+      <p id="hh" style="color:White;  font-size: 18px">👋 Hi, <?php echo $username; ?></p>
         
-              <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="home.html" class="nav-link px-2">Home</a></li>
-                <li><a href="#" class="nav-link px-2">Services</a></li>
-                <li><a href="#" class="nav-link px-2">About</a></li>
-                <li><a href="#" class="nav-link px-2">Contact</a></li>
-              </ul>
-            </header>
-        </div>
+      </div>
+   
+  </div>
+<!-- ......................................header end ...............................-->
         <!--Body of the page-->
         <div class="body">
 
