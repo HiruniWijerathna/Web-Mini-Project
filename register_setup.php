@@ -43,6 +43,17 @@ if ($stmt->execute() === TRUE) {
     exit(); // Make sure to exit after redirection
 }
 
+if ($stmt->execute() === TRUE) {
+    // Registration successful, store username in session and redirect to header2.php
+    $_SESSION['username'] = $username;
+    header("Location: header2.php");
+    exit(); // Make sure to exit after redirection
+} else {
+    // Redirect back to register.php
+    header("Location: register.php");
+    exit(); // Make sure to exit after redirection
+}
+
 // Close statement and connection
 $stmt->close();
 $conn->close();

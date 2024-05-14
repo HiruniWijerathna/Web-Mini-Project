@@ -1,5 +1,13 @@
+<?php
+session_start(); // Start the session
 
-
+// Check if the username is set in the session
+if (isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
+} else {
+    $username = ''; // Set default username if not set
+}
+?>
 <!doctype html>
 <html lang="en">
   <head>
