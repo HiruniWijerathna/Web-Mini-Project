@@ -11,6 +11,7 @@
 
     <!-- Add your CSS links here -->
     <link rel="stylesheet" href="css/readpost.css">
+    <link rel="stylesheet" href="css\style.css">
 </head>
 <body>
 
@@ -34,6 +35,7 @@ if (isset($_SESSION['username'])) {
       <div class="col-md-3 mb-2 mb-md-0">
         <a href="home.php" class="d-inline-flex link-body-emphasis text-decoration-none">
             <img src="image/logo.png" alt="Your Logo" class="logo">
+
         </a>
       </div>
 
@@ -51,7 +53,25 @@ if (isset($_SESSION['username'])) {
    
   </div>
 <!-- ......................................header end ...............................-->
-    <div class="topic"><h3>Read Posts</h3></div>
+   <!-- carousel Section -->
+
+   <div id="myCarousel" class="carousel slide mb-6 pointer-event" data-bs-ride="carousel" style="margin-top: -0.1rem">
+       
+       <div class="carousel-inner">
+         <div class="carousel-item active hover-item" >
+           <img src="image/ReadPostMainImage.jpg" class="d-block w-100" alt="Image 2">
+           <div class="container">
+             <div class="carousel-caption text-start">
+               <h1 style="color: black">Read Post🧾📚</h1>
+               <p class="opacity-75" style="color:black">Come read, wander the animal world🚀</p>
+               </div>
+           </div>
+         </div>
+         
+       </div>
+  
+     </div>
+      <!-- serveces section -->
 
     <!-- Content Section -->
     <div class="container mt-5">
