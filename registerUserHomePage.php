@@ -44,7 +44,7 @@ if (isset($_SESSION['username'])) {
       </ul>
 
       <div class="col-md-3 text-end">
-      <p id="hh" style="color:White;  font-size: 18px">Hi, <?php echo $username; ?></p>
+      <p id="hh" style="color:White;  font-size: 18px">👋 Hi, <?php echo $username; ?></p>
         
       </div>
    
