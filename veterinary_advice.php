@@ -71,16 +71,16 @@
 <div class="container mt-4">
     <div class="row gx-4 gy-4">
         <div class="col-md-4">
-            <!-- <a href="manageProfile.php" class="button-link"> -->
-                <button class="serbutt" onclick="window.location.href='manageProfile.php';">
+            <!-- <a href="readMedicalPost.php" class="button-link"> -->
+                <button class="serbutt" onclick="window.location.href='readMedicalPost.php';">
                     <img src="image/VeterinaryDetailsPostReadImage.jpg" alt="ManageProfileLogo" width="30%" id="bservice"> <br>Read Medical Post
                 </button>
             <!-- </a> -->
         </div>
        
         <div class="col-md-4">
-            <!-- <a href="readPost.php" class="button-link"> -->
-                <button class="serbutt" onclick="window.location.href='readPost.php';">
+            <!-- <a href="VeterinaryDetails.html" class="button-link"> -->
+                <button class="serbutt" onclick="window.location.href='VeterinaryDetails.html';">
                     <img src="image/VeterinaryDetailsProfilImage.jpg" alt="ReadPost" width="30%" id="bservice"> <br>Veterinary Profile
                 </button>
             <!-- </a> -->
