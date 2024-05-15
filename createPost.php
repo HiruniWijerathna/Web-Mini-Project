@@ -90,6 +90,13 @@ if (isset($_SESSION['username'])) {
         </div>
         <br>
     </form>
+    <?php
+    // Check if there is an error message
+    if (isset($_GET['error']) && $_GET['error'] == "post_exists") {
+        // Display an alert with the error message
+        echo "<script>alert('" . $_GET['msg'] . "')</script>";
+    }
+    ?>
 </div>
     <!-- End Content -->
 
