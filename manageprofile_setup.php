@@ -27,7 +27,7 @@ $first_name = $_POST['firstname'];
 $last_name = $_POST['lastname'];
 $phone = $_POST['phone'];
 $location = $_POST['location'];
-$role = $_POST['role']; // Adjusted to match your table structure
+$category = $_POST['category']; // Changed from role to category
 $about = $_POST['about'];
 
 // Retrieve user_id from session
@@ -55,9 +55,9 @@ if ($result->num_rows > 0) {
 // Prepare and bind the statement
 $stmt = $conn->prepare($sql);
 if ($result->num_rows > 0) {
-    $stmt->bind_param("sssssssi", $role, $first_name, $last_name, $phone, $location, $about, $image, $user_id);
+    $stmt->bind_param("sssssssi", $category, $first_name, $last_name, $phone, $location, $about, $image, $user_id);
 } else {
-    $stmt->bind_param("isssssss", $user_id, $role, $first_name, $last_name, $phone, $location, $about, $image);
+    $stmt->bind_param("isssssss", $user_id, $category, $first_name, $last_name, $phone, $location, $about, $image);
 }
 
 // Move uploaded image to the uploads folder
@@ -72,7 +72,7 @@ if (move_uploaded_file($temp_name, $folder.$image)) {
 // Execute the statement
 if ($stmt->execute() === TRUE) {
     // Profile info added or updated successfully, redirect to profile page or home page
-    header("Location: viewprofile.php");
+    header("Location: registerUserHomePage.php");
     exit();
 } else {
     // Error in adding or updating profile info, redirect back to manage profile page
