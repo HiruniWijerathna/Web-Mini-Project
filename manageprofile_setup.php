@@ -72,7 +72,7 @@ if (move_uploaded_file($temp_name, $folder.$image)) {
 // Execute the statement
 if ($stmt->execute() === TRUE) {
     // Profile info added or updated successfully, redirect to profile page or home page
-    header("Location: registerUserHomePage.php");
+    header("Location:manageProfile.php");
     exit();
 } else {
     // Error in adding or updating profile info, redirect back to manage profile page

@@ -122,3 +122,24 @@ input[type=submit]:hover {
     display: none;
 }
 
+/* ......................showimg ..................*/
+/* CSS for round profile image */
+#showimg-container {
+    width: 400px; /* Set the width */
+    height: 400px; /* Set the height */
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 50px;
+    
+
+}
+#showimg {
+    width: 400px;
+    height:400px;
+    object-fit: cover;
+    
+}
+p{
+    font-size: 30px;
+}
