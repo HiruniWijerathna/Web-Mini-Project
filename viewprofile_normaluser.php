@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veterinarian Profiles | BeastBuddy</title>
+    <title>Normal User Profiles | BeastBuddy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -40,7 +40,7 @@
     <!-- Header End -->
 
     <div class="container mt-5">
-        <h2>Veterinarian Profiles</h2>
+        <h2>Normal User Profiles</h2>
         <?php
         // Database connection details
         $servername = "localhost";
@@ -56,8 +56,8 @@
             die("Connection failed: " . $conn->connect_error);
         }
 
-        // Fetch profiles of users with role "Veterinarian"
-        $sql = "SELECT * FROM profile_info WHERE role = 'Veterinarian'";
+        // Fetch profiles of users with role "Animal Organization"
+        $sql = "SELECT * FROM profile_info WHERE role = 'Normal User'";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
@@ -82,7 +82,7 @@
                 echo "</div>";
             }
         } else {
-            echo "No Veterinarian profiles found.";
+            echo "No Normal User Profiles found.";
         }
 
         // Close connection
