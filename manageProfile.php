@@ -1,9 +1,61 @@
+<?php
+session_start(); // Start the session
+// Database connection details
+$servername = "localhost"; // Change this to your server name if it's not localhost
+$username = "root"; // Change this to your MySQL username
+$password = ""; // Change this to your MySQL password
+$database = "beastbuddy"; // Change this to your database name
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $database);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Initialize variables to store profile data
+$profile_data = array(
+    'first_name' => '',
+    'last_name' => '',
+    'phone_number' => '',
+    'location' => '',
+    'role' => '',
+    'self_intro' => '',
+    'profile_image' => '' // Added for profile image
+);
+
+// Check if the user is logged in
+if (isset($_SESSION['user_id'])) {
+    // Retrieve user_id from session
+    $user_id = $_SESSION['user_id'];
+
+    // Retrieve user's profile data
+    $sql_profile = "SELECT * FROM profile_info WHERE user_id = ?";
+    $stmt_profile = $conn->prepare($sql_profile);
+    $stmt_profile->bind_param("i", $user_id);
+    $stmt_profile->execute();
+    $result_profile = $stmt_profile->get_result();
+
+    // Check if profile data exists
+    if ($result_profile->num_rows > 0) {
+        $profile_data = $result_profile->fetch_assoc();
+    }
+
+    // Close profile statement
+    $stmt_profile->close();
+}
+
+// Close connection
+$conn->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Profile</title>
+    <title>Manage Profile | BeastBuddy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -19,7 +71,7 @@
 
    <!-- header begin -->
    <?php
-session_start(); // Start the session
+// session_start(); // Start the session
 
 // Check if the username is set in the session
 if (isset($_SESSION['username'])) {
@@ -61,10 +113,15 @@ if (isset($_SESSION['username'])) {
         <!-- Image Upload -->
         <div class="col-md-6">
             <div id="descriptionPart">
-                <!-- <h3>Add Your Photo</h3> -->
-                <!-- <input type="file" id="uploadInput" accept="image/*" onchange="previewImage(event)">
-                <button onclick="removePhoto()">Remove Photo</button> -->
-                <img id="preview" src="image/profilePhotoLogo.jpg" alt="Preview Image">
+            <div id="showimg-container">
+                                <!-- Display the user's profile image -->
+                                <?php if (!empty($profile_data['profile_image']) && file_exists('profile_uploads/' . $profile_data['profile_image'])): ?>
+                                    <img id="showimg" src="profile_uploads/<?php echo $profile_data['profile_image']; ?>" alt="Profile Image">
+                                <?php else: ?>
+                                    <!-- Default profile image if user hasn't uploaded any -->
+                                    <img id="showimg" src="image\profilePhotoLogo.jpg" alt="Default Profile Image">
+                                <?php endif; ?>
+                            </div><br>
                 <p><span id="displayText"></span> <span id="displaText"></span></p>
             </div>
         </div>
@@ -75,27 +132,27 @@ if (isset($_SESSION['username'])) {
             <div class="detailpart"> 
                 <h2>Profile Setting</h2>
                 <form action="manageprofile_setup.php" method="post" enctype="multipart/form-data">
-                    <input type="text" id="fname" name="firstname" placeholder="First Name" onkeyup="updateText()">
+                    <input type="text" id="fname" name="firstname" placeholder="First Name" onkeyup="updateText()"value="<?php echo isset($profile_data['first_name']) ? $profile_data['first_name'] : ''; ?>">
                     <br>
-                    <input type="text" id="lname" name="lastname" placeholder="Last Name" onkeyup="updatText()">
+                    <input type="text" id="lname" name="lastname" placeholder="Last Name" onkeyup="updatText()"value="<?php echo isset($profile_data['last_name']) ? $profile_data['last_name'] : ''; ?>">
                     <br>
-                    <input type="text" id="phone" name="phone" placeholder="Phone Number">
+                    <input type="text" id="phone" name="phone" placeholder="Phone Number"value="<?php echo isset($profile_data['phone_number']) ? $profile_data['phone_number'] : ''; ?>">
                     <br>
-                    <input type="text" id="location" name="location" placeholder="location">
+                    <input type="text" id="location" name="location" placeholder="location"value="<?php echo isset($profile_data['location']) ? $profile_data['location'] : ''; ?>">
                     <br>
                     <div class="form-floating">
             <select class="form-select" id="floatingCategory" name="category" required>
-                <option selected disabled>Select your role</option>
-                <option value="Normal User">Normal User</option>
-                <option value="Veterinarian">Veterinarian</option>
-                <option value="Snake Catcher">Snake Catcher</option>
-                <option value="Animal Organization">Animal Organization</option>
+            <option disabled>Select your role</option>
+                    <option value="Normal User" <?php if(isset($profile_data['role']) && $profile_data['role'] == 'Normal User') echo 'selected'; ?>>Normal User</option>
+                    <option value="Veterinarian" <?php if(isset($profile_data['role']) && $profile_data['role'] == 'Veterinarian') echo 'selected'; ?>>Veterinarian</option>
+                    <option value="Snake Catcher" <?php if(isset($profile_data['role']) && $profile_data['role'] == 'Snake Catcher') echo 'selected'; ?>>Snake Catcher</option>
+                    <option value="Animal Organization" <?php if(isset($profile_data['role']) && $profile_data['role'] == 'Animal Organization') echo 'selected'; ?>>Animal Organization</option>
             </select>
             <label for="floatingCategory">Category</label>
         </div>
                     <br>
-                    <textarea id="about" name="about" placeholder="Write something about yourself.." rows="4"></textarea>
-                    <br><br>
+                    <textarea id="about" name="about" placeholder="Write something about yourself.." rows="4"><?php echo isset($profile_data['self_intro']) ? $profile_data['self_intro'] : ''; ?></textarea>
+            <br><br>
                     <label>Add your photo</label>
                     <input type="file" id="profile_img" name="profile_image" accept="image/*" placeholder="Profile_img">
                     

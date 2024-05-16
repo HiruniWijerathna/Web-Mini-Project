@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RegisteredUserHome</title>
+    <title>Animal Organization | BeastBuddy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -81,16 +81,16 @@ if (isset($_SESSION['username'])) {
     <div class="row gx-4 gy-4">
         <div class="col-md-4">
             <!-- <a href="readOrganizationPost.php" class="button-link"> -->
-                <button class="serbutt" onclick="window.location.href='readOrganizationPost.php';">
-                    <img src="image/readOrganitionPostImage.png" alt="ManageProfileLogo" width="30%" id="bservice"> <br>Read Organization Post
+                <button class="serbutt" onclick="window.location.href='posts_events.php';">
+                    <img src="image/readOrganitionPostImage.png" alt="ManageProfileLogo" width="30%" id="bservice"> <br>Community Events
                 </button>
             <!-- </a> -->
         </div>
        
         <div class="col-md-4">
             <!-- <a href="Organizational_Details.php" class="button-link"> -->
-                <button class="serbutt" onclick="window.location.href='Organizational_Details.php';">
-                    <img src="image/OrganizationProfilrImage.png" alt="ReadPost" width="30%" id="bservice"> <br>Organization Profile
+                <button class="serbutt" onclick="window.location.href='viewprofile_animalorganization.php';">
+                    <img src="image/OrganizationProfilrImage.png" alt="ReadPost" width="30%" id="bservice"> <br>Animal Organizations
                 </button>
             <!-- </a> -->
         </div>

@@ -31,6 +31,18 @@ $location = $_POST['location'];
 // Retrieve user_id from session
 $user_id = $_SESSION['user_id'];
 
+// Check if the post already exists for this user
+$stmt_check = $conn->prepare("SELECT * FROM posts WHERE user_id = ? AND title = ? AND category = ? AND content = ? AND location = ?");
+$stmt_check->bind_param("issss", $user_id, $title, $category, $about, $location);
+$stmt_check->execute();
+$result = $stmt_check->get_result();
+
+if ($result->num_rows > 0) {
+    // If the post already exists, redirect back to createPost.php with an alert message
+    header("Location: createPost.php?error=post_exists&msg=Post%20already%20exists"); // Redirect back to createPost.php with an error parameter and message
+    exit();
+}
+
 // Upload image
 $image = $_FILES['image']['name'];
 $temp_name = $_FILES['image']['tmp_name'];
