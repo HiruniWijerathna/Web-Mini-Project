@@ -216,6 +216,13 @@ h2.fw-normal {
     font-weight: 400 !important;
 }
 
+/* .........css for help......... */
+.helpqu{
+    text-align: left;
+    font-size: 20px;
+}
+
+
 
 /* ................................CSS for footer............................ */
 /* Footer Social Icons */

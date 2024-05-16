@@ -27,7 +27,7 @@
         <li><a href="home.php#myCarousel" class="nav-link px-2 link-secondary">Home</a></li>
         <li><a href="home.php#services" class="nav-link px-2">Services</a></li>
         <li><a href="home.php#about" class="nav-link px-2">About</a></li>
-        <li><a href="contact.php" class="nav-link px-2">Contact</a></li>
+        <li><a href="home.php#help" class="nav-link px-2">Help</a></li>
       </ul>
 
       <div class="col-md-3 text-end">
@@ -141,6 +141,47 @@
     <div class="col-lg-8 mx-auto py-3">
       <p class="lead mb-4 about-text">Certainly! Creating a platform that connects concerned individuals, local authorities, animal welfare organizations, and volunteers can make a big difference for animals in distress worldwide. Let's work together to improve animal welfare!</p>
     </div>
+  </div>
+
+  <!-- help -->
+  <div id="help" class="px-4 py-5 my-5 text-center">
+  <h1 class="display-5 fw-bold text-body-emphasis">Welcome to Our Website Help Center</h1>
+  <div class="col-lg-8 mx-auto py-3">
+      <p class="lead mb-4 about-text">At BeastBuddy , we strive to provide you with the best possible experience. If you have any questions or encounter any issues while using our website, you've come to the right place. Below, you'll find helpful resources and answers to common inquiries.</p>
+      <h3 style="text-align: left;">Frequently Asked Questions </h3>
+      <ol class="helpqu"> 
+            <li>How do I create an account?</li> 
+            <li>I forgot my password. How can I reset it?</li> 
+            <li>How to login to the website?</li> 
+            <li>How to create posts?</li> 
+            <li>How to read posts?</li> 
+            <li>How to read posts related to the following categories?
+              <ul>
+                <li>Vet Updates</li>
+                <li>Community Events</li>
+                <li>Read Snake Post</li>
+              </ul>
+            </li> 
+
+            <li>How to view the profiles of the following
+            <ul>
+                <li>Veterinary Profile</li>
+                <li>Animal Organizations Profile</li>
+                <li>Snake Catchers Profile</li>
+              </ul>
+            </li> 
+        </ol>  
+        <p><div style="font-size: 22px;">All these questions are answered in the video below, See now...</p>
+
+        <h3>Video</h3> 
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/fcyshDExRuQ?si=ifBXL9-cbdsmbItz" frameborder="0" allowfullscreen></iframe>  
+        
+
+
+      </div>
+    </div>
+
+
   </div>
 
 <!--...................... Footer............................................. -->
