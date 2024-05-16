@@ -11,7 +11,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Add your CSS links here -->
-    <link rel="stylesheet" href="css/readpost.css">
+    <link rel="stylesheet" href="css/readspost.css">
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
 
@@ -33,7 +35,27 @@
         </header>
     </div>
     <!-- End Header Section -->
-    <div class="topic"><h3>Vet Updates</h3></div>
+
+      <!-- carousel Section -->
+<div style="background-color:rgb(173, 220, 241);">
+   <div id="myCarousel" class="carousel slide mb-6 pointer-event" data-bs-ride="carousel" style="margin-top: -0.1rem">
+       
+       <div class="carousel-inner">
+         <div class="carousel-item active hover-item" >
+           <img src="image/VetUpdatesMainImage.jpg" class="d-block w-100" alt="Image 2">
+           <div class="container">
+             <div class="carousel-caption text-start">
+               <h1 style="color: black">Vet Updates🧾📚</h1>
+               <p class="opacity-75" style="color:black">Come read, To be aware of animal diseases🚀</p>
+               </div>
+           </div>
+         </div>
+         
+       </div>
+  
+     </div>
+      <!-- serveces section -->
+    
 
     <!-- Content Section -->
     <div class="container mt-5">
@@ -68,12 +90,13 @@
                 while ($row = $result->fetch_assoc()) {
                     echo "<div class='col-md-6 mb-4'>
                             <div class='card'>
+                            <p class='card-text'><small class='text-muted'>Location: " . $row["location"] . "</small></p>
                             <img src='uploads/" . $row['image'] . "' class='card-img-top' alt='Post Image'>
 
                                 <div class='card-body'>
                                     <h5 class='card-title'>" . $row["title"] . "</h5>
                                     <p class='card-text'>" . $row["content"] . "</p>
-                                    <p class='card-text'><small class='text-muted'>Location: " . $row["location"] . "</small></p>
+                                   
                                     <p class='card-text'><small class='text-muted'>Posted by: " . $row["username"] . "</small></p>
                                 </div>
                             </div>
@@ -131,6 +154,38 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+
+    <!--.post color change. -->
+    <script>
+    function changePostColors() {
+  const posts = document.querySelectorAll('.card');
+
+  // Choose a logic for color changes (replace with your desired logic)
+  // Here, we use a repeating value based on current time (every 5 seconds)
+  const currentTime = Math.floor(Date.now() / 1000) % 3; // Repeating value between 0, 1, and 2 every 3 seconds
+
+  for (const post of posts) {
+    // Remove existing color classes (optional, ensures only one color is applied)
+    post.classList.remove('card-red', 'card-blue', 'card-green');
+
+    // Apply new color class based on chosen logic
+    if (currentTime === 0) {
+      post.classList.add('card-red');
+    } else if (currentTime === 1) {
+      post.classList.add('card-blue');
+    } else {
+      post.classList.add('card-green');
+    }
+  }
+}
+
+// Call the function initially to set initial colors (if not set by PHP)
+changePostColors();
+
+// Set an interval to call the function repeatedly (adjust the interval as needed)
+setInterval(changePostColors, 5000); // Change color every 5 seconds
+</script>
+<!--.post color change end -->
 
 </body>
 </html>
