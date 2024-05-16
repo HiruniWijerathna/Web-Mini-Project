@@ -30,7 +30,7 @@
                 <li><a href="home.php#myCarousel" class="nav-link px-4 link-secondary">Home</a></li>
                 <li><a href="home.php#services" class="nav-link px-4">Services</a></li>
                 <li><a href="home.php#about" class="nav-link px-4">About</a></li>
-                <li><a href="contact.php" class="nav-link px-4">Contact</a></li>
+                <li><a href="help.php" class="nav-link px-2">Help</a></li>
             </ul>
         </header>
     </div>

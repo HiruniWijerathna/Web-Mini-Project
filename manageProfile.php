@@ -95,7 +95,7 @@ if (isset($_SESSION['username'])) {
         <li><a href="home.php#myCarousel" class="nav-link px-2">Home</a></li>
         <li><a href="home.php#services" class="nav-link px-2">Services</a></li>
         <li><a href="home.php#about" class="nav-link px-2">About</a></li>
-        <li><a href="contact.php" class="nav-link px-2">Contact</a></li>
+        <li><a href="help.php" class="nav-link px-2">Help</a></li>
       </ul>
 
       <div class="col-md-3 text-end">
