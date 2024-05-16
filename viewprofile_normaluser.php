@@ -41,6 +41,7 @@
 
     <div class="container mt-5">
         <h2>Normal User Profiles</h2>
+        <br>
         <?php
         // Database connection details
         $servername = "localhost";
@@ -62,25 +63,34 @@
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                echo "<div class='card mt-3'>";
-                echo "<div class='card-body'>";
-                echo "<h5 class='card-title'>" . $row['first_name'] . " " . $row['last_name'] . "</h5>";
-                echo "<h6 class='card-subtitle mb-2 text-muted'>Phone: " . $row['phone_number'] . "</h6>";
-                echo "<p class='card-text'>Location: " . $row['location'] . "</p>";
-                echo "<p class='card-text'>About: " . $row['self_intro'] . "</p>";
+                echo "<div class='row'>";
+                echo "<div class='column'>";
+                echo"<div class='card'>";
+                //Name of the user
+                echo "<p class='card-title'>" . $row['first_name'] . " " . $row['last_name'] . "</p>";
 
                 // Check if image exists for this profile
-                if (file_exists("profile_uploads/" . $row['profile_image'])) {
-                    // If image exists, display it
+                  if (file_exists("profile_uploads/" . $row['profile_image'])) {
+                // If image exists, display it
                     echo "<img src='profile_uploads/" . $row['profile_image'] . "' class='img-fluid' alt='Profile Image'>";
                 } else {
                     // If image doesn't exist, display a default image or a placeholder
                     echo "<img src='image\profilePhotoLogo.jpg' class='img-fluid' alt='Profile Image'>";
                 }
 
+                echo "<p class='card-body'>Phone: " . $row['phone_number'] . "</p>";
+                echo "<p class='card-body'>Location: " . $row['location'] . "</p>";
+                echo "<p class='card-body'>About: " . $row['self_intro'] . "</p>";
+
+              
+
                 echo "</div>";
                 echo "</div>";
-            }
+                echo"</div>";
+                }
+                
+                        
+
         } else {
             echo "No Normal User Profiles found.";
         }
@@ -88,7 +98,9 @@
         // Close connection
         $conn->close();
         ?>
+        
     </div>
+    <br><br>
 
     <!-- Footer -->
     <div class="container-fluid px-4 " style="background-color: #080433">

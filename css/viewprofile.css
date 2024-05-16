@@ -67,3 +67,35 @@ footer .nav .text-body-secondary {
     color: white;
     font-weight: 100;
 }
+
+/*----------Profile_card---------*/
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    padding: 20px; /*add some padding inside the card*/
+  }
+
+
+.card-body {
+    font-weight: 100;
+    font-size: 18px;
+}
+
+
+h2{
+    text-align: center;
+}
+
+.img-fluid{
+    border-radius: 10px;
+}
+
+.card-title{
+    font-size: 23px;
+}
+
+
