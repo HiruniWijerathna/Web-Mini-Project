@@ -147,8 +147,8 @@
   <div id="help" class="px-4 py-5 my-5 text-center">
   <h1 class="display-5 fw-bold text-body-emphasis">Welcome to Our Website Help Center</h1>
   <div class="col-lg-8 mx-auto py-3">
-      <p class="lead mb-4 about-text">At BeastBuddy , we strive to provide you with the best possible experience. If you have any questions or encounter any issues while using our website, you've come to the right place. Below, you'll find helpful resources and answers to common inquiries.</p>
-      <h3 style="text-align: left;">Frequently Asked Questions </h3>
+      <p class="lead mb-4 about-text">At BeastBuddy ,If you have any questions or encounter issues, you're in the right place. Below, you'll find helpful resources and answers to common inquiries.</p>
+      <h2 style="text-align: left;">Questions </h2>
       <ol class="helpqu"> 
             <li>How do I create an account?</li> 
             <li>I forgot my password. How can I reset it?</li> 
@@ -171,7 +171,7 @@
               </ul>
             </li> 
         </ol>  
-        <p><div style="font-size: 22px;">All these questions are answered in the video below, See now...</p>
+        <h3><div style="font-size: 22px;">All these questions are answered in the video below, See now...</h3>
 
         <h3>Video</h3> 
         <iframe width="560" height="315" src="https://www.youtube.com/embed/fcyshDExRuQ?si=ifBXL9-cbdsmbItz" frameborder="0" allowfullscreen></iframe>  
