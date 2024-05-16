@@ -81,6 +81,18 @@ if (isset($_SESSION['username'])) {
 }
 ?>
 
+   <!--.......................... Header................................ -->
+   <?php
+session_start(); // Start the session
+
+// Check if the username is set in the session
+if (isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
+} else {
+    $username = ''; // Set default username if not set
+}
+?>
+
    <!-- <div id="header"></div> -->
    <!-- Header -->
  <div class="container-fluid px-4 border-bottom shadow-bottom" style="background-color: #080433">
