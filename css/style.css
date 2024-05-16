@@ -264,21 +264,21 @@ footer .nav .text-body-secondary {
 }
 #login_form {
     
-    height: 500px;
-    background-color: rgba(2, 0, 68, 0.4);
+    
+    background-color: rgba(155, 238, 210, 0.4);
     background-blend-mode: darken;
     border-radius: 2px;
     opacity: 0.9; 
     /* margin: 10 10 10 10px; */
     padding-top: 5%;
     padding-bottom:5%;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 2%;
+    padding-right: 2%;
     overflow: hidden;
-    max-width: 400px; /* Limiting the width of the form */
+    /* Limiting the width of the form */
     margin-top: 50px;
     margin-bottom: 100px;
-    
+   max-width: 500px;
     margin-left: 50px;
     margin-right: auto; /* Centering the form horizontally */
 }
@@ -286,11 +286,13 @@ footer .nav .text-body-secondary {
 
 .login-h1 {
     font-size: 40px;
-    text-align: center; /* Aligning the heading to the center */
+    text-align: center;
+    color: white; /* Aligning the heading to the center */
 }
 
 .form-floating {
     margin-bottom: 15px; /* Adding space between form inputs */
+    width: 100%;
 }
 
 .form-control {
@@ -307,15 +309,23 @@ footer .nav .text-body-secondary {
     font-size: 16px;
     margin-bottom: 10px;
     border-radius: 5px;
+    background-color: #09008b;
+    color: white;
 }
 .login_button:hover{
     cursor: pointer;
-    background-color: #080433;
+    background-color: #2b92c2;
     color: #ffffff;
 }
 .forgot-password-link {
     display: block; /* Make the link a block element */
     margin-top: 10px; /* Add space between the link and the button */
+    color: #755bca;
+    font-size: 17px;
+}
+.forgot-password-link:hover{
+    color: rgb(158, 3, 3);
+   
 }
 
 .img {
@@ -328,22 +338,24 @@ footer .nav .text-body-secondary {
     margin: 0 5px; /* Add space between social media icons */
 }
 
+
+
 /* ...............register form................. */
 
 #register_form {
-    width: 500px;
+   
     height: 600px;
-    background-color: rgba(2, 0, 68, 0.4);
+    background-color: rgba(0, 0, 0, 0.4);
     background-blend-mode: darken;
     border-radius: 2px;
     opacity: 0.9; 
     /* margin: 10 10 10 10px; */
     padding-top: 5%;
     padding-bottom:5%;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 2%;
+    padding-right: 2%;
     overflow: hidden;
-    max-width: 400px; /* Limiting the width of the form */
+    max-width: 500px; /* Limiting the width of the form */
     margin-top: 50px;
     margin-bottom: 100px;
     

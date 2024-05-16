@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="login-body" style="background-image: url('image/login.jpg'); background-size: cover;">
+<body class="login-body" style="background-image: url('image//regimain.jpeg'); background-size: cover;">
 
     <!-- Load the header -->
     <!-- <div id="header"></div>
@@ -27,10 +27,10 @@
       </div>
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="home.php#myCarousel" class="nav-link px-2 link-secondary">Home</a></li>
+        <li><a href="home.php#myCarousel" class="nav-link px-2 ">Home</a></li>
         <li><a href="home.php#services" class="nav-link px-2">Services</a></li>
         <li><a href="home.php#about" class="nav-link px-2">About</a></li>
-        <li><a href="contact.php" class="nav-link px-2">Contact</a></li>
+        <li><a href="home.php#help" class="nav-link px-2">Help</a></li>
       </ul>
 
       <div class="col-md-3 text-end">
@@ -52,7 +52,7 @@
     <form id="register_form" action="register_setup.php" method="post" style="height: 700px;">
 
 
-        <h1 class="login-h1">Register</h1>
+        <h1 class="login-h1">Register</h1><br>
 
         <div class="form-floating">
             <input type="text" class="form-control" id="floatingUsername" name="username" placeholder="Username" required>
@@ -72,7 +72,7 @@
                 <option value="Snake Catcher">Snake Catcher</option>
                 <option value="Animal Organization">Animal Organization</option>
             </select>
-            <label for="floatingCategory">Category</label>
+            <label for="floatingCategory"></label>
         </div>
 
         <div class="form-floating">
@@ -90,18 +90,18 @@
         <!-- <a href="forgot_password_page.php" class="forgot-password-link">Forgot password?</a> -->
 
         
-        <p class="mt-3 mb-0">You have an account? <a href="login.php">Login here</a></p>
+        <p class="mt-3 mb-0" style="color: white;">You have an account? <a href="login.php">Login here</a></p><br>
 
         <div class="form-floating">
             <h3 class="img">
                 <a href="https://www.facebook.com" target="_blank">
-                    <img src="image/fb.png" width="70px">
+                    <img src="image/fb.png" width="45px">
                 </a>
                 <a href="https://www.instagram.com" target="_blank">
-                    <img src="image/ins.png" width="60px">
+                    <img src="image/ins.png" width="45px">
                 </a>
                 <a href="https://www.twitter.com" target="_blank">	
-                    <img src="image/twe.png" width="70px">
+                    <img src="image/twe.png" width="45px">
                 </a>
             </h3>
         </div>	
