@@ -102,7 +102,7 @@
                         </div>";
                 }
             } else {
-                echo "<div class='col-md-12'><p>No snake information posts found.</p></div>";
+                echo "<div class='col-md-12'><p>No event posts found.</p></div>";
             }
 
             // Close the connection
