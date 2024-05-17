@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/registerUserHomepage.css">
     <link rel="stylesheet" href="css/createPost.css">
     <script src="js/createPost.js"></script>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body style="background-color: rgb(173, 220, 241);">
 
@@ -36,8 +37,8 @@ if (isset($_SESSION['username'])) {
       </div>
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="home.php#myCarousel" class="nav-link px-2">Home</a></li>
-        <li><a href="home.php#services" class="nav-link px-2">Services</a></li>
+      <li><a href="registerUserHomePage.php" class="nav-link px-2 ">Home</a></li>
+        <li><a href="registerUserHomePage.php#ReService" class="nav-link px-2">Services</a></li>
         <li><a href="home.php#about" class="nav-link px-2">About</a></li>
         <li><a href="help.php" class="nav-link px-2">Help</a></li>
       </ul>
@@ -49,9 +50,29 @@ if (isset($_SESSION['username'])) {
    
   </div>
 <!-- ......................................header end ...............................-->
+
+<!-- carousel Section -->
+<div style="background-color:rgb(173, 220, 241);">
+   <div id="myCarousel" class="carousel slide mb-6 pointer-event" data-bs-ride="carousel" style="margin-top: -0.1rem">
+       
+       <div class="carousel-inner">
+         <div class="carousel-item active hover-item" >
+           <img src="image/createPostMainImage.jpg" class="d-block w-100" alt="Image 2">
+           <div class="container">
+             <div class="carousel-caption text-start">
+               <h1 style="color: black">Create Post🧾</h1>
+               
+               </div>
+           </div>
+         </div>
+         
+       </div>
+  
+     </div>
+      <!-- serveces section -->
     <br>
     <div>
-        <h1><center>Create Post</center></h1>
+        
     </div>
 
     <!-- Content -->
