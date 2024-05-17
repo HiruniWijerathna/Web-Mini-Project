@@ -148,32 +148,10 @@
   <h1 class="display-5 fw-bold text-body-emphasis">Welcome to Our Website Help Center</h1>
   <div class="col-lg-8 mx-auto py-3">
       <p class="lead mb-4 about-text">At BeastBuddy ,If you have any questions or encounter issues, you're in the right place. Below, you'll find helpful resources and answers to common inquiries.</p>
-      <h2 style="text-align: left;">Questions </h2>
-      <ol class="helpqu"> 
-            <li>How do I create an account?</li> 
-            <li>I forgot my password. How can I reset it?</li> 
-            <li>How to login to the website?</li> 
-            <li>How to create posts?</li> 
-            <li>How to read posts?</li> 
-            <li>How to read posts related to the following categories?
-              <ul>
-                <li>Vet Updates</li>
-                <li>Community Events</li>
-                <li>Read Snake Post</li>
-              </ul>
-            </li> 
+      
+        <h3><div style="font-size: 22px;">All your questions are answered in the video below, See now...</h3>
 
-            <li>How to view the profiles of the following
-            <ul>
-                <li>Veterinary Profile</li>
-                <li>Animal Organizations Profile</li>
-                <li>Snake Catchers Profile</li>
-              </ul>
-            </li> 
-        </ol>  
-        <h3><div style="font-size: 22px;">All these questions are answered in the video below, See now...</h3>
-
-        <h3>Video</h3> 
+        <h4>Video</h4> 
         <iframe width="560" height="315" src="https://www.youtube.com/embed/fcyshDExRuQ?si=ifBXL9-cbdsmbItz" frameborder="0" allowfullscreen></iframe>  
         
 
