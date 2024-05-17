@@ -74,6 +74,9 @@ footer .nav .text-body-secondary {
     background-color: #eef7fd; /* Light gray background */
     padding: 1.25rem;
     border-style: solid;
+   
+  
+    height: 650px;
 
     /* Remove border */
 }
@@ -84,6 +87,7 @@ footer .nav .text-body-secondary {
     color: #241784;
     font-size: 27px;
     text-align: center;
+    
 }
 
 /* Card body */
@@ -102,11 +106,18 @@ footer .nav .text-body-secondary {
 
 /* Card image */
 .card-img-top {
-    height: 500px;
+    height: 300px;
     object-fit: cover;
     border-style: solid;
-    width: 99%;
+    width: 60%;
+    margin: 0 auto;
+  
    
+}
+.location_img{
+    width:30px;
+    height:30px;
+
 }
 
 /* Card footer */
@@ -201,7 +212,7 @@ footer .nav .text-body-secondary {
   }
   
   .card-red {
-    background-color: rgb(248, 233, 233);
+    background-color: rgb(255, 232, 232);
     color: white;
   }
   

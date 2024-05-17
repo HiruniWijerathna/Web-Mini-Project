@@ -27,7 +27,7 @@
         <li><a href="home.php#myCarousel" class="nav-link px-2 link-secondary">Home</a></li>
         <li><a href="home.php#services" class="nav-link px-2">Services</a></li>
         <li><a href="home.php#about" class="nav-link px-2">About</a></li>
-        <li><a href="contact.php" class="nav-link px-2">Contact</a></li>
+        <li><a href="home.php#help" class="nav-link px-2">Help</a></li>
       </ul>
 
       <div class="col-md-3 text-end">
@@ -143,6 +143,25 @@
     </div>
   </div>
 
+  <!-- help -->
+  <div id="help" class="px-4 py-5 my-5 text-center">
+  <h1 class="display-5 fw-bold text-body-emphasis">Welcome to Our Website Help Center</h1>
+  <div class="col-lg-8 mx-auto py-3">
+      <p class="lead mb-4 about-text">At BeastBuddy ,If you have any questions or encounter issues, you're in the right place. Below, you'll find helpful resources and answers to common inquiries.</p>
+      
+        <h3><div style="font-size: 22px;">All your questions are answered in the video below, See now...</h3>
+
+        <h4>Video</h4> 
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/fcyshDExRuQ?si=ifBXL9-cbdsmbItz" frameborder="0" allowfullscreen></iframe>  
+        
+
+
+      </div>
+    </div>
+
+
+  </div>
+
 <!--...................... Footer............................................. -->
 <!-- <div id="footer"></div> -->
 
@@ -183,6 +202,7 @@
                     <li class="nav-item mb-2"><a href="home.php#myCarousel" class="nav-link p-0 text-body-secondary">Home</a></li>
                     <li class="nav-item mb-2"><a href="home.php#services" class="nav-link p-0 text-body-secondary">Service</a></li>
                     <li class="nav-item mb-2"><a href="home.php#about" class="nav-link p-0 text-body-secondary">About</a></li>
+                    <li class="nav-item mb-2"><a href="home.php#help" class="nav-link p-0 text-body-secondary">Help</a></li>
                 </ul>
             </div>
 

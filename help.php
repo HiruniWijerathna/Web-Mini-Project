@@ -3,18 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veterinary Advice | BeastBuddy</title>
+    <title>Help</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="css\style.css">
-    <link rel="stylesheet" href="css/animal_Organization.css">
     
+    <link rel="stylesheet" href="css\style.css">
 </head>
-<body style="background-color: rgb(173, 220, 241);">
+<body style="background-color:rgb(173, 220, 241);">
+     <!-- header begin -->
+   <?php
+// session_start(); // Start the session
 
-<?php
+// Check if the username is set in the session
+if (isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
+} else {
+    $username = ''; // Set default username if not set
+}
+?>
+
+  <!--.......................... Header................................ -->
+  <?php
 session_start(); // Start the session
 
 // Check if the username is set in the session
@@ -36,10 +47,10 @@ if (isset($_SESSION['username'])) {
       </div>
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="registerUserHomePage.php" class="nav-link px-2 ">Home</a></li>
+      <li><a href="registerUserHomePage.php" class="nav-link px-2 ">Home</a></li>
         <li><a href="registerUserHomePage.php#ReService" class="nav-link px-2">Services</a></li>
         <li><a href="home.php#about" class="nav-link px-2">About</a></li>
-        <li><a href="help.php" class="nav-link px-2">Help</a></li>
+        <li><a href="help.php" class="nav-link px-2 link-secondary">Help</a></li>
       </ul>
 
       <div class="col-md-3 text-end">
@@ -50,56 +61,39 @@ if (isset($_SESSION['username'])) {
   </div>
 <!-- ......................................header end ...............................-->
 
-   
-    <!-- carousel Section -->
-
-    <div id="myCarousel" class="carousel slide mb-6 pointer-event" data-bs-ride="carousel" style="margin-top: -0.1rem">
+ <!-- carousel Section -->
+ <div style="background-color:rgb(173, 220, 241);">
+   <div id="myCarousel" class="carousel slide mb-6 pointer-event" data-bs-ride="carousel" style="margin-top: -0.1rem">
        
-        <div class="carousel-inner">
-          <div class="carousel-item active hover-item" >
-            <img src="image/VeterinaryDetailsMAinImage.jpg" class="d-block w-100" alt="Image 2">
-            <div class="container">
-              <div class="carousel-caption text-start">
-                <h1 style="color: black">Veterinary Details🏥</h1>
-                <p class="opacity-75" style="color:black">Get medical advice for your animals from veterinarians themselves</p>
-                </div>
-            </div>
-          </div>
-          
-        </div>
-   
+       <div class="carousel-inner">
+         <div class="carousel-item active hover-item" >
+           <img src="image/help.png" class="d-block w-100" alt="Image 2">
+           <div class="container">
+             <div class="carousel-caption text-start">
+               <h1 style="color: white">Welcome to Our Website Help Center</h1>
+               <p class="opacity-75" style="color:white">At BeastBuddy ,If you have any questions or encounter issues, you're in the right place. Below, you'll find helpful resources and answers to common inquiries.</p>
+               </div>
+           </div>
+         </div>
+         
+       </div>
+  
+     </div>
+      <!-- serveces section -->
+
+<div id="help" class="px-4 py-5 my-5 text-center">
+  <h1 class="display-5 fw-bold text-body-emphasis"></h1>
+  <div class="col-lg-8 mx-auto py-3">
+      
+       
+        <h3><div style="font-size: 22px;">All your questions are answered in the video below, See now...</h3></div>
+         <div>
+        <h3>Video</h3> 
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/fcyshDExRuQ?si=ifBXL9-cbdsmbItz" frameborder="0" allowfullscreen></iframe>  
+        
+         </div>
       </div>
-       <!-- serveces section -->
-
-       <div>
-       
-
-    </div>
-
-    <!-- Content -->
-<div class="container mt-4">
-    <div class="row gx-4 gy-4">
-        <div class="col-md-4">
-            <!-- <a href="readMedicalPost.php" class="button-link"> -->
-                <button class="serbutt" onclick="window.location.href='posts_veterinary.php';">
-                    <img src="image/VeterinaryDetailsPostReadImage.jpg" alt="ManageProfileLogo" width="30%" id="bservice"> <br>Vet Updates
-                </button>
-            <!-- </a> -->
         </div>
-       
-        <div class="col-md-4">
-            <!-- <a href="VeterinaryDetails.php" class="button-link"> -->
-                <button class="serbutt" onclick="window.location.href='viewprofile_veterinarian.php';">
-                    <img src="image/VeterinaryDetailsProfilImage.jpg" alt="ReadPost" width="30%" id="bservice"> <br>Veterinary Profile
-                </button>
-            <!-- </a> -->
-        </div>
-        
-        
-    </div>
-</div>
-<!-- End Content -->
-    <!-- End Content -->
 
     <!--...................... Footer............................................. -->
 <!-- <div id="footer"></div> -->
@@ -158,5 +152,6 @@ if (isset($_SESSION['username'])) {
 <!-- ........................footer end ..................................-->
 
 
+    
 </body>
 </html>
