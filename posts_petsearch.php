@@ -39,8 +39,8 @@ if (isset($_SESSION['username'])) {
       </div>
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="home.php#myCarousel" class="nav-link px-2">Home</a></li>
-        <li><a href="home.php#services" class="nav-link px-2">Services</a></li>
+      <li><a href="registerUserHomePage.php" class="nav-link px-2 ">Home</a></li>
+        <li><a href="registerUserHomePage.php#ReService" class="nav-link px-2">Services</a></li>
         <li><a href="home.php#about" class="nav-link px-2">About</a></li>
         <li><a href="help.php" class="nav-link px-2">Help</a></li>
       </ul>
@@ -59,10 +59,10 @@ if (isset($_SESSION['username'])) {
        
        <div class="carousel-inner">
          <div class="carousel-item active hover-item" >
-           <img src="image/ReadPostMainImage.jpg" class="d-block w-100" alt="Image 2">
+           <img src="image/AnimalSearch&RescueMainImage.jpg" class="d-block w-100" alt="Image 2">
            <div class="container">
              <div class="carousel-caption text-start">
-               <h1 style="color: black">Pet Search & Rescue🧾📚</h1>
+               <h1 style="color: black">Animal Search & Rescue🧾📚</h1>
                <p class="opacity-75" style="color:black">Come read, wander the animal world🚀</p>
                </div>
            </div>
