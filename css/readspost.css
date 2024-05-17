@@ -74,8 +74,9 @@ footer .nav .text-body-secondary {
     background-color: #eef7fd; /* Light gray background */
     padding: 1.25rem;
     border-style: solid;
+   
   
-    height: 750px;
+    height: 650px;
 
     /* Remove border */
 }
@@ -86,6 +87,7 @@ footer .nav .text-body-secondary {
     color: #241784;
     font-size: 27px;
     text-align: center;
+    
 }
 
 /* Card body */
@@ -104,10 +106,12 @@ footer .nav .text-body-secondary {
 
 /* Card image */
 .card-img-top {
-    height: 400px;
+    height: 300px;
     object-fit: cover;
     border-style: solid;
-    width: 99%;
+    width: 60%;
+    margin: 0 auto;
+  
    
 }
 
