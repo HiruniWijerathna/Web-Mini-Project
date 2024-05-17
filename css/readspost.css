@@ -114,6 +114,11 @@ footer .nav .text-body-secondary {
   
    
 }
+.location_img{
+    width:30px;
+    height:30px;
+
+}
 
 /* Card footer */
 .card-footer {

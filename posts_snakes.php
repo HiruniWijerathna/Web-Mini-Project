@@ -111,7 +111,7 @@ if (isset($_SESSION['username'])) {
                                 <div class='card-body'>
                                     <h5 class='card-title'>" . $row["title"] . "</h5>
                                     <p class='card-text'>" . $row["content"] . "</p>
-                                    <p class='card-text'><small class='text-muted'>Location: " . $row["location"] . "</small></p>
+                                    <p class='card-text'><small class='text-muted'><img src='image/location.png ' class='location_img' alt='location Image'> " . $row["location"] . "</small></p>
                                     <p class='card-text'><small class='text-muted'>Posted by: " . $row["username"] . "</small></p>
                                 </div>
                             </div>

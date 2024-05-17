@@ -106,7 +106,7 @@ INNER JOIN users ON posts.user_id = users.user_id";
                 while ($row = $result->fetch_assoc()) {
                     echo "<div class='col-md-6 mb-4'>
                             <div class='card'>
-                            <p class='card-text'><small class='text-muted'>Location: " . $row["location"] . "</small></p>
+                            <p class='card-text'><small class='text-muted'><img src='image/location.png ' class='location_img' alt='location Image'> " . $row["location"] . "</small></p>
                             <img src='uploads/" . $row['image'] . "' class='card-img-top' alt='Post Image'>
 
                                 <div class='card-body'>
