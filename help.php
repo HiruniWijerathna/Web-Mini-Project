@@ -47,8 +47,8 @@ if (isset($_SESSION['username'])) {
       </div>
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="home.php#myCarousel" class="nav-link px-2">Home</a></li>
-        <li><a href="home.php#services" class="nav-link px-2">Services</a></li>
+      <li><a href="registerUserHomePage.php" class="nav-link px-2 ">Home</a></li>
+        <li><a href="registerUserHomePage.php#ReService" class="nav-link px-2">Services</a></li>
         <li><a href="home.php#about" class="nav-link px-2">About</a></li>
         <li><a href="help.php" class="nav-link px-2 link-secondary">Help</a></li>
       </ul>
@@ -85,30 +85,8 @@ if (isset($_SESSION['username'])) {
   <h1 class="display-5 fw-bold text-body-emphasis"></h1>
   <div class="col-lg-8 mx-auto py-3">
       
-      <h2 style="text-align: left;"> Questions </h2>
-      <ol class="helpqu"> 
-            <li>How do I create an account?</li> 
-            <li>I forgot my password. How can I reset it?</li> 
-            <li>How to login to the website?</li> 
-            <li>How to create posts?</li> 
-            <li>How to read posts?</li> 
-            <li>How to read posts related to the following categories?
-              <ul>
-                <li>Vet Updates</li>
-                <li>Community Events</li>
-                <li>Read Snake Post</li>
-              </ul>
-            </li> 
-
-            <li>How to view the profiles of the following
-            <ul>
-                <li>Veterinary Profile</li>
-                <li>Animal Organizations Profile</li>
-                <li>Snake Catchers Profile</li>
-              </ul>
-            </li> 
-        </ol>  
-        <h3><div style="font-size: 22px;">All these questions are answered in the video below, See now...</h3></div>
+       
+        <h3><div style="font-size: 22px;">All your questions are answered in the video below, See now...</h3></div>
          <div>
         <h3>Video</h3> 
         <iframe width="560" height="315" src="https://www.youtube.com/embed/fcyshDExRuQ?si=ifBXL9-cbdsmbItz" frameborder="0" allowfullscreen></iframe>  
