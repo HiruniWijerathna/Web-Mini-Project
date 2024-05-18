@@ -12,15 +12,12 @@
     <link rel="stylesheet" href="css\viewprofile.css">
     <link rel="stylesheet" href="css\style.css">
     <style>
-    body {
-    background-image: url('image/back_viewprofile.jpg');
-    }
-    </style>
+
 </head>
 
 <body>
 
-    <!--.......................... Header................................ -->
+<!--.......................... Header................................ -->
     <?php
 session_start(); // Start the session
 
@@ -78,58 +75,59 @@ if (isset($_SESSION['username'])) {
 
 <!--Profile Section-->
 
-    <div class="container mt-5">
-        
-        <?php
-        // Database connection details
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $database = "beastbuddy";
+<div class="container mt-5">
+        <div class="grid-container">
+            <?php
+            // Database connection details
+            $servername = "localhost";
+            $username = "root";
+            $password = "";
+            $database = "beastbuddy";
 
-        // Create connection
-        $conn = new mysqli($servername, $username, $password, $database);
+            // Create connection
+            $conn = new mysqli($servername, $username, $password, $database);
 
-        // Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-
-        // Fetch profiles of users with role "Animal Organization"
-        $sql = "SELECT * FROM profile_info WHERE role = 'Animal Organization'";
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                echo "<div class='card mt-3'>";
-                echo "<div class='card-body'>";
-                echo "<h5 class='card-title'>" . $row['first_name'] . " " . $row['last_name'] . "</h5>";
-                echo "<h6 class='card-subtitle mb-2 text-muted'>Phone: " . $row['phone_number'] . "</h6>";
-                echo "<p class='card-text'>Location: " . $row['location'] . "</p>";
-                echo "<p class='card-text'>About: " . $row['self_intro'] . "</p>";
-
-                // Check if image exists for this profile
-                if (file_exists("profile_uploads/" . $row['profile_image'])) {
-                    // If image exists, display it
-                    echo "<img src='profile_uploads/" . $row['profile_image'] . "' class='img-fluid' alt='Profile Image'>";
-                } else {
-                    // If image doesn't exist, display a default image or a placeholder
-                    echo "<img src='image\profilePhotoLogo.jpg' class='img-fluid' alt='Profile Image'>";
-                }
-
-                echo "</div>";
-                echo "</div>";
+            // Check connection
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
             }
-        } else {
-            echo "No Animal Organization profiles found.";
-        }
 
-        // Close connection
-        $conn->close();
-        ?>
+            // Fetch profiles of users with role "Animal Organization"
+            $sql = "SELECT * FROM profile_info WHERE role = 'Animal Organization'";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo "<div class='card mt-3'>";
+                    echo "<div class='card-body'>";
+                    echo "<h5 class='card-title'>" . $row['first_name'] . " " . $row['last_name'] . "</h5>";
+                    // Check if image exists for this profile
+                    if (file_exists("profile_uploads/" . $row['profile_image'])) {
+                        // If image exists, display it
+                        echo "<img src='profile_uploads/" . $row['profile_image'] . "' class='img-fluid' alt='Profile Image'>";
+                    } else {
+                        // If image doesn't exist, display a default image or a placeholder
+                        echo "<img src='image/profilePhotoLogo.jpg' class='img-fluid' alt='Profile Image'>";
+                    }
+                    echo "<br><br>";
+                    echo "<h6 class='card-subtitle mb-2 text-muted'>Phone: " . $row['phone_number'] . "</h6>";
+                    echo "<p class='card-text'>Location: " . $row['location'] . "</p>";
+                    echo "<p class='card-text'>About: " . $row['self_intro'] . "</p>";
+                    echo "</div>";
+                    echo "</div>";
+                }
+            } else {
+                echo "No Animal Organization Profiles found.";
+            }
+
+            // Close connection
+            $conn->close();
+            ?>
+        </div>
     </div>
+    <br><br>
 
-    <!--...................... Footer............................................. -->
+<!--...................... Footer............................................. -->
 <!-- <div id="footer"></div> -->
 
 <!-- Load Combined JavaScript -->
