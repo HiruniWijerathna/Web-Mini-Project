@@ -25,10 +25,10 @@ $conn->select_db("beastbuddy");
 // Create users table
 $sql = "CREATE TABLE IF NOT EXISTS users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL,
-    password VARCHAR(255) NOT NULL,
-    category VARCHAR(100),
+    username VARCHAR(25) NOT NULL,
+    email VARCHAR(25) NOT NULL,
+    password VARCHAR(12) NOT NULL,
+    category VARCHAR(25),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )";
 if ($conn->query($sql) === TRUE) {
@@ -41,16 +41,35 @@ if ($conn->query($sql) === TRUE) {
 $sql = "CREATE TABLE IF NOT EXISTS posts (
     post_id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT,
-    title VARCHAR(255) NOT NULL,
-    category VARCHAR(100),
-    content TEXT,
+    title VARCHAR(25) NOT NULL,
+    category VARCHAR(25),
+    content VARCHAR(150),
     image LONGBLOB,
-    location VARCHAR(255),
+    location VARCHAR(25),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 )";
 if ($conn->query($sql) === TRUE) {
     echo "Table 'posts' created successfully<br>";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+// Create profile_info table
+$sql = "CREATE TABLE IF NOT EXISTS profile_info (
+    profile_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    role VARCHAR(100),
+    first_name VARCHAR(25),
+    last_name VARCHAR(25),
+    phone_number VARCHAR(10),
+    location VARCHAR(25),
+    self_intro TEXT,
+    profile_image LONGBLOB,
+    FOREIGN KEY (user_id) REFERENCES users(user_id)
+)";
+if ($conn->query($sql) === TRUE) {
+    echo "Table 'profile_info' created successfully<br>";
 } else {
     echo "Error creating table: " . $conn->error;
 }
