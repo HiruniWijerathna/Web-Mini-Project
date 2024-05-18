@@ -10,12 +10,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="css\viewprofile.css">
+    <link rel="stylesheet" href="css\style.css">
 </head>
 
 <body>
 
-    <!--.......................... Header................................ -->
-    <?php
+<!--.......................... Header................................ -->
+<?php
 session_start(); // Start the session
 
 // Check if the username is set in the session
@@ -43,16 +44,36 @@ if (isset($_SESSION['username'])) {
         <li><a href="help.php" class="nav-link px-2">Help</a></li>
       </ul>
 
-      <div class="col-md-3 text-end">
+            <div class="col-md-3 text-end">
       <p id="hh" style="color:White;  font-size: 18px">👋 Hi, <?php echo $username; ?></p>
-        
-      </div>
-   
-  </div>
+
+            </div>
+
+    </div>
 <!-- ......................................header end ...............................-->
+    <!-- carousel Section -->
+
+    <div id="myCarousel" class="carousel slide mb-6 pointer-event" data-bs-ride="carousel" style="margin-top: -0.1rem">
+       
+        <div class="carousel-inner">
+          <div class="carousel-item active hover-item" >
+            <img src="image/snake_catcher.jpg" class="d-block w-100" alt="Image 2">
+            <div class="container">
+            <div class="carousel-caption text-start">
+                <h1 style="color: white">Snake Catcher Profiles</h1>
+                <p class="opacity-75" style="color:white"><b>Meet our skilled and dedicated snake catchers, ready to help with safe and humane snake removal.</b></p>
+            </div>
+            </div>
+        </div>
+          
+    </div>
+   
+    </div>
+
+<!--Profile Section-->
 
     <div class="container mt-5">
-        <h2>Snake Catcher Profiles </h2>
+        
         <?php
         // Database connection details
         $servername = "localhost";
