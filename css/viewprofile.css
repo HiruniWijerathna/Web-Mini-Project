@@ -77,12 +77,14 @@ footer .nav .text-body-secondary {
     text-align: center;
     font-family: arial;
     padding: 20px; /*add some padding inside the card*/
+    
   }
 
 
 .card-body {
     font-weight: 100;
     font-size: 18px;
+    
 }
 
 
@@ -102,5 +104,4 @@ h2{
     margin-top: 3rem !important;
     margin-bottom: 5rem;
 }
-
 

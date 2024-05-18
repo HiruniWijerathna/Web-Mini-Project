@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="css\viewprofile.css">
     <link rel="stylesheet" href="css\style.css">
     <style>
-    body {
-    background-image: url('image/back_viewprofile.jpg');
-    }
+        body {
+        background-image: url('image/back_viewprofile.jpg');
+        }
     </style>
 
 </head>
