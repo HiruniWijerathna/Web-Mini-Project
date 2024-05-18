@@ -83,7 +83,7 @@ if (isset($_SESSION['username'])) {
 
    <!--.......................... Header................................ -->
    <?php
-session_start(); // Start the session
+// session_start(); // Start the session
 
 // Check if the username is set in the session
 if (isset($_SESSION['username'])) {
