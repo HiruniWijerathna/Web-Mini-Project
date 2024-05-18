@@ -1,9 +1,11 @@
 <?php
+session_start(); // Start the session
+
 // Establish database connection
-$servername = "localhost"; // Change this to your server name if it's not localhost
-$username = "root"; // Change this to your MySQL username
-$password = ""; // Change this to your MySQL password
-$dbname = "beastbuddy"; // Name of the database
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "beastbuddy";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -27,22 +29,22 @@ $result = $stmt->get_result();
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     $hashed_password = $row['password'];
+
     // Verify password
     if (password_verify($password, $hashed_password)) {
         // Password is correct, set session variables and redirect to registerUserHomePage.php
-        session_start();
         $_SESSION['user_id'] = $row['user_id'];
         $_SESSION['username'] = $row['username'];
-        header("Location: registerUserHomePage.php"); // Change this to the appropriate page
+        header("Location: registerUserHomePage.php"); // Redirect to user home page
         exit();
     } else {
         // Password is incorrect, redirect back to login.php
-        header("Location: login.php?error=password"); // Optionally, you can pass an error parameter
+        header("Location: login.php?error=password");
         exit();
     }
 } else {
     // User not found, redirect back to login.php
-    header("Location: login.php?error=user_not_found"); // Optionally, you can pass an error parameter
+    header("Location: login.php?error=user_not_found");
     exit();
 }
 
