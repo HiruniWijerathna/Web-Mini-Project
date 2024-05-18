@@ -79,15 +79,16 @@ if (isset($_SESSION['username'])) {
     <!-- Content -->
 <div class="container mt-4">
     <div class="row gx-4 gy-4">
-        <div class="col-md-4">
+        <div class="col-md-6">
             <!-- <a href="readMedicalPost.php" class="button-link"> -->
                 <button class="serbutt" onclick="window.location.href='posts_veterinary.php';">
                     <img src="image/VeterinaryDetailsPostReadImage.jpg" alt="ManageProfileLogo" width="30%" id="bservice"> <br>Vet Updates
                 </button>
             <!-- </a> -->
         </div>
+        
        
-        <div class="col-md-4">
+        <div class="col-md-6 ">
             <!-- <a href="VeterinaryDetails.php" class="button-link"> -->
                 <button class="serbutt" onclick="window.location.href='viewprofile_veterinarian.php';">
                     <img src="image/VeterinaryDetailsProfilImage.jpg" alt="ReadPost" width="30%" id="bservice"> <br>Veterinary Profile

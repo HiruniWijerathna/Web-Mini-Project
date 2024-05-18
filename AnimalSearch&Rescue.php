@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RegisteredUserHome | BeastBuddy</title>
+    <title>AnimalSearch&Rescue | BeastBuddy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="css\style.css">
-    <link rel="stylesheet" href="css/registerUserHomepage.css">
+    <link rel="stylesheet" href="css/animal_Organization.css">
     
 </head>
 <body style="background-color: rgb(173, 220, 241);">
 
-      <!--.......................... Header................................ -->
-      <?php
+<?php
 session_start(); // Start the session
 
 // Check if the username is set in the session
@@ -37,7 +36,7 @@ if (isset($_SESSION['username'])) {
       </div>
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="home.php" class="nav-link px-2 ">Home</a></li>
+      <li><a href="registerUserHomePage.php" class="nav-link px-2 ">Home</a></li>
         <li><a href="registerUserHomePage.php#ReService" class="nav-link px-2">Services</a></li>
         <li><a href="home.php#about" class="nav-link px-2">About</a></li>
         <li><a href="help.php" class="nav-link px-2">Help</a></li>
@@ -51,8 +50,6 @@ if (isset($_SESSION['username'])) {
   </div>
 <!-- ......................................header end ...............................-->
 
-
-
    
     <!-- carousel Section -->
 
@@ -60,11 +57,11 @@ if (isset($_SESSION['username'])) {
        
         <div class="carousel-inner">
           <div class="carousel-item active hover-item" >
-            <img src="image/registedUserHomePageImage.jpg" class="d-block w-100" alt="Image 2">
+            <img src="image/Animal earch&RescueMainImage.jpg" class="d-block w-100" alt="Image 2">
             <div class="container">
               <div class="carousel-caption text-start">
-                <h1 style="color: black">Welcome to the BeastBuddy Community 🌍🌿🐾</h1>
-                <p class="opacity-75" style="color: yellow">Explore, connect, and share your love for creatures big and small - BeastBuddy! 🐾</p>
+                <h1 style="color: black">Animal Search & Rescue</h1>
+                <p class="opacity-75" style="color:white">Join us to help animals</p>
                 </div>
             </div>
           </div>
@@ -78,75 +75,28 @@ if (isset($_SESSION['username'])) {
        
 
     </div>
-<div id="ReService">
+
     <!-- Content -->
 <div class="container mt-4">
     <div class="row gx-4 gy-4">
-        <div class="col-md-4">
-            <!-- <a href="manageProfile.php" class="button-link"> -->
-                <button class="serbutt" onclick="window.location.href='manageProfile.php';">
-                    <img src="image/ManageProfileLogo.png" alt="ManageProfileLogo" width="30%" id="bservice"> <br>Manage Profile
+        <div class="col-md-6">
+            <!-- <a href="posts_petsearch.php" class="button-link"> -->
+                <button class="serbutt" onclick="window.location.href='posts_petsearch.php';">
+                    <img src="image/AnimalSearch&RescuePostImage.jpg" alt="ManageProfileLogo" width="30%" id="bservice"> <br>Search & Rescue Post
                 </button>
             <!-- </a> -->
         </div>
-        <div class="col-md-4">
-            <!-- <a href="createPost.php" class="button-link"> -->
-                <button class="serbutt" onclick="window.location.href='createPost.php';">
-                    <img src="image/createPostLogo.jpg" alt="createPostLogo" width="30%" id="bservice"> <br>Create Post
+       
+        <div class="col-md-6">
+            <!-- <a href="viewprofile_normaluser php" class="button-link"> -->
+                <button class="serbutt" onclick="window.location.href='viewprofile_normaluser.php';">
+                    <img src="image/AnimalSearch&RescueProfileImage.jpg" alt="ReadPost" width="30%" id="bservice"> <br>User's Profile
                 </button>
             <!-- </a> -->
         </div>
-        <div class="col-md-4">
-            <!-- <a href="readPost.php" class="button-link"> -->
-                <button class="serbutt" onclick="window.location.href='readPost.php';">
-                    <img src="image/ReadPost.jpeg" alt="ReadPost" width="30%" id="bservice"> <br>Read Post
-                </button>
-            <!-- </a> -->
-        </div>
-        <div class="col-md-4">
-            <!-- <a href="veterinaryAdvice.php" class="button-link"> -->
-                <button class="serbutt" onclick="window.location.href='veterinary_advice.php';">
-                    <img src="image/vet.jpeg" alt="vet" width="30%" id="bservice"> <br>Veterinary Advice
-                </button>
-            <!-- </a> -->
-        </div>
-        <div class="col-md-4">
-            <!-- <a href="animalOrganization.php" class="button-link"> -->
-                <button class="serbutt" onclick="window.location.href='animal_Organization.php';">
-                    <img src="image/animalOrganization.jpeg" alt="animalOrganization" width="30%" id="bservice"> <br>Animal Organization
-                </button>
-            <!-- </a> -->
-        </div>
-        <div class="col-md-4">
-            <!-- <a href="snakeInformation.php" class="button-link"> -->
-                <button class="serbutt" onclick="window.location.href='snakeInformation.php';">
-                    <img src="image/snakeinfor.jpeg" alt="snakeinfor" width="30%" id="bservice"> <br>Snake Information
-                </button>
-            <!-- </a> -->
-        </div>
-        <div class="col-md-4">
-            <!-- <a href="snakeInformation.php" class="button-link"> -->
-                <!-- <button class="serbutt" onclick="window.location.href='AnimalSearch&Rescue.php';">
-                    <img src="image//AnimalSearch&RescueLogo.jpg" alt="snakeinfor" width="30%" id="bservice"> <br>Animal Search & Rescue
-                </button> -->
-            <!-- </a> -->
-        </div>
-        <div class="col-md-4">
-            <!-- <a href="snakeInformation.php" class="button-link"> -->
-                <button class="serbutt" onclick="window.location.href='AnimalSearch&Rescue.php';">
-                    <img src="image//AnimalSearch&RescueLogo.jpg" alt="snakeinfor" width="30%" id="bservice"> <br>Animal Search & Rescue
-                </button>
-            <!-- </a> -->
-        </div>
-        <div class="col-md-4">
-            <!-- <a href="snakeInformation.php" class="button-link"> -->
-                <!-- <button class="serbutt" onclick="window.location.href='AnimalSearch&Rescue.php';">
-                    <img src="image//AnimalSearch&RescueLogo.jpg" alt="snakeinfor" width="30%" id="bservice"> <br>Animal Search & Rescue
-                </button> -->
-            <!-- </a> -->
-        </div>
+        
+        
     </div>
-</div>
 </div>
 <!-- End Content -->
     <!-- End Content -->

@@ -106,12 +106,13 @@ if (isset($_SESSION['username'])) {
                 while ($row = $result->fetch_assoc()) {
                     echo "<div class='col-md-6 mb-4'>
                             <div class='card'>
+                            <p class='card-text'><small class='text-muted'><img src='image/location.png ' class='location_img' alt='location Image'> " . $row["location"] . "</small></p>
                             <img src='uploads/" . $row['image'] . "' class='card-img-top' alt='Post Image'>
 
                                 <div class='card-body'>
                                     <h5 class='card-title'>" . $row["title"] . "</h5>
                                     <p class='card-text'>" . $row["content"] . "</p>
-                                    <p class='card-text'><small class='text-muted'><img src='image/location.png ' class='location_img' alt='location Image'> " . $row["location"] . "</small></p>
+                                    
                                     <p class='card-text'><small class='text-muted'>Posted by: " . $row["username"] . "</small></p>
                                 </div>
                             </div>

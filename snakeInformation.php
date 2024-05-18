@@ -79,7 +79,7 @@ if (isset($_SESSION['username'])) {
     <!-- Content -->
 <div class="container mt-4">
     <div class="row gx-4 gy-4">
-        <div class="col-md-4">
+        <div class="col-md-6">
             <!-- <a href="readSnakeInformation.php" class="button-link"> -->
                 <button class="serbutt" onclick="window.location.href='posts_snakes.php';">
                     <img src="image/readSnakePostImage.jpg" alt="ManageProfileLogo" width="30%" id="bservice"> <br>Read Snake Post
@@ -87,7 +87,7 @@ if (isset($_SESSION['username'])) {
             <!-- </a> -->
         </div>
        
-        <div class="col-md-4">
+        <div class="col-md-6">
             <!-- <a href="Snake_Catchers_Details.php" class="button-link"> -->
                 <button class="serbutt" onclick="window.location.href='viewprofile_snakecatcher.php';">
                     <img src="image/SnakecatchersProfileImage.jpg" alt="ReadPost" width="30%" id="bservice"> <br>Snake Catchers Profile
