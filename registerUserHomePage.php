@@ -124,6 +124,13 @@ if (isset($_SESSION['username'])) {
                 </button>
             <!-- </a> -->
         </div>
+        <div class="col-md-4">
+            <!-- <a href="snakeInformation.php" class="button-link"> -->
+                <button class="serbutt" onclick="window.location.href='snakeInformation.php';">
+                    <img src="image/snakeinfor.jpeg" alt="snakeinfor" width="30%" id="bservice"> <br>Animal Search & Rescue
+                </button>
+            <!-- </a> -->
+        </div>
     </div>
 </div>
 </div>
