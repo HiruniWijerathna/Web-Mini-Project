@@ -57,11 +57,11 @@ if (isset($_SESSION['username'])) {
        
         <div class="carousel-inner">
           <div class="carousel-item active hover-item" >
-            <img src="image/SnakeMainImage.jpg" class="d-block w-100" alt="Image 2">
+            <img src="image/Animal earch&RescueMainImage.jpg" class="d-block w-100" alt="Image 2">
             <div class="container">
               <div class="carousel-caption text-start">
-                <h1 style="color: black">Snake Information 🐍</h1>
-                <p class="opacity-75" style="color:white">Join us to learn about snakes properly</p>
+                <h1 style="color: black">Animal Search & Rescue</h1>
+                <p class="opacity-75" style="color:white">Join us to help animals</p>
                 </div>
             </div>
           </div>
@@ -80,17 +80,17 @@ if (isset($_SESSION['username'])) {
 <div class="container mt-4">
     <div class="row gx-4 gy-4">
         <div class="col-md-6">
-            <!-- <a href="readSnakeInformation.php" class="button-link"> -->
-                <button class="serbutt" onclick="window.location.href='posts_snakes.php';">
-                    <img src="image/readSnakePostImage.jpg" alt="ManageProfileLogo" width="30%" id="bservice"> <br>Read Snake Post
+            <!-- <a href="posts_petsearch.php" class="button-link"> -->
+                <button class="serbutt" onclick="window.location.href='posts_petsearch.php';">
+                    <img src="image/AnimalSearch&RescuePostImage.jpg" alt="ManageProfileLogo" width="30%" id="bservice"> <br>Search & Rescue Post
                 </button>
             <!-- </a> -->
         </div>
        
         <div class="col-md-6">
-            <!-- <a href="Snake_Catchers_Details.php" class="button-link"> -->
-                <button class="serbutt" onclick="window.location.href='viewprofile_snakecatcher.php';">
-                    <img src="image/SnakecatchersProfileImage.jpg" alt="ReadPost" width="30%" id="bservice"> <br>Snake Catchers Profile
+            <!-- <a href="viewprofile_normaluser php" class="button-link"> -->
+                <button class="serbutt" onclick="window.location.href='viewprofile_normaluser.php';">
+                    <img src="image/AnimalSearch&RescueProfileImage.jpg" alt="ReadPost" width="30%" id="bservice"> <br>User's Profile
                 </button>
             <!-- </a> -->
         </div>
