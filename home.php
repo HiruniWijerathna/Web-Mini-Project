@@ -141,7 +141,19 @@
     <div class="col-lg-8 mx-auto py-3">
       <p class="lead mb-4 about-text">Certainly! Creating a platform that connects concerned individuals, local authorities, animal welfare organizations, and volunteers can make a big difference for animals in distress worldwide. Let's work together to improve animal welfare!</p>
     </div>
+  
+  <div id="videoyoutub">
+  <h4>Video</h4> 
+  <iframe width="500" height="280" src="https://www.youtube.com/embed/92Wr9w2MaVs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="500" height="280" src="https://www.youtube.com/embed/6gw9rtF5nzk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="500" height="280" src="https://www.youtube.com/embed/92Wr9w2MaVs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="500" height="280" src="https://www.youtube.com/embed/92Wr9w2MaVs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="500" height="280" src="https://www.youtube.com/embed/92Wr9w2MaVs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="500" height="280" src="https://www.youtube.com/embed/92Wr9w2MaVs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+       
   </div>
+  </div>
+
 
   <!-- help -->
   <div id="help" class="px-4 py-5 my-5 text-center">
@@ -152,7 +164,7 @@
         <h3><div style="font-size: 22px;">All your questions are answered in the video below, See now...</h3>
 
         <h4>Video</h4> 
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/fcyshDExRuQ?si=ifBXL9-cbdsmbItz" frameborder="0" allowfullscreen></iframe>  
+        <iframe width="760" height="515" src="https://www.youtube.com/embed/fcyshDExRuQ?si=ifBXL9-cbdsmbItz" frameborder="0" allowfullscreen></iframe>  
         
 
 
