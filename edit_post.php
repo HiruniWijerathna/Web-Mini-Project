@@ -158,7 +158,7 @@ if (isset($_SESSION['username'])) {
         <div class="lablela"><label  for="title">Title:</label><br></div>
         <input type="text" id="title" name="title" value="<?php echo htmlspecialchars($post['title']); ?>"><br><br>
         <div class="lablela"><label for="content">Content:</label></div>
-        <textarea id="content" name="content" rows="7"><?php echo htmlspecialchars($post['content']); ?></textarea><br><br>
+        <textarea id="content" name="content" rows="7"><?php echo htmlspecialchars($post['content']); ?></textarea><br><br><br>
         <input type="submit" value="Submit">
     </form>
     </div>
