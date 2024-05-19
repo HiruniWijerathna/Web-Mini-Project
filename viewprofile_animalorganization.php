@@ -15,9 +15,10 @@
 
 </head>
 
-<body>
+<body style="background-color: rgb(173, 220, 241);">
 
 <!--.......................... Header................................ -->
+
     <?php
 session_start(); // Start the session
 

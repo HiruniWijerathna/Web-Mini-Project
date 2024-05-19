@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css\style.css">
 </head>
 
-<body>
+<body style="background-color: rgb(173, 220, 241);">
 
 <!--.......................... Header................................ -->
 <?php

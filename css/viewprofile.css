@@ -149,3 +149,7 @@ footer .nav .text-body-secondary {
         grid-template-columns: 1fr;
     }
 }
+
+body{
+    background-color: rgb(173, 220, 241);
+}
