@@ -55,3 +55,42 @@ input[type=submit]:hover {
     margin-right: auto; /* Centering the form horizontally */
     
 }
+
+
+
+#formm {
+    
+   
+    border-radius: 10px;
+    background-color: #050039;
+  
+    padding-top: 5%;
+    padding-bottom:5%;
+    padding-left: 2%;
+    padding-right: 2%;
+    overflow: hidden;
+    /* Limiting the width of the form */
+    margin-top: 50px;
+    margin-bottom: 100px;
+    max-width: 65%;
+    margin-left: auto;
+    margin-right: auto; /* Centering the form horizontally */
+    
+}
+
+#bno{
+    font-size: 18px;
+    text-color: rgb(0, 0, 1);
+    padding: 14px 14px;
+    border-radius: 10px;
+    width: 50%;
+    background-color: rgba(194, 243, 255, 0.729);
+    margin-left: 25%;
+    text-align: center;
+    forced-color-adjust: white;
+}
+
+#bno:hover {
+    background-color: #0e028a;
+    color: rgb(255, 255, 255);
+}

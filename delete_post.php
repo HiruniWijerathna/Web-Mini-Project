@@ -131,12 +131,37 @@ if (isset($_SESSION['username'])) {
    
   </div>
 <!-- ......................................header end ...............................-->
-    <h1>Delete Post</h1>
-    <p>Are you sure you want to delete this post?</p>
+
+ <!-- carousel Section -->
+ <div style="background-color:rgb(173, 220, 241);">
+   <div id="myCarousel" class="carousel slide mb-6 pointer-event" data-bs-ride="carousel" style="margin-top: -0.1rem">
+       
+       <div class="carousel-inner">
+         <div class="carousel-item active hover-item" >
+           <img src="image/AnimalSearch&RescueMainImage.jpg" class="d-block w-100" alt="Image 2">
+           <div class="container">
+             <div class="carousel-caption text-start">
+               <h1 style="color: black">Delete Post</h1>
+               
+               </div>
+           </div>
+         </div>
+         
+       </div>
+  
+     </div>
+      <!-- serveces section -->
+
+
+<div id="formm">
+    <h4 style="color:White; text-align:center">Are you sure you want to delete this post?
+             <br>This action cannot be undone.</h4><br>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . '?post_id=' . $post_id; ?>" method="post">
-        <input type="submit" value="Yes">
-        <a href="<?php echo isset($_SESSION['previous_page']) ? $_SESSION['previous_page'] : 'registerUserHomePage.php'; ?>">No</a>
+        <input type="submit" value="Yes"><br><br>
+        <a href="<?php echo isset($_SESSION['previous_page']) ? $_SESSION['previous_page'] : 'registerUserHomePage.php'; ?>"><button id="bno">No</button></a>
     </form>
+
+    </div>
 
      <!--...................... Footer............................................. -->
 <!-- <div id="footer"></div> -->
