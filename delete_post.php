@@ -82,7 +82,46 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delete Post | BeastBuddy</title>
 </head>
+
+
 <body>
+
+<!--.......................... Header................................ -->
+<?php
+
+if (isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
+    $user_id = $_SESSION['user_id']; // Assuming you store user_id in the session
+} else {
+    $username = '';
+    $user_id = '';
+}
+?>
+
+   <!-- <div id="header"></div> -->
+   <!-- Header -->
+ <div class="container-fluid px-4 border-bottom shadow-bottom" style="background-color: #080433">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom ">
+      <div class="col-md-3 mb-2 mb-md-0">
+        <a href="home.php" class="d-inline-flex link-body-emphasis text-decoration-none">
+            <img src="image/logo.png" alt="Your Logo" class="logo">
+        </a>
+      </div>
+
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+      <li><a href="registerUserHomePage.php" class="nav-link px-2 ">Home</a></li>
+        <li><a href="registerUserHomePage.php#ReService" class="nav-link px-2">Services</a></li>
+        <li><a href="home.php#about" class="nav-link px-2">About</a></li>
+        <li><a href="help.php" class="nav-link px-2">Help</a></li>
+      </ul>
+
+      <div class="col-md-3 text-end">
+      <p id="hh" style="color:White;  font-size: 18px">👋 Hi, <?php echo $username; ?></p>
+        
+      </div>
+   
+  </div>
+<!-- ......................................header end ...............................-->
     <h1>Delete Post</h1>
     <p>Are you sure you want to delete this post?</p>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . '?post_id=' . $post_id; ?>" method="post">

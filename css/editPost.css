@@ -1,0 +1,52 @@
+input[type=text], input[type=password], input[type=email] {
+    padding: 14px 14px;
+    margin: 8px 0;
+    border-radius: 10px;
+    width: 100%;
+    font-size: 15px;
+}
+
+textarea {
+    width: 100%;
+}
+
+
+input[type=submit] {
+    font-size: 15px;
+    color: rgb(2, 2, 22);
+    padding: 14px 14px;
+    margin: 8px 0;
+    border-radius: 10px;
+    width: 50%;
+}
+
+input[type=submit]:hover {
+    background-color: #2618c4;
+    color: rgb(255, 255, 255);
+}
+
+.lablela{
+    color: white;
+    font-size: 20px;
+}
+
+
+#form {
+    
+    
+    
+    border-radius: 10px;
+    background-color: #050039;
+  
+    padding-top: 5%;
+    padding-bottom:5%;
+    padding-left: 2%;
+    padding-right: 2%;
+    overflow: hidden;
+    /* Limiting the width of the form */
+    margin-top: 50px;
+    margin-bottom: 100px;
+    max-width: 500px;
+    margin-left: 50px;
+    margin-right: auto; /* Centering the form horizontally */
+}
