@@ -103,7 +103,7 @@ if (isset($_SESSION['username'])) {
                     // Check if image exists for this profile
                     if (file_exists("profile_uploads/" . $row['profile_image'])) {
                         // If image exists, display it
-                        echo "<img src='profile_uploads/" . $row['profile_image'] . "' class='img-fluid' alt='Profile Image'>";
+                        echo "<img src='profile_uploads/" . $row['profile_image'] . "' class='img-fluid ' alt='Profile Image'>";
                     } else {
                         // If image doesn't exist, display a default image or a placeholder
                         echo "<img src='image/profilePhotoLogo.jpg' class='img-fluid' alt='Profile Image'>";
