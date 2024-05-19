@@ -93,7 +93,7 @@ $conn->close();
 </head>
 
 
-<body>
+<body style="background-image: url('image/DeletePostMainImage.jpg'); background-size:cover; position:relative;">
 
 <!--.......................... Header................................ -->
 <?php
@@ -132,29 +132,12 @@ if (isset($_SESSION['username'])) {
   </div>
 <!-- ......................................header end ...............................-->
 
- <!-- carousel Section -->
- <div style="background-color:rgb(173, 220, 241);">
-   <div id="myCarousel" class="carousel slide mb-6 pointer-event" data-bs-ride="carousel" style="margin-top: -0.1rem">
-       
-       <div class="carousel-inner">
-         <div class="carousel-item active hover-item" >
-           <img src="image/DeletePostMainImage.jpg" class="d-block w-100" alt="Image 2">
-           <div class="container">
-             <div class="carousel-caption text-start">
-               <h1 style="color: white">Are you sure you want to delete this post?
-             <br>This action cannot be undone.</h1>
-               
-               </div>
-           </div>
-         </div>
-         
-       </div>
-  
-     </div>
-      <!-- serveces section -->
+
 
 
 <div id="formm">
+    <h3 style=" text-align: center;color: black;">Are you sure you want to delete this post?
+             <br>This action cannot be undone</h3><br>
 
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . '?post_id=' . $post_id; ?>" method="post">
     <input type="submit" value="Yes">

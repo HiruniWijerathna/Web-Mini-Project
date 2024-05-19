@@ -62,7 +62,9 @@ input[type=submit]:hover {
     
    
     border-radius: 10px;
-    background-color: #050039;
+    background-color: rgba(225, 249, 228, 0.4);
+    background-blend-mode: darken;
+    border-radius: 2px;
   
     padding-top: 5%;
     padding-bottom:5%;
