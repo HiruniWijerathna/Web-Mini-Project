@@ -181,7 +181,37 @@ if (isset($_SESSION['username'])) {
 
 
 <!-- ........................footer end ..................................-->
+<!--.post color change. -->
+<script>
+    function changePostColors() {
+  const posts = document.querySelectorAll('.card');
 
+  // Choose a logic for color changes (replace with your desired logic)
+  // Here, we use a repeating value based on current time (every 5 seconds)
+  const currentTime = Math.floor(Date.now() / 1000) % 3; // Repeating value between 0, 1, and 2 every 3 seconds
+
+  for (const post of posts) {
+    // Remove existing color classes (optional, ensures only one color is applied)
+    post.classList.remove('card-red', 'card-blue', 'card-green');
+
+    // Apply new color class based on chosen logic
+    if (currentTime === 0) {
+      post.classList.add('card-red');
+    } else if (currentTime === 1) {
+      post.classList.add('card-blue');
+    } else {
+      post.classList.add('card-green');
+    }
+  }
+}
+
+// Call the function initially to set initial colors (if not set by PHP)
+changePostColors();
+
+// Set an interval to call the function repeatedly (adjust the interval as needed)
+setInterval(changePostColors, 5000); // Change color every 5 seconds
+</script>
+<!--.post color change end -->
 
 </body>
 
