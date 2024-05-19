@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="css\viewprofile.css">
+    <link rel="stylesheet" href="css\style.css">
+
 </head>
 
 <body>
@@ -51,66 +53,76 @@ if (isset($_SESSION['username'])) {
   </div>
 <!-- ......................................header end ...............................-->
 
-    <div class="container mt-5">
-        <h2>Normal User Profiles</h2>
-        <br>
-        <?php
-        // Database connection details
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $database = "beastbuddy";
+<!-- carousel Section -->
 
-        // Create connection
-        $conn = new mysqli($servername, $username, $password, $database);
+    <div id="myCarousel" class="carousel slide mb-6 pointer-event" data-bs-ride="carousel" style="margin-top: -0.1rem">
+       
+        <div class="carousel-inner">
+          <div class="carousel-item active hover-item" >
+            <img src="image/normal_user.jpg" class="d-block w-100" alt="Image 2">
+            <div class="container">
+            <div class="carousel-caption text-start">
+                <h1 style="color: white">Normal User Profiles</h1>
+                <p class="opacity-75" style="color:white"><b>Profiles of dedicated individuals making a difference in animal rescue.</b></p>
+            </div>
+            </div>
+        </div>
+          
+    </div>
+   
+    </div>
 
-        // Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
+<!--Profile Section-->
 
-        // Fetch profiles of users with role "Animal Organization"
-        $sql = "SELECT * FROM profile_info WHERE role = 'Normal User'";
-        $result = $conn->query($sql);
+<div class="container mt-5">
+        <div class="grid-container">
+            <?php
+            // Database connection details
+            $servername = "localhost";
+            $username = "root";
+            $password = "";
+            $database = "beastbuddy";
 
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                echo "<div class='row'>";
-                echo "<div class='column'>";
-                echo"<div class='card'>";
-                //Name of the user
-                echo "<p class='card-title'>" . $row['first_name'] . " " . $row['last_name'] . "</p>";
+            // Create connection
+            $conn = new mysqli($servername, $username, $password, $database);
 
-                // Check if image exists for this profile
-                  if (file_exists("profile_uploads/" . $row['profile_image'])) {
-                // If image exists, display it
-                    echo "<img src='profile_uploads/" . $row['profile_image'] . "' class='img-fluid' alt='Profile Image'>";
-                } else {
-                    // If image doesn't exist, display a default image or a placeholder
-                    echo "<img src='image\profilePhotoLogo.jpg' class='img-fluid' alt='Profile Image'>";
+            // Check connection
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+
+            // Fetch profiles of users with role "Animal Organization"
+            $sql = "SELECT * FROM profile_info WHERE role = 'Normal User'";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo "<div class='card mt-3'>";
+                    echo "<div class='card-body'>";
+                    echo "<h5 class='card-title'>" . $row['first_name'] . " " . $row['last_name'] . "</h5>";
+                    // Check if image exists for this profile
+                    if (file_exists("profile_uploads/" . $row['profile_image'])) {
+                        // If image exists, display it
+                        echo "<img src='profile_uploads/" . $row['profile_image'] . "' class='img-fluid' alt='Profile Image'>";
+                    } else {
+                        // If image doesn't exist, display a default image or a placeholder
+                        echo "<img src='image/profilePhotoLogo.jpg' class='img-fluid' alt='Profile Image'>";
+                    }
+                    echo "<br><br>";
+                    echo "<h6 class='card-subtitle mb-2 text-muted'>Phone: " . $row['phone_number'] . "</h6>";
+                    echo "<p class='card-text'>Location: " . $row['location'] . "</p>";
+                    echo "<p class='card-text'>About: " . $row['self_intro'] . "</p>";
+                    echo "</div>";
+                    echo "</div>";
                 }
+            } else {
+                echo "No Normal User Profiles found.";
+            }
 
-                echo "<p class='card-body'>Phone: " . $row['phone_number'] . "</p>";
-                echo "<p class='card-body'>Location: " . $row['location'] . "</p>";
-                echo "<p class='card-body'>About: " . $row['self_intro'] . "</p>";
-
-              
-
-                echo "</div>";
-                echo "</div>";
-                echo"</div>";
-                }
-                
-                        
-
-        } else {
-            echo "No Normal User Profiles found.";
-        }
-
-        // Close connection
-        $conn->close();
-        ?>
-        
+            // Close connection
+            $conn->close();
+            ?>
+        </div>
     </div>
     <br><br>
 

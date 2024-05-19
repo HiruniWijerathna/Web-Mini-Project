@@ -10,12 +10,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="css\viewprofile.css">
+    <link rel="stylesheet" href="css\style.css">
 </head>
 
 <body>
 
-    <!--.......................... Header................................ -->
-    <?php
+<!--.......................... Header................................ -->
+<?php
 session_start(); // Start the session
 
 // Check if the username is set in the session
@@ -43,64 +44,85 @@ if (isset($_SESSION['username'])) {
         <li><a href="help.php" class="nav-link px-2">Help</a></li>
       </ul>
 
-      <div class="col-md-3 text-end">
+            <div class="col-md-3 text-end">
       <p id="hh" style="color:White;  font-size: 18px">👋 Hi, <?php echo $username; ?></p>
-        
-      </div>
-   
-  </div>
-<!-- ......................................header end ...............................-->
 
-    <div class="container mt-5">
-        <h2>Snake Catcher Profiles </h2>
-        <?php
-        // Database connection details
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $database = "beastbuddy";
+            </div>
 
-        // Create connection
-        $conn = new mysqli($servername, $username, $password, $database);
-
-        // Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-
-        // Fetch profiles of users with role "Animal Organization"
-        $sql = "SELECT * FROM profile_info WHERE role = 'Snake Catcher'";
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                echo "<div class='card mt-3'>";
-                echo "<div class='card-body'>";
-                echo "<h5 class='card-title'>" . $row['first_name'] . " " . $row['last_name'] . "</h5>";
-                echo "<h6 class='card-subtitle mb-2 text-muted'>Phone: " . $row['phone_number'] . "</h6>";
-                echo "<p class='card-text'>Location: " . $row['location'] . "</p>";
-                echo "<p class='card-text'>About: " . $row['self_intro'] . "</p>";
-
-                // Check if image exists for this profile
-                if (file_exists("profile_uploads/" . $row['profile_image'])) {
-                    // If image exists, display it
-                    echo "<img src='profile_uploads/" . $row['profile_image'] . "' class='img-fluid' alt='Profile Image'>";
-                } else {
-                    // If image doesn't exist, display a default image or a placeholder
-                    echo "<img src='image\profilePhotoLogo.jpg' class='img-fluid' alt='Profile Image'>";
-                }
-
-                echo "</div>";
-                echo "</div>";
-            }
-        } else {
-            echo "No Snake Catcher Profiles  found.";
-        }
-
-        // Close connection
-        $conn->close();
-        ?>
     </div>
+<!-- ......................................header end ...............................-->
+    <!-- carousel Section -->
+
+    <div id="myCarousel" class="carousel slide mb-6 pointer-event" data-bs-ride="carousel" style="margin-top: -0.1rem">
+       
+        <div class="carousel-inner">
+          <div class="carousel-item active hover-item" >
+            <img src="image/snake_catcher.jpg" class="d-block w-100" alt="Image 2">
+            <div class="container">
+            <div class="carousel-caption text-start">
+                <h1 style="color: white">Snake Catcher Profiles</h1>
+                <p class="opacity-75" style="color:white"><b>Meet our skilled and dedicated snake catchers, ready to help with safe and humane snake removal.</b></p>
+            </div>
+            </div>
+        </div>
+          
+    </div>
+   
+    </div>
+
+<!--Profile Section-->
+
+<div class="container mt-5">
+        <div class="grid-container">
+            <?php
+            // Database connection details
+            $servername = "localhost";
+            $username = "root";
+            $password = "";
+            $database = "beastbuddy";
+
+            // Create connection
+            $conn = new mysqli($servername, $username, $password, $database);
+
+            // Check connection
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+
+            // Fetch profiles of users with role "Animal Organization"
+            $sql = "SELECT * FROM profile_info WHERE role = 'Snake Catcher'";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo "<div class='card mt-3'>";
+                    echo "<div class='card-body'>";
+                    echo "<h5 class='card-title'>" . $row['first_name'] . " " . $row['last_name'] . "</h5>";
+                    // Check if image exists for this profile
+                    if (file_exists("profile_uploads/" . $row['profile_image'])) {
+                        // If image exists, display it
+                        echo "<img src='profile_uploads/" . $row['profile_image'] . "' class='img-fluid' alt='Profile Image'>";
+                    } else {
+                        // If image doesn't exist, display a default image or a placeholder
+                        echo "<img src='image/profilePhotoLogo.jpg' class='img-fluid' alt='Profile Image'>";
+                    }
+                    echo "<br><br>";
+                    echo "<h6 class='card-subtitle mb-2 text-muted'>Phone: " . $row['phone_number'] . "</h6>";
+                    echo "<p class='card-text'>Location: " . $row['location'] . "</p>";
+                    echo "<p class='card-text'>About: " . $row['self_intro'] . "</p>";
+                    echo "</div>";
+                    echo "</div>";
+                }
+            } else {
+                echo "No Snake Catcher Profiles found.";
+            }
+
+            // Close connection
+            $conn->close();
+            ?>
+        </div>
+    </div>
+    <br><br>
 
     <!--...................... Footer............................................. -->
 <!-- <div id="footer"></div> -->

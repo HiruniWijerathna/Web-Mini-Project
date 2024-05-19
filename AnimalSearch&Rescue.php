@@ -59,19 +59,19 @@ if (isset($_SESSION['username'])) {
           <div class="carousel-item active hover-item" >
             <img src="image/Animal earch&RescueMainImage.jpg" class="d-block w-100" alt="Image 2">
             <div class="container">
-              <div class="carousel-caption text-start">
+            <div class="carousel-caption text-start">
                 <h1 style="color: black">Animal Search & Rescue</h1>
                 <p class="opacity-75" style="color:white">Join us to help animals</p>
-                </div>
             </div>
-          </div>
-          
+            </div>
         </div>
+          
+    </div>
    
-      </div>
-       <!-- serveces section -->
+    </div>
+    <!-- serveces section -->
 
-       <div>
+    <div>
        
 
     </div>
