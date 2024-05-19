@@ -1,4 +1,13 @@
-<!-- snake_information.php -->
+<?php
+session_start();
+// Start session at the beginning of the file if not already started
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+// Store the current page in the session
+$_SESSION['previous_page'] = 'posts_petsearch.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,19 +21,20 @@
 
     <!-- Add your CSS links here -->
     <link rel="stylesheet" href="css/readspost.css">
-    <link rel="stylesheet" href="css\style.css">
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
 
-   <!--.......................... Header................................ -->
-   <?php
-session_start(); // Start the session
+    <!--.......................... Header................................ -->
+    <?php
 
-// Check if the username is set in the session
 if (isset($_SESSION['username'])) {
     $username = $_SESSION['username'];
+    $user_id = $_SESSION['user_id']; // Assuming you store user_id in the session
 } else {
-    $username = ''; // Set default username if not set
+    $username = '';
+    $user_id = '';
 }
 ?>
 
@@ -53,7 +63,7 @@ if (isset($_SESSION['username'])) {
   </div>
 <!-- ......................................header end ...............................-->
 
-<!-- carousel Section -->
+      <!-- carousel Section -->
 <div style="background-color:rgb(173, 220, 241);">
    <div id="myCarousel" class="carousel slide mb-6 pointer-event" data-bs-ride="carousel" style="margin-top: -0.1rem">
        
@@ -76,7 +86,7 @@ if (isset($_SESSION['username'])) {
 
     <!-- Content Section -->
     <div class="container mt-5">
-        <!-- Display Snake Information Posts Section -->
+        <!-- Display Veterinary Information Posts Section -->
         <div class="row">
             <?php
             // Establish database connection
@@ -93,8 +103,8 @@ if (isset($_SESSION['username'])) {
                 die("Connection failed: " . $conn->connect_error);
             }
 
-            // Fetch snake_information posts from the snake_catchers category
-            $sql = "SELECT posts.post_id, posts.title, posts.content, posts.location, posts.image, users.username 
+            // Fetch veterinary posts
+            $sql = "SELECT posts.post_id, posts.user_id, posts.title, posts.content, posts.location, posts.image, users.username 
                     FROM posts 
                     INNER JOIN users ON posts.user_id = users.user_id 
                     WHERE posts.category = 'category1'";
@@ -107,31 +117,32 @@ if (isset($_SESSION['username'])) {
                 while ($row = $result->fetch_assoc()) {
                     echo "<div class='col-md-6 mb-4'>
                             <div class='card'>
-                            <p class='card-text'><small class='text-muted'><img src='image/location.png ' class='location_img' alt='location Image'> " . $row["location"] . "</small></p>
-                            <img src='uploads/" . $row['image'] . "' class='card-img-top' alt='Post Image'>
-
+                                <p class='card-text'><small class='text-muted'><img src='image/location.png' class='location_img' alt='location Image'> " . $row["location"] . "</small></p>
+                                <img src='uploads/" . $row['image'] . "' class='card-img-top' alt='Post Image'>
                                 <div class='card-body'>
                                     <h5 class='card-title'>" . $row["title"] . "</h5>
                                     <p class='card-text'>" . $row["content"] . "</p>
-                                    
-                                    <p class='card-text'><small class='text-muted'>Posted by: " . $row["username"] . "</small></p>
-                                </div>
-                            </div>
-                        </div>";
+                                    <p class='card-text'><small class='text-muted'>Posted by: " . $row["username"] . "</small></p>";
+                    // Show edit and delete buttons if the logged-in user is the owner of the post
+                    if ($row["user_id"] == $user_id) {
+                        echo "<a href='edit_post.php?post_id=" . $row['post_id'] . "' class='btn btn-primary'>Edit</a>
+                              <a href='delete_post.php?post_id=" . $row['post_id'] . "' class='btn btn-danger' onclick='return confirm(\"Are you sure you want to delete this post?\");'>Delete</a>";
+                    }
+                    echo "</div></div></div>";
                 }
             } else {
-                echo "<div class='col-md-12'><p>No snake information posts found.</p></div>";
+                echo "<div class='col-md-12'><p>No veterinary information posts found.</p></div>";
             }
 
             // Close the connection
             $conn->close();
             ?>
         </div>
-        <!-- End Display Snake Information Posts Section -->
+        <!-- End Display Veterinary Information Posts Section -->
     </div>
     <!-- End Content Section -->
 
-    <!--...................... Footer............................................. -->
+   <!--...................... Footer............................................. -->
 <!-- <div id="footer"></div> -->
 
 <!-- Load Combined JavaScript -->
@@ -223,5 +234,6 @@ changePostColors();
 setInterval(changePostColors, 5000); // Change color every 5 seconds
 </script>
 <!--.post color change end -->
+
 </body>
 </html>
