@@ -156,10 +156,13 @@ if (isset($_SESSION['username'])) {
 
 <div id="formm">
 
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . '?post_id=' . $post_id; ?>" method="post">
-        <input type="submit" value="Yes"><br><br>
-        <a href="<?php echo isset($_SESSION['previous_page']) ? $_SESSION['previous_page'] : 'registerUserHomePage.php'; ?>"><button id="bno">No</button></a>
-    </form>
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . '?post_id=' . $post_id; ?>" method="post">
+    <input type="submit" value="Yes">
+</form>
+<br>
+<form action="<?php echo isset($_SESSION['previous_page']) ? $_SESSION['previous_page'] : 'registerUserHomePage.php'; ?>" method="get">
+    <button id="bno" type="submit">No</button>
+</form>
 
     </div>
 
