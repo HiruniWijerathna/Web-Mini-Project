@@ -138,10 +138,11 @@ if (isset($_SESSION['username'])) {
        
        <div class="carousel-inner">
          <div class="carousel-item active hover-item" >
-           <img src="image/AnimalSearch&RescueMainImage.jpg" class="d-block w-100" alt="Image 2">
+           <img src="image/DeletePostMainImage.jpg" class="d-block w-100" alt="Image 2">
            <div class="container">
              <div class="carousel-caption text-start">
-               <h1 style="color: black">Delete Post</h1>
+               <h1 style="color: white">Are you sure you want to delete this post?
+             <br>This action cannot be undone.</h1>
                
                </div>
            </div>
@@ -154,8 +155,7 @@ if (isset($_SESSION['username'])) {
 
 
 <div id="formm">
-    <h4 style="color:White; text-align:center">Are you sure you want to delete this post?
-             <br>This action cannot be undone.</h4><br>
+
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . '?post_id=' . $post_id; ?>" method="post">
         <input type="submit" value="Yes"><br><br>
         <a href="<?php echo isset($_SESSION['previous_page']) ? $_SESSION['previous_page'] : 'registerUserHomePage.php'; ?>"><button id="bno">No</button></a>
