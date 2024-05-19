@@ -97,7 +97,6 @@ footer .nav .text-body-secondary {
     /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);*/
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
-    height: 400px;
     margin: auto;
     text-align: center;
     font-family: arial;
@@ -108,6 +107,7 @@ footer .nav .text-body-secondary {
     padding: 15px;
     font-weight: 100;
     font-size: 18px;
+    position: relative;
 }
 
 .card-title {
@@ -121,15 +121,11 @@ footer .nav .text-body-secondary {
     margin-bottom: 10px;
 }
 
-.card-text {
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-}
-
 .img-fluid {
-    max-width: 100%;
-    height: auto;
     border-radius: 25px;
+    object-fit: cover;
+    height: 200px;
+    width: 100%;
 }
 
 @media (max-width: 1200px) {
@@ -152,4 +148,18 @@ footer .nav .text-body-secondary {
 
 body{
     background-color: rgb(173, 220, 241);
+}
+
+/*card css*/
+
+.card-text {
+    max-height: 60px;
+    overflow: hidden;
+}
+.see-more {
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    background: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
 }
