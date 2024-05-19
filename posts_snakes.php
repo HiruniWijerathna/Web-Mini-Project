@@ -69,11 +69,11 @@ if (isset($_SESSION['username'])) {
        
        <div class="carousel-inner">
          <div class="carousel-item active hover-item" >
-           <img src="image/VetUpdatesMainImage.jpg" class="d-block w-100" alt="Image 2">
+           <img src="image/snakeInformatonMainImage.jpg" class="d-block w-100" alt="Image 2">
            <div class="container">
              <div class="carousel-caption text-start">
-               <h1 style="color: black">Vet Updates🧾📚</h1>
-               <p class="opacity-75" style="color:black">Come read, To be aware of animal diseases🚀</p>
+               <h1 style="color: black">Read Snake Post🧾📚</h1>
+               <p class="opacity-75" style="color:black">Come read, Be aware of snakes.🚀</p>
                </div>
            </div>
          </div>
