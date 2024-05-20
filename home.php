@@ -143,14 +143,15 @@
     </div>
   
   <div id="videoyoutub">
-  <h4>Video</h4> 
-  <iframe width="420" height="280" src="https://www.youtube.com/embed/92Wr9w2MaVs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  <iframe width="420" height="280" src="https://www.youtube.com/embed/6gw9rtF5nzk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  <iframe width="420" height="280" src="https://www.youtube.com/embed/O80CNiEUzTI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  <iframe width="280" height="430" src="https://www.youtube.com/embed/-191vQ62fUQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  <iframe width="280" height="430" src="https://www.youtube.com/embed/JnUmlSYIjng" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  <iframe width="280" height="430" src="https://www.youtube.com/embed/rFZVsAqOSoI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
-       
+  <h4>Video</h4> <br>
+  <iframe width="440" height="280" src="https://www.youtube.com/embed/92Wr9w2MaVs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="440" height="280" src="https://www.youtube.com/embed/6gw9rtF5nzk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="440" height="280" src="https://www.youtube.com/embed/O80CNiEUzTI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="270" height="460" src="https://www.youtube.com/embed/O50e2uImh8E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="270" height="460" src="https://www.youtube.com/embed/-191vQ62fUQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="270" height="460" src="https://www.youtube.com/embed/JnUmlSYIjng" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="270" height="460" src="https://www.youtube.com/embed/Ert8FBrCfRc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+  <iframe width="270" height="460" src="https://www.youtube.com/embed/rFZVsAqOSoI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>    
   </div>
   </div>
 
@@ -163,7 +164,7 @@
       
         <h3><div style="font-size: 22px;">All your questions are answered in the video below, See now...</h3>
 
-        <h4>Video</h4> 
+        <h4>Video</h4><br> 
         <iframe width="760" height="515" src="https://www.youtube.com/embed/fcyshDExRuQ?si=ifBXL9-cbdsmbItz" frameborder="0" allowfullscreen></iframe>  
         
 
