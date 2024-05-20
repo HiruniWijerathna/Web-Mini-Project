@@ -2,7 +2,7 @@
 session_start(); // Start session at the very beginning of the file
 
 // Store the current page in the session
-$_SESSION['previous_page'] = 'readpost.php';
+$_SESSION['previous_page'] = 'readpost2.php';
 
 // Ensure session variables are set
 if (!isset($_SESSION['username']) || !isset($_SESSION['user_id'])) {
@@ -29,27 +29,32 @@ $user_id = $_SESSION['user_id'];
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body style="background-color:rgb(173, 220, 241);">
-
-<!--.......................... Header................................ -->
-<div class="container-fluid px-4 border-bottom shadow-bottom" style="background-color: #080433">
+  <!--.......................... Header................................ -->
+   <!-- <div id="header"></div> -->
+   <!-- Header -->
+   <div class="container-fluid px-4 border-bottom shadow-bottom" style="background-color: #080433">
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom ">
-        <div class="col-md-3 mb-2 mb-md-0">
-            <a href="home.php" class="d-inline-flex link-body-emphasis text-decoration-none">
-                <img src="image/logo.png" alt="Your Logo" class="logo">
-            </a>
-        </div>
-        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="registerUserHomePage.php" class="nav-link px-2">Home</a></li>
-            <li><a href="registerUserHomePage.php#ReService" class="nav-link px-2">Services</a></li>
-            <li><a href="home.php#about" class="nav-link px-2">About</a></li>
-            <li><a href="help.php" class="nav-link px-2">Help</a></li>
-        </ul>
-        <div class="col-md-3 text-end">
-            <p id="hh" style="color:White; font-size: 18px">👋 Hi, <?php echo htmlspecialchars($username); ?></p>
-        </div>
+      <div class="col-md-3 mb-2 mb-md-0">
+        <a href="home.php" class="d-inline-flex link-body-emphasis text-decoration-none">
+            <img src="image/logo.png" alt="Your Logo" class="logo">
+        </a>
+      </div>
+
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="home.php#myCarousel" class="nav-link px-2 ">Home</a></li>
+        <li><a href="home.php#services" class="nav-link px-2">Services</a></li>
+        <li><a href="home.php#about" class="nav-link px-2">About</a></li>
+        <li><a href="home.php#help" class="nav-link px-2">Help</a></li>
+      </ul>
+
+      <div class="col-md-3 text-end">
+        <button type="button" class="btn btn-outline-primary me-4 btn-custom" onclick="window.location.href='register.php';">Register</button>
+        <button type="button" class="btn btn-primary btn-custom" onclick="window.location.href='login.php';">Login</button>
+      </div>
     </header>
-</div>
+  </div>
 <!-- ......................................header end ...............................-->
+
 <!-- carousel Section -->
 <div style="background-color:rgb(173, 220, 241);">
    <div id="myCarousel" class="carousel slide mb-6 pointer-event" data-bs-ride="carousel" style="margin-top: -0.1rem">
@@ -106,8 +111,7 @@ $user_id = $_SESSION['user_id'];
                                 <p class='card-text'><small class='text-muted'>Posted by: " . htmlspecialchars($row["username"]) . "</small></p>";
                 // Show edit and delete buttons if the logged-in user is the owner of the post
                 if ($row["user_id"] == $user_id) {
-                    echo "<a href='edit_post.php?post_id=" . $row['post_id'] . "' class='btn btn-primary'>Edit</a>
-                          <a href='delete_post.php?post_id=" . $row['post_id'] . "' class='btn btn-danger' onclick='return confirm(\"Are you sure you want to delete this post?\");'>Delete</a>";
+                    echo "";
                 }
                 echo "</div></div></div>";
             }

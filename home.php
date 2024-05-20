@@ -99,7 +99,7 @@
                 <image href="image\ReadPost.jpeg" width="220" height="220" fill="var(--bs-secondary-color)" />
             </svg>
             <h2 class="fw-normal " ></h2>
-            <p><a class="btn btn-secondary" href="readpost.php">Read post »</a></p>
+            <p><a class="btn btn-secondary" href="readpost2.php">Read post »</a></p>
 
         </div><!-- /.col-lg-3 -->
         <div class="col-lg-3 service-item">
