@@ -99,18 +99,19 @@ if (isset($_SESSION['username'])) {
             <br>
             <input type="text" id="title" name="title" placeholder="Title">
             <br><br>
-            <textarea id="about" name="about" placeholder="Description" rows="10"></textarea>
+            <textarea id="about" name="about" placeholder="Description" rows="7"></textarea>
             <br><br>
             <div id="descriptionPart">
                 <input type="file" id="uploadInput" name="image" accept="image/*" onchange="previewImage(event)">
                 <button type="button" onclick="removePhoto()">Remove Photo</button>
                 <br>
-                <img id="preview" src="image/addphotoLogo.jpg" alt="Preview Image">
+                <img id="preview" src="image/AddphotoIcon.png" alt="Preview Image">
             </div>
-            <input type="submit" value="Save">
+            <br><input type="submit" value="Save">
         </div>
-        <br>
+      
     </form>
+    </div>
     <?php
     // Check if there is an error message
     if (isset($_GET['error']) && $_GET['error'] == "post_exists") {
