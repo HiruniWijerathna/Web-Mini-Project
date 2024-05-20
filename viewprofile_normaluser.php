@@ -63,7 +63,10 @@ if (isset($_SESSION['username'])) {
             <div class="container">
             <div class="carousel-caption text-start">
                 <h1 style="color: white">Normal User Profiles</h1>
-                <p class="opacity-75" style="color:white"><b>Profiles of dedicated individuals making a difference in animal rescue.</b></p>
+                <div class="glow">
+                    <p class="opacity-75" style="color:white"><b>Profiles of dedicated individuals making a difference in animal rescue.</b></p>
+                </div>
+                
             </div>
             </div>
         </div>

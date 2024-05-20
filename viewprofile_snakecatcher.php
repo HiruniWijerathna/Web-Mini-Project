@@ -61,7 +61,10 @@ if (isset($_SESSION['username'])) {
             <div class="container">
             <div class="carousel-caption text-start">
                 <h1 style="color: white">Snake Catcher Profiles</h1>
+                <div class="glow">
                 <p class="opacity-75" style="color:white"><b>Meet our skilled and dedicated snake catchers, ready to help with safe and humane snake removal.</b></p>
+                </div>
+                
             </div>
             </div>
         </div>

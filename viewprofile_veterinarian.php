@@ -63,7 +63,10 @@ if (isset($_SESSION['username'])) {
             <div class="container">
             <div class="carousel-caption text-start">
                 <h1 style="color: black">Veterinarian Profiles</h1>
+                <div class="glow">
                 <p class="opacity-75" style="color:black"><b>Discover our compassionate veterinarians dedicated to the health and well-being of rescued animals.</b></p>
+                </div>
+                
             </div>
             </div>
         </div>
