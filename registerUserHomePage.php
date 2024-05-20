@@ -60,11 +60,11 @@ if (isset($_SESSION['username'])) {
        
         <div class="carousel-inner">
           <div class="carousel-item active hover-item" >
-            <img src="image/registedUserHomePageImage.jpg" class="d-block w-100" alt="Image 2">
+            <img src="image/homeusermain.jpg" class="d-block w-100" alt="Image 2">
             <div class="container">
               <div class="carousel-caption text-start">
                 <h1 style="color: black">Welcome to the BeastBuddy Community 🌍🌿🐾</h1>
-                <p class="opacity-75" style="color: yellow">Explore, connect, and share your love for creatures big and small - BeastBuddy! 🐾</p>
+                <p class="opacity-75" style="color: white">Explore, connect, and share your love for creatures big and small - BeastBuddy! 🐾</p>
                 </div>
             </div>
           </div>
