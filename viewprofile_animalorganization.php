@@ -65,7 +65,10 @@ if (isset($_SESSION['username'])) {
            <div class="container">
            <div class="carousel-caption text-start">
                <h1 style="color: White">Animal Organizations Profiles</h1>
-               <p class="opacity-75" style="color:white">Explore our committed animal organizations working tirelessly to rescue and protect animals in need.</p>
+               <div class="glow">
+                    <p class="opacity-75" style="color:white">Explore our committed animal organizations working tirelessly to rescue and protect animals in need.</p>
+               </div>
+               
            </div>
            </div>
        </div>
