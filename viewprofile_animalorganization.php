@@ -31,7 +31,9 @@ if (isset($_SESSION['username'])) {
 ?>
 
    <!-- <div id="header"></div> -->
+
    <!-- Header -->
+   
  <div class="container-fluid px-4 border-bottom shadow-bottom" style="background-color: #080433">
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom ">
       <div class="col-md-3 mb-2 mb-md-0">
