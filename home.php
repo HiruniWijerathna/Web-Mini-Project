@@ -86,54 +86,58 @@
         </button>
       </div>
 
-  <!-- serveces section -->
+  <!-- services section --><br>
 <div id="services" class="container-fluid py-5">
-    <h1 class="display-5 fw-bold text-body-emphasis" style="text-align: center;">Services</h1>
-
-    <div class="row">
-        <div class="col-lg-3 service-item">
+    <h1 class="display-5 fw-bold text-body-emphasis" style="text-align: center;">Services</h1><br>
+    <div class="d-flex justify-content-center flex-wrap">
+        <div class="col-lg-2 col-md-3 col-sm-4 service-item text-center m-3">
             <svg class="bd-placeholder-img rounded-circle" width="220" height="220" xmlns="http://www.w3.org/2000/svg"
                 role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <title>Placeholder</title>
                 <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
                 <image href="image\ReadPost.jpeg" width="220" height="220" fill="var(--bs-secondary-color)" />
             </svg>
-            <h2 class="fw-normal " ></h2>
-            <p><a class="btn btn-secondary" href="readpost.php">Read post »</a></p>
-
-        </div><!-- /.col-lg-3 -->
-        <div class="col-lg-3 service-item">
+            
+            <p><a class="btn btn-secondary" href="readpost2.php">Read post »</a></p>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 service-item text-center m-3">
             <svg class="bd-placeholder-img rounded-circle" width="220" height="220" xmlns="http://www.w3.org/2000/svg"
                 role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <title>Placeholder</title>
                 <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
                 <image href="image\vet.jpeg" width="220" height="220" fill="var(--bs-secondary-color)" />
             </svg>
-            <h2 class="fw-normal"></h2>
-            <p><a class="btn btn-secondary" href="veterinary_advice.php">Veterinary advice »</a></p>
-        </div><!-- /.col-lg-3 -->
-        <div class="col-lg-3 service-item">
+            
+            <p><a class="btn btn-secondary" href="login.php">Veterinary advice »</a></p>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 service-item text-center m-3">
             <svg class="bd-placeholder-img rounded-circle" width="220" height="220" xmlns="http://www.w3.org/2000/svg"
                 role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <title>Placeholder</title>
                 <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
                 <image href="image\animalOrganization.jpeg" width="220" height="220" fill="var(--bs-secondary-color)" />
             </svg>
-            <h2 class="fw-normal"></h2>
-            <p><a class="btn btn-secondary" href="animal_Organization.php">Animal Organization »</a></p>
-        </div><!-- /.col-lg-3 -->
-        <div class="col-lg-3 service-item">
+            
+            <p><a class="btn btn-secondary" href="login.php">Animal Organization »</a></p>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 service-item text-center m-3">
             <svg class="bd-placeholder-img rounded-circle" width="220" height="220" xmlns="http://www.w3.org/2000/svg"
                 role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <title>Placeholder</title>
                 <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
                 <image href="image\snakeinfor.jpeg" width="220" height="220" fill="var(--bs-secondary-color)" />
             </svg>
-            <h2 class="fw-normal"></h2>
-            <p><a class="btn btn-secondary" href="snakeInformation.php">Snake Information »</a></p>
+            
+            <p><a class="btn btn-secondary" href="login.php">Snake Information »</a></p>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 service-item text-center m-3">
+            <svg class="bd-placeholder-img rounded-circle" width="220" height="220" xmlns="http://www.w3.org/2000/svg"
+                role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+                <image href="image/AnimalSearch&RescueLogo.jpg" width="220" height="220" fill="var(--bs-secondary-color)"/>
+            </svg>
+           
+            <p><a class="btn btn-secondary" href="login.php">Animal Search & Rescue »</a></p>
         </div>
     </div>
 </div>
+
 
 <!-- About -->
 <div id="about" class="px-4 py-5 my-5 text-center">
@@ -143,14 +147,15 @@
     </div>
   
   <div id="videoyoutub">
-  <h4>Video</h4> 
-  <iframe width="420" height="280" src="https://www.youtube.com/embed/92Wr9w2MaVs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  <iframe width="420" height="280" src="https://www.youtube.com/embed/6gw9rtF5nzk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  <iframe width="420" height="280" src="https://www.youtube.com/embed/O80CNiEUzTI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  <iframe width="280" height="430" src="https://www.youtube.com/embed/-191vQ62fUQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  <iframe width="280" height="430" src="https://www.youtube.com/embed/JnUmlSYIjng" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  <iframe width="280" height="430" src="https://www.youtube.com/embed/rFZVsAqOSoI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
-       
+  <h4>Video</h4> <br>
+  <iframe width="440" height="280" src="https://www.youtube.com/embed/92Wr9w2MaVs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="440" height="280" src="https://www.youtube.com/embed/6gw9rtF5nzk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="440" height="280" src="https://www.youtube.com/embed/O80CNiEUzTI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="270" height="460" src="https://www.youtube.com/embed/O50e2uImh8E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="270" height="460" src="https://www.youtube.com/embed/-191vQ62fUQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="270" height="460" src="https://www.youtube.com/embed/JnUmlSYIjng" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="270" height="460" src="https://www.youtube.com/embed/Ert8FBrCfRc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+  <iframe width="270" height="460" src="https://www.youtube.com/embed/rFZVsAqOSoI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>    
   </div>
   </div>
 
@@ -163,8 +168,8 @@
       
         <h3><div style="font-size: 22px;">All your questions are answered in the video below, See now...</h3>
 
-        <h4>Video</h4> 
-        <iframe width="760" height="515" src="https://www.youtube.com/embed/fcyshDExRuQ?si=ifBXL9-cbdsmbItz" frameborder="0" allowfullscreen></iframe>  
+        <h4>Video</h4><br> 
+        <iframe width="660" height="415" src="https://www.youtube.com/embed/LcWzxkUy9FY?si=5OfmLgRIozL4GTFX" frameborder="0" allowfullscreen></iframe>
         
 
 

@@ -1,111 +1,38 @@
-<?php
-session_start();
-
-// Check if user is logged in
-if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php"); // Redirect to login page if not logged in
-    exit();
-}
-
-// Check if post_id is provided in the URL
-if (!isset($_GET['post_id'])) {
-    header("Location: index.php"); // Redirect to home page if post_id is not provided
-    exit();
-}
-
-// Store the previous page URL if not already set
-if (!isset($_SESSION['previous_page'])) {
-    $_SESSION['previous_page'] = $_SERVER['HTTP_REFERER'];
-}
-
-// Include database connection file
-// Establish database connection
-$servername = "localhost"; // Change this to your server name if it's not localhost
-$username = "root"; // Change this to your MySQL username
-$password = ""; // Change this to your MySQL password
-$dbname = "beastbuddy"; // Name of the database
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-// Sanitize the post_id parameter
-$post_id = filter_input(INPUT_GET, 'post_id', FILTER_SANITIZE_NUMBER_INT);
-
-// Fetch the post from the database based on post_id
-$sql = "SELECT * FROM posts WHERE post_id = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("i", $post_id);
-$stmt->execute();
-$result = $stmt->get_result();
-
-if ($result->num_rows === 1) {
-    $post = $result->fetch_assoc();
-
-    // Check if the logged-in user is the owner of the post
-    if ($post['user_id'] != $_SESSION['user_id']) {
-        // Redirect to home page or display an error message
-        header("Location: registerUserHomePage.php");
-        exit();
-    }
-} else {
-    // Redirect to home page or display an error message
-    header("Location: registerUserHomePage.php");
-    exit();
-}
-
-// If form is submitted, update the post content in the database
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Sanitize and validate form inputs
-    $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
-    $content = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_STRING);
-
-    // Update the post content in the database
-    $sql = "UPDATE posts SET title = ?, content = ? WHERE post_id = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssi", $title, $content, $post_id);
-    $stmt->execute();
-
-    // Redirect to the previous page or display a success message
-    $previous_page = $_SESSION['previous_page'];
-    unset($_SESSION['previous_page']); // Clear the session variable
-    header("Location: $previous_page");
-    exit();
-}
-
-// Close database connection
-$stmt->close();
-$conn->close();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Post</title>
+    <title>Help</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/editPost.css">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="css\style.css">
 </head>
-<body >
-    <!--.......................... Header................................ -->
-<?php
+<body style="background-color:rgb(173, 220, 241);">
+     <!-- header begin -->
+   <?php
+// session_start(); // Start the session
 
+// Check if the username is set in the session
 if (isset($_SESSION['username'])) {
     $username = $_SESSION['username'];
-    $user_id = $_SESSION['user_id']; // Assuming you store user_id in the session
 } else {
-    $username = '';
-    $user_id = '';
+    $username = ''; // Set default username if not set
+}
+?>
+
+  <!--.......................... Header................................ -->
+  <?php
+session_start(); // Start the session
+
+// Check if the username is set in the session
+if (isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
+} else {
+    $username = ''; // Set default username if not set
 }
 ?>
 
@@ -122,8 +49,8 @@ if (isset($_SESSION['username'])) {
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
       <li><a href="registerUserHomePage.php" class="nav-link px-2 ">Home</a></li>
         <li><a href="registerUserHomePage.php#ReService" class="nav-link px-2">Services</a></li>
-        <li><a href="about.php" class="nav-link px-2 ">About</a></li>
-        <li><a href="help.php" class="nav-link px-2">Help</a></li>
+        <li><a href="about.php" class="nav-link px-2 link-secondary">About</a></li>
+        <li><a href="help.php" class="nav-link px-2 ">Help</a></li>
       </ul>
 
       <div class="col-md-3 text-end">
@@ -134,17 +61,17 @@ if (isset($_SESSION['username'])) {
   </div>
 <!-- ......................................header end ...............................-->
 
-<!-- carousel Section -->
-<div style="background-color:rgb(173, 220, 241);">
+ <!-- carousel Section -->
+ <div style="background-color:rgb(173, 220, 241);">
    <div id="myCarousel" class="carousel slide mb-6 pointer-event" data-bs-ride="carousel" style="margin-top: -0.1rem">
        
        <div class="carousel-inner">
          <div class="carousel-item active hover-item" >
-           <img src="image/editPostMainImage.jpg" class="d-block w-100" alt="Image 2">
+           <img src="image/aboutMainImage.jpg" class="d-block w-100" alt="Image 2">
            <div class="container">
              <div class="carousel-caption text-start">
-               <h1 style="color: black">Edit Post</h1>
-               <p class="opacity-75" style="color:black">Now you con edit you'r post</p>
+               <h1 style="color: black">About</h1>
+               <p class="opacity-75" style="color:black">Connecting hearts and hands to save animals in need..</p>
                </div>
            </div>
          </div>
@@ -153,15 +80,26 @@ if (isset($_SESSION['username'])) {
   
      </div>
       <!-- serveces section -->
-<div id="form">
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . '?post_id=' . $post_id; ?>" method="post">
-        <div class="lablela"><label  for="title">Title:</label><br></div>
-        <input type="text" id="title" name="title" value="<?php echo htmlspecialchars($post['title']); ?>"><br><br>
-        <div class="lablela"><label for="content">Content:</label></div>
-        <textarea id="content" name="content" rows="7"><?php echo htmlspecialchars($post['content']); ?></textarea><br><br><br>
-        <input type="submit" value="Submit">
-    </form>
-    </div>
+
+<div id="help" class="px-4 py-5 my-5 text-center">
+  <h1 class="display-5 fw-bold text-body-emphasis"></h1>
+  <div class="col-lg-8 mx-auto py-3">
+             
+        <h2><div style="font-size: 22px;">Certainly! Creating a platform that connects concerned individuals, local authorities, animal welfare organizations, and volunteers can make a big difference for animals in distress worldwide. Let's work together to improve animal welfare!</h2></div>
+         <div><br>
+        <h3>Video</h3> <br>
+        <iframe width="440" height="280" src="https://www.youtube.com/embed/92Wr9w2MaVs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="440" height="280" src="https://www.youtube.com/embed/6gw9rtF5nzk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="440" height="280" src="https://www.youtube.com/embed/O80CNiEUzTI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="270" height="460" src="https://www.youtube.com/embed/O50e2uImh8E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="270" height="460" src="https://www.youtube.com/embed/-191vQ62fUQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="270" height="460" src="https://www.youtube.com/embed/JnUmlSYIjng" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="270" height="460" src="https://www.youtube.com/embed/Ert8FBrCfRc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+  <iframe width="270" height="460" src="https://www.youtube.com/embed/rFZVsAqOSoI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>    
+        
+         </div>
+      </div>
+        </div>
 
     <!--...................... Footer............................................. -->
 <!-- <div id="footer"></div> -->
@@ -220,5 +158,6 @@ if (isset($_SESSION['username'])) {
 <!-- ........................footer end ..................................-->
 
 
+    
 </body>
 </html>
