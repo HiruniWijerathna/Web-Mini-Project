@@ -39,6 +39,7 @@
 }
 
 /* ................................CSS for footer............................ */
+
 /* Footer Social Icons */
 footer .nav a {
     color: #080433 !important;
@@ -70,9 +71,6 @@ footer .nav .text-body-secondary {
 
 /*----------Profile_card---------*/
 
-
-
-
 .img-fluid{
     border-radius: 10px;
 }
@@ -100,6 +98,28 @@ footer .nav .text-body-secondary {
     font-family: arial;
     padding: 20px; /*add some padding inside the card*/
 }
+
+/* Base styles for the card */
+
+.card {
+    
+}
+
+.card-red {
+  background-color: rgb(255, 232, 232);
+  color: rgb(0, 0, 0);
+}
+
+.card-blue {
+  background-color: rgb(228, 228, 250);
+  color: rgb(0, 0, 0);
+}
+
+.card-green {
+  background-color: rgb(221, 250, 235);
+  color: rgb(0, 0, 0);
+}
+
 
 .card-body {
     padding: 15px;
@@ -159,25 +179,6 @@ body{
   
 }
 
-/* Base styles for the card */
-.card {
-    
-  }
-  
-  .card-red {
-    background-color: rgb(255, 232, 232);
-    color: rgb(0, 0, 0);
-  }
-  
-  .card-blue {
-    background-color: rgb(228, 228, 250);
-    color: rgb(0, 0, 0);
-  }
-  
-  .card-green {
-    background-color: rgb(221, 250, 235);
-    color: rgb(0, 0, 0);
-  }
 
   /*glow text*/
 
