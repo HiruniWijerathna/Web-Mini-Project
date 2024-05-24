@@ -94,13 +94,13 @@
 
         <div class="form-floating">
             <h3 class="img">
-                <a href="https://www.facebook.com" target="_blank">
+                <a href="https://www.facebook.com/profile.php?id=61559491240781&mibextid=ZbWKwL" target="_blank">
                     <img src="image/fb.png" width="45px">
                 </a>
-                <a href="https://www.instagram.com" target="_blank">
+                <a href="https://www.instagram.com/__beastbuddy__?igsh=MTZtbGp3bmhzNGk3eA==" target="_blank">
                     <img src="image/ins.png" width="45px">
                 </a>
-                <a href="https://www.twitter.com" target="_blank">	
+                <a href="https://mail.google.com/" target="_blank">	
                     <img src="image/twe.png" width="45px">
                 </a>
             </h3>
