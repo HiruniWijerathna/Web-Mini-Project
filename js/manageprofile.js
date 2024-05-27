@@ -1,4 +1,4 @@
-//uplode profile photo
+//upload profile photo
 
 function previewImage(event) {
     var preview = document.getElementById('preview');
@@ -17,7 +17,7 @@ function removePhoto() {
     uploadInput.style.display = "block";
 }
 
-// uplode name
+// upload name
 
 function updateText() {
     var typedText = document.getElementById('fname').value;
