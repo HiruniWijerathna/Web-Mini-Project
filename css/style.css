@@ -320,11 +320,11 @@ footer .nav .text-body-secondary {
 .forgot-password-link {
     display: block; /* Make the link a block element */
     margin-top: 10px; /* Add space between the link and the button */
-    color: #755bca;
+    color: #ffffff;
     font-size: 17px;
 }
 .forgot-password-link:hover{
-    color: rgb(158, 3, 3);
+    color: rgb(255, 0, 0);
    
 }
 
