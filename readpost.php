@@ -119,7 +119,7 @@ $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
                 if ($result_comments->num_rows > 0) {
                     while ($comment_row = $result_comments->fetch_assoc()) {
                         $comment_username = $comment_row['comment_username'] ? $comment_row['comment_username'] : $comment_row['guest_name'];
-                        echo "<p><strong>" . htmlspecialchars($comment_username) . ":</strong> " . htmlspecialchars($comment_row['comment']) . "</p>";
+                        echo "<p style='color:black;'><strong>" . htmlspecialchars($comment_username) . ":</strong> " . htmlspecialchars($comment_row['comment']) . "</p>";
                     }
                 } else {
                     echo "<p style='color:black;' >No comments yet.</p>";
