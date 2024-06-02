@@ -139,11 +139,10 @@ if (isset($_SESSION['username'])) {
                     }
 
                     // Display comments
-echo "<button class='btn btn-secondary mt-3' data-bs-toggle='collapse' data-bs-target='#comments$post_id'>Comments</button>
+echo "<button class='btn btn-secondary ' data-bs-toggle='collapse' data-bs-target='#comments$post_id'>Comments</button>
 <div id='comments$post_id' class='collapse mt-2 comment-section'>
-    <div class='card card-body'>
-        <h6>Comments:</h6>";
-
+<div class='card card-body' style='background-color:  #d0d0d0; height:300px;'>
+<h6 style='color:black;'>Comments:</h6>";
 // Fetch comments for this post
 $sql_comments = "SELECT comments.comment, users.username AS comment_username, comments.guest_name 
            FROM comments 
@@ -156,7 +155,7 @@ while ($comment_row = $result_comments->fetch_assoc()) {
   echo "<p><strong>" . htmlspecialchars($comment_username) . ":</strong> " . htmlspecialchars($comment_row['comment']) . "</p>";
 }
 } else {
-echo "<p>No comments yet.</p>";
+  echo "<p style='color:black;' >No comments yet.</p>";
 }
 
 // Comment form

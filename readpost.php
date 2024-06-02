@@ -106,10 +106,10 @@ $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
                 }
 
                    // Display comments
-                echo "<button class='btn btn-secondary mt-3' data-bs-toggle='collapse' data-bs-target='#comments$post_id'>Comments</button>
+                echo "<button class='btn btn-secondary ' data-bs-toggle='collapse' data-bs-target='#comments$post_id'> Comments </button>
                       <div id='comments$post_id' class='collapse mt-2 comment-section'>
-                          <div class='card card-body'>
-                              <h6>Comments:</h6>";
+                          <div class='card card-body' style='background-color:  #d0d0d0; height:300px;'>
+                              <h6 style='color:black;'>Comments:</h6>";
                 // Fetch comments for this post
                 $sql_comments = "SELECT comments.comment, users.username AS comment_username, comments.guest_name 
                                  FROM comments 
@@ -122,12 +122,12 @@ $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
                         echo "<p><strong>" . htmlspecialchars($comment_username) . ":</strong> " . htmlspecialchars($comment_row['comment']) . "</p>";
                     }
                 } else {
-                    echo "<p>No comments yet.</p>";
+                    echo "<p style='color:black;' >No comments yet.</p>";
                 }
 
                 // Comment form
                 echo "<div class='mt-4'>
-                        <form method='POST' action='add_comment.php'>
+                        <form  method='POST' action='add_comment.php'>
                             <!-- Your comment form goes here -->
                             <input type='hidden' name='post_id' value='" . $post_id . "'>";
                 if ($user_id) {
@@ -230,6 +230,40 @@ $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
         });
     });
 </script>
+
+<!--.post color change. -->
+<script>
+    function changePostColors() {
+  const posts = document.querySelectorAll('.card');
+
+  // Choose a logic for color changes (replace with your desired logic)
+  // Here, we use a repeating value based on current time (every 5 seconds)
+  const currentTime = Math.floor(Date.now() / 1000) % 3; // Repeating value between 0, 1, and 2 every 3 seconds
+
+  for (const post of posts) {
+    // Remove existing color classes (optional, ensures only one color is applied)
+    post.classList.remove('card-red', 'card-blue', 'card-green');
+
+    // Apply new color class based on chosen logic
+    if (currentTime === 0) {
+      post.classList.add('card-red');
+    } else if (currentTime === 1) {
+      post.classList.add('card-blue');
+    } else {
+      post.classList.add('card-green');
+    }
+  }
+}
+
+// Call the function initially to set initial colors (if not set by PHP)
+changePostColors();
+
+// Set an interval to call the function repeatedly (adjust the interval as needed)
+setInterval(changePostColors, 5000); // Change color every 5 seconds
+</script>
+<!--.post color change end -->
+
+
 
 </body>
 </html>
