@@ -5,15 +5,11 @@ session_start(); // Start session at the very beginning of the file
 $_SESSION['previous_page'] = 'readpost2.php';
 
 // Ensure session variables are set
-if (!isset($_SESSION['username']) || !isset($_SESSION['user_id'])) {
-    // Redirect to login page or show a message
-    header("Location: login.php");
-    exit();
-}
-
-$username = $_SESSION['username'];
-$user_id = $_SESSION['user_id'];
+$username = isset($_SESSION['username']) ? $_SESSION['username'] : null;
+$user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,6 +23,12 @@ $user_id = $_SESSION['user_id'];
     <!-- Add your CSS links here -->
     <link rel="stylesheet" href="css/readspost.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .comment-section {
+            position: relative;
+            z-index: 10;
+        }
+    </style>
 </head>
 <body style="background-color:rgb(173, 220, 241);">
   <!--.......................... Header................................ -->
@@ -101,6 +103,7 @@ $user_id = $_SESSION['user_id'];
         if ($result->num_rows > 0) {
             // Output data of each row
             while ($row = $result->fetch_assoc()) {
+                $post_id = $row['post_id'];
                 echo "<div class='col-md-6 mb-4'>
                         <div class='card'>
                             <p class='card-text'><small class='text-muted'><img src='image/location.png' class='location_img' alt='location Image'> " . htmlspecialchars($row["location"]) . "</small></p>
@@ -113,6 +116,48 @@ $user_id = $_SESSION['user_id'];
                 if ($row["user_id"] == $user_id) {
                     echo "";
                 }
+                 // Display comments
+                 echo "<button class='btn btn-secondary mt-3' data-bs-toggle='collapse' data-bs-target='#comments$post_id'>Comments</button>
+                 <div id='comments$post_id' class='collapse mt-2 comment-section'>
+                     <div class='card card-body'>
+                         <h6>Comments:</h6>";
+           // Fetch comments for this post
+           $sql_comments = "SELECT comments.comment, users.username AS comment_username, comments.guest_name 
+                            FROM comments 
+                            LEFT JOIN users ON comments.user_id = users.user_id 
+                            WHERE comments.post_id = $post_id";
+           $result_comments = $conn->query($sql_comments);
+           if ($result_comments->num_rows > 0) {
+               while ($comment_row = $result_comments->fetch_assoc()) {
+                   $comment_username = $comment_row['comment_username'] ? $comment_row['comment_username'] : $comment_row['guest_name'];
+                   echo "<p><strong>" . htmlspecialchars($comment_username) . ":</strong> " . htmlspecialchars($comment_row['comment']) . "</p>";
+               }
+           } else {
+               echo "<p>No comments yet.</p>";
+           }
+
+           // Comment form
+           echo "<div class='mt-4'>
+                   <form method='POST' action='add_comment.php'>
+                       <!-- Your comment form goes here -->
+                       <input type='hidden' name='post_id' value='" . $post_id . "'>";
+           if ($user_id) {
+               echo "<div class='mb-3'>
+                       <textarea class='form-control' name='comment' placeholder='Add a comment...' required></textarea>
+                     </div>";
+           } else {
+               echo "<div class='mb-3'>
+                       <input type='text' class='form-control' name='guest_name' placeholder='Your name' required>
+                     </div>
+                     <div class='mb-3'>
+                       <textarea class='form-control' name='comment' placeholder='Add a comment...' required></textarea>
+                     </div>";
+           }
+           echo "<button type='submit' class='btn btn-primary'>Post Comment</button>
+                   </form>
+                 </div>
+                 </div>
+                 </div>";
                 echo "</div></div></div>";
             }
         } else {
