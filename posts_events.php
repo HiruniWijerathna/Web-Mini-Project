@@ -156,7 +156,7 @@ while ($comment_row = $result_comments->fetch_assoc()) {
   echo "<p><strong>" . htmlspecialchars($comment_username) . ":</strong> " . htmlspecialchars($comment_row['comment']) . "</p>";
 }
 } else {
-  echo "<p style='color:black;' >No comments yet.</p>";
+echo "<p style='color:black;' >No comments yet.</p>";
 }
 
 // Comment form
