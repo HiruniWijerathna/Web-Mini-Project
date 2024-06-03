@@ -98,21 +98,7 @@ if (isset($_SESSION['username'])) {
 
     <div class="container mt-5">
         <h1 style="text-align: center;">Manage Profile</h1>
-        <div class="col-md-4">
-            <div id="descriptionPart">
-            <div id="showimg-container">
-                                <!-- Display the user's profile image -->
-                                <?php if (!empty($profile_data['profile_image']) && file_exists('profile_uploads/' . $profile_data['profile_image'])): ?>
-                                    <img id="showimg" src="profile_uploads/<?php echo $profile_data['profile_image']; ?>" alt="Profile Image">
-                                <?php else: ?>
-                                    <!-- Default profile image if user hasn't uploaded any -->
-                                    <img id="showimg" src="image\profilePhotoLogo.jpg" alt="Default Profile Image">
-                                <?php endif; ?>
-                            </div><br>
-                <p><span id="displayText"></span> <span id="displaText"></span></p>
-            </div>
-        </div>
-
+     
         <!-- Profile Form -->
         <form id="profile_form" action="manageprofile_setup.php" method="post" enctype="multipart/form-data">
         <div class="formm">
