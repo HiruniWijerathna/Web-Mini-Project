@@ -140,7 +140,7 @@ if (isset($_SESSION['username'])) {
                      // Display comments
 echo "<button class='btn btn-secondary ' data-bs-toggle='collapse' data-bs-target='#comments$post_id'>Comments</button>
 <div id='comments$post_id' class='collapse mt-2 comment-section'>
-<div class='card card-body' style='background-color:  #d0d0d0; height:300px;'>
+<div class='card card-body' style='background-color:  #d0d0d0; '>
 <h6 style='color:black;'>Comments:</h6>";
 
 // Fetch comments for this post
