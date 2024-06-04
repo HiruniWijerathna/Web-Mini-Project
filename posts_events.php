@@ -22,6 +22,12 @@ $_SESSION['previous_page'] = 'posts_events.php';
     <!-- Add your CSS links here -->
     <link rel="stylesheet" href="css/readspost.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .comment-section {
+            position: relative;
+            z-index: 10;
+        }
+    </style>
 
 </head>
 <body>
@@ -32,9 +38,11 @@ $_SESSION['previous_page'] = 'posts_events.php';
 if (isset($_SESSION['username'])) {
     $username = $_SESSION['username'];
     $user_id = $_SESSION['user_id']; // Assuming you store user_id in the session
+    // Store current page URL in session
+    $_SESSION['previous_page'] = $_SERVER['REQUEST_URI'];
 } else {
     $username = '';
-    $user_id = '';
+    $user_id = null;
 }
 ?>
 
@@ -115,6 +123,7 @@ if (isset($_SESSION['username'])) {
             if ($result->num_rows > 0) {
                 // Output data of each row
                 while ($row = $result->fetch_assoc()) {
+                    $post_id = $row['post_id']; // Define $post_id here
                     echo "<div class='col-md-6 mb-4'>
                             <div class='card'>
                                 <p class='card-text'><small class='text-muted'><img src='image/location.png' class='location_img' alt='location Image'> " . $row["location"] . "</small></p>
@@ -128,6 +137,52 @@ if (isset($_SESSION['username'])) {
                         echo "<a href='edit_post.php?post_id=" . $row['post_id'] . "' class='btn btn-primary'>Edit</a>
                               <a href='delete_post.php?post_id=" . $row['post_id'] . "' class='btn btn-danger' onclick='return confirm(\"Are you sure you want to delete this post?\");'>Delete</a>";
                     }
+
+                    // Display comments
+echo "<button class='btn btn-secondary' data-bs-toggle='collapse' data-bs-target='#comments$post_id'>Comments</button>
+<div id='comments$post_id' class='collapse mt-2 comment-section'>
+<div class='card card-body' style='background-color:  #d0d0d0; '>
+<h6 style='color:black;'>Comments:</h6>";
+
+// Fetch comments for this post
+$sql_comments = "SELECT comments.comment, users.username AS comment_username, comments.guest_name 
+           FROM comments 
+           LEFT JOIN users ON comments.user_id = users.user_id 
+           WHERE comments.post_id = $post_id";
+$result_comments = $conn->query($sql_comments);
+if ($result_comments->num_rows > 0) {
+while ($comment_row = $result_comments->fetch_assoc()) {
+  $comment_username = $comment_row['comment_username'] ? $comment_row['comment_username'] : $comment_row['guest_name'];
+  echo "<p style='color:black;'><strong>" . htmlspecialchars($comment_username) . ":</strong> " . htmlspecialchars($comment_row['comment']) . "</p>";
+}
+} else {
+echo "<p style='color:black;' >No comments yet.</p>";
+}
+
+// Comment form
+echo "<div class='mt-4'>
+  <form method='POST' action='add_comment.php' class='comment-form'>
+      <!-- Your comment form goes here -->
+      <input type='hidden' name='post_id' value='" . $post_id . "'>";
+if ($user_id) {
+echo "<div class='mb-3'>
+      <textarea class='form-control' name='comment' placeholder='Add a comment...' required></textarea>
+    </div>";
+} else {
+echo "<div class='mb-3'>
+      <input type='text' class='form-control' name='guest_name' placeholder='Your name' required>
+    </div>
+    <div class='mb-3'>
+      <textarea class='form-control' name='comment' placeholder='Add a comment...' required></textarea>
+    </div>";
+}
+echo "<button type='submit' class='btn btn-primary'>Post Comment</button>
+</form>
+</div>
+</div>
+</div>";
+
+
                     echo "</div></div></div>";
                 }
             } else {

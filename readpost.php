@@ -5,14 +5,8 @@ session_start(); // Start session at the very beginning of the file
 $_SESSION['previous_page'] = 'readpost.php';
 
 // Ensure session variables are set
-if (!isset($_SESSION['username']) || !isset($_SESSION['user_id'])) {
-    // Redirect to login page or show a message
-    header("Location: login.php");
-    exit();
-}
-
-$username = $_SESSION['username'];
-$user_id = $_SESSION['user_id'];
+$username = isset($_SESSION['username']) ? $_SESSION['username'] : null;
+$user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,13 +18,18 @@ $user_id = $_SESSION['user_id'];
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Add your CSS links here -->
     <link rel="stylesheet" href="css/readspost.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .comment-section {
+            position: relative;
+            z-index: 10;
+        }
+    </style>
 </head>
 <body style="background-color:rgb(173, 220, 241);">
 
-<!--.......................... Header................................ -->
+<!-- Header -->
 <div class="container-fluid px-4 border-bottom shadow-bottom" style="background-color: #080433">
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom ">
         <div class="col-md-3 mb-2 mb-md-0">
@@ -49,8 +48,7 @@ $user_id = $_SESSION['user_id'];
         </div>
     </header>
 </div>
-<!-- ......................................header end ...............................-->
-<!-- carousel Section -->
+<!-- Carousel Section -->
 <div style="background-color:rgb(173, 220, 241);">
    <div id="myCarousel" class="carousel slide mb-6 pointer-event" data-bs-ride="carousel" style="margin-top: -0.1rem">
        <div class="carousel-inner">
@@ -68,17 +66,16 @@ $user_id = $_SESSION['user_id'];
 </div>
 <!-- Content Section -->
 <div class="container mt-5">
-    <!-- Display Posts Section -->
     <div class="row">
         <?php
         // Establish database connection
-        $servername = "localhost"; // Change this to your server name if it's not localhost
-        $username = "root"; // Change this to your MySQL username
-        $password = ""; // Change this to your MySQL password
-        $dbname = "beastbuddy"; // Name of the database
+        $servername = "localhost";
+        $db_username = "root";
+        $db_password = "";
+        $dbname = "beastbuddy";
 
         // Create connection
-        $conn = new mysqli($servername, $username, $password, $dbname);
+        $conn = new mysqli($servername, $db_username, $db_password, $dbname);
 
         // Check connection
         if ($conn->connect_error) {
@@ -92,10 +89,9 @@ $user_id = $_SESSION['user_id'];
 
         $result = $conn->query($sql);
 
-        // Check if there are posts
         if ($result->num_rows > 0) {
-            // Output data of each row
             while ($row = $result->fetch_assoc()) {
+                $post_id = $row['post_id'];
                 echo "<div class='col-md-6 mb-4'>
                         <div class='card'>
                             <p class='card-text'><small class='text-muted'><img src='image/location.png' class='location_img' alt='location Image'> " . htmlspecialchars($row["location"]) . "</small></p>
@@ -104,42 +100,79 @@ $user_id = $_SESSION['user_id'];
                                 <h5 class='card-title'>" . htmlspecialchars($row["title"]) . "</h5>
                                 <p class='card-text'>" . htmlspecialchars($row["content"]) . "</p>
                                 <p class='card-text'><small class='text-muted'>Posted by: " . htmlspecialchars($row["username"]) . "</small></p>";
-                // Show edit and delete buttons if the logged-in user is the owner of the post
                 if ($row["user_id"] == $user_id) {
                     echo "<a href='edit_post.php?post_id=" . $row['post_id'] . "' class='btn btn-primary'>Edit</a>
                           <a href='delete_post.php?post_id=" . $row['post_id'] . "' class='btn btn-danger' onclick='return confirm(\"Are you sure you want to delete this post?\");'>Delete</a>";
                 }
+
+                   // Display comments
+                echo "<button class='btn btn-secondary ' data-bs-toggle='collapse' data-bs-target='#comments$post_id'> Comments </button>
+                      <div id='comments$post_id' class='collapse mt-2 comment-section'>
+                          <div class='card card-body' style='background-color:  #d0d0d0;'>
+                              <h6 style='color:black;'>Comments:</h6>";
+                // Fetch comments for this post
+                $sql_comments = "SELECT comments.comment, users.username AS comment_username, comments.guest_name 
+                                 FROM comments 
+                                 LEFT JOIN users ON comments.user_id = users.user_id 
+                                 WHERE comments.post_id = $post_id";
+                $result_comments = $conn->query($sql_comments);
+                if ($result_comments->num_rows > 0) {
+                    while ($comment_row = $result_comments->fetch_assoc()) {
+                        $comment_username = $comment_row['comment_username'] ? $comment_row['comment_username'] : $comment_row['guest_name'];
+                        echo "<p style='color:black;'><strong>" . htmlspecialchars($comment_username) . ":</strong> " . htmlspecialchars($comment_row['comment']) . "</p>";
+                    }
+                } else {
+                    echo "<p style='color:black;' >No comments yet.</p>";
+                }
+
+                // Comment form
+                echo "<div class='mt-4'>
+                        <form  method='POST' action='add_comment.php'>
+                            <!-- Your comment form goes here -->
+                            <input type='hidden' name='post_id' value='" . $post_id . "'>";
+                if ($user_id) {
+                    echo "<div class='mb-3'>
+                            <textarea class='form-control' name='comment' placeholder='Add a comment...' required></textarea>
+                          </div>";
+                } else {
+                    echo "<div class='mb-3'>
+                            <input type='text' class='form-control' name='guest_name' placeholder='Your name' required>
+                          </div>
+                          <div class='mb-3'>
+                            <textarea class='form-control' name='comment' placeholder='Add a comment...' required></textarea>
+                          </div>";
+                }
+                echo "<button type='submit' class='btn btn-primary'>Post Comment</button>
+                        </form>
+                      </div>
+                      </div>
+                      </div>";
+
                 echo "</div></div></div>";
             }
         } else {
-            echo "<div class='col-md-12'><p>No veterinary information posts found.</p></div>";
+            echo "<div class='col-md-12'><p>No  posts found.</p></div>";
         }
 
-        // Close the connection
         $conn->close();
         ?>
     </div>
-    <!-- End Display Posts Section -->
 </div>
-<!-- End Content Section -->
 
-<!--...................... Footer............................................. -->
+<!-- Footer -->
 <div class="container-fluid px-4" style="background-color: #080433">
     <footer class="py-1">
         <div class="row flex-lg-row-align-items-center g-5" style="background-color: #080433">
             <div class="col-md-4 offset-md-1 mb-5">
-                <form>
-                    <div class="text-white">
-                        <h5>BeastBuddy</h5>
-                        <p class="descrip">Dedicated to saving lives, one paw at a time. <br>Our passionate team
-                            connects animals with loving homes, making a difference in the world of animal rescue.</p>
-                    </div>
-                </form>
+                <div class="text-white">
+                    <h5>BeastBuddy</h5>
+                    <p class="descrip">Dedicated to saving lives, one paw at a time. Our passionate team connects animals with loving homes, making a difference in the world of animal rescue.</p>
+                </div>
             </div>
             <div class="col-6 col-md-3 mb-5">
                 <h5 class="text-white">Follow Us On</h5>
                 <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="https://www.facebook.com/profile.php?id=61559491240781&mibextid=ZbWKwL" class="nav-link p-0 text-body-secondary">Facebook</a></li>
+                    <li class="nav-item mb-2"><a href="https://www.facebook.com/profile.php?id=61579515877382" class="nav-link p-0 text-body-secondary">Facebook</a></li>
                     <li class="nav-item mb-2"><a href="https://www.instagram.com/__beastbuddy__?igsh=MTZtbGp3bmhzNGk3eA==" class="nav-link p-0 text-body-secondary">Instagram</a></li>
                     <li class="nav-item mb-2"><a href="https://youtube.com/@beastbuddy-2024?si=P8ZBuQ0NL2N8WTv6" class="nav-link p-0 text-body-secondary">Youtube</a></li>
                 </ul>
@@ -159,34 +192,78 @@ $user_id = $_SESSION['user_id'];
         </div>
     </footer>
 </div>
-<!-- End Footer Section -->
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Post color change -->
+<!-- Include jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <script>
-function changePostColors() {
-    const posts = document.querySelectorAll('.card');
-    const currentTime = Math.floor(Date.now() / 1000) % 3;
+    // AJAX function to submit comment form
+    $(document).on('submit', 'form.comment-form', function(e) {
+        e.preventDefault(); // Prevent default form submission
 
-    for (const post of posts) {
-        post.classList.remove('card-red', 'card-blue', 'card-green');
-        if (currentTime === 0) {
-            post.classList.add('card-red');
-        } else if (currentTime === 1) {
-            post.classList.add('card-blue');
-        } else {
-            post.classList.add('card-green');
-        }
+        // Get form data
+        var formData = $(this).serialize();
+
+        // Submit form data asynchronously using AJAX
+        $.ajax({
+            type: 'POST',
+            url: 'add_comment.php',
+            data: formData,
+            dataType: 'json',
+            success: function(response) {
+                if (response.success) {
+                    // If comment submission is successful, append the new comment to the comments section
+                    var comment = response.comment;
+                    var commentHtml = '<p><strong>' + comment.username + ':</strong> ' + comment.comment + '</p>';
+                    $(commentHtml).appendTo('#comments' + comment.post_id + ' .comment-body');
+                } else {
+                    // If comment submission fails, display an error message
+                    alert('Failed to submit comment.');
+                }
+            },
+            error: function() {
+                // If there's an error with the AJAX request, display an error message
+                alert('Error submitting comment. Please try again.');
+            }
+        });
+    });
+</script>
+
+<!--.post color change. -->
+<script>
+    function changePostColors() {
+  const posts = document.querySelectorAll('.card');
+
+  // Choose a logic for color changes (replace with your desired logic)
+  // Here, we use a repeating value based on current time (every 5 seconds)
+  const currentTime = Math.floor(Date.now() / 1000) % 3; // Repeating value between 0, 1, and 2 every 3 seconds
+
+  for (const post of posts) {
+    // Remove existing color classes (optional, ensures only one color is applied)
+    post.classList.remove('card-red', 'card-blue', 'card-green');
+
+    // Apply new color class based on chosen logic
+    if (currentTime === 0) {
+      post.classList.add('card-red');
+    } else if (currentTime === 1) {
+      post.classList.add('card-blue');
+    } else {
+      post.classList.add('card-green');
     }
+  }
 }
 
+// Call the function initially to set initial colors (if not set by PHP)
 changePostColors();
-setInterval(changePostColors, 5000);
+
+// Set an interval to call the function repeatedly (adjust the interval as needed)
+setInterval(changePostColors, 5000); // Change color every 5 seconds
 </script>
-<!-- Post color change end -->
+<!--.post color change end -->
+
+
 
 </body>
 </html>

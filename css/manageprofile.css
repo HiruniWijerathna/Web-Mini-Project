@@ -1,113 +1,30 @@
-/* CSS for header */
-.logo {
-    max-width: 150px;
-    max-height: 70px;
-}
-
-.nav-link {
-    color: white;
-    font-size: 18px;
-    margin-right: 25px;
-}
-
-.nav-link:hover {
-    color: #2636e8;
-}
-
-.btn-custom {
-    color: #080433;
-    font-size: 16px;
-    font-weight: 600;
-    padding: 10px 20px;
-    background-color: #DAF1F5;
-}
-
-.btn-custom:hover {
-    background-color: #080433;
-}
-
-.border-bottom {
-    margin-bottom: 0rem !important;
-}
-
-/* ...................................CSS for footer......................... */
-
-
-footer .nav a {
-    color: #080433 !important;
-}
-
-footer .nav a:hover {
-    color: #2636e8 !important;
-}
-
-footer .nav .text-body-secondary {
-    color: #FFFFFF !important;
-    font-weight: 100;
-}
-
-.text-white .descrip {
-    color: white;
-    font-weight: 100;
-}
-
-.descrip {
-    color: white;
-    font-weight: 100;
-}
 
 /*............................. CSS for manage profile ................................*/
 
 
-input[type=text], input[type=password], input[type=email] {
-    padding: 14px 14px;
-    margin: 8px 0;
+
+
+.form-group{
+    padding: 5px 5px;
+    margin: 4px 0;
     border-radius: 10px;
     width: 100%;
-    font-size: 15px;
+    font-size: 17px;
 }
 
-textarea {
-    width: 100%;
-}
-
-.detailpart, #descriptionPart {
-    text-align: center;
+.formm{
+ 
     font-size: 19px;
     background-color: rgb(0, 0, 51);
     color: white;
     padding: 5%;
-    width: 100%;
-}
-
-#descriptionPart {
-    width: 80%;
-    height: 100%;
+  
     position: relative;
-    left: 0%;
-    padding-top: 100px;
-}
+   
+ 
 
-input[type=submit] {
-    font-size: 15px;
-    color: rgb(2, 2, 22);
-    padding: 14px 14px;
-    margin: 8px 0;
-    border-radius: 10px;
-    width: 50%;
-}
-
-input[type=submit]:hover {
-    background-color: #2618c4;
-    color: rgb(255, 255, 255);
-}
-
-.active {
-    padding: 5%;
-}
-
-#butin {
-    border-radius: 50%;
+ 
+  
 }
 
 /* Custom styles for image preview */
@@ -129,8 +46,9 @@ input[type=submit]:hover {
     height: 400px; /* Set the height */
     border-radius: 50%;
     overflow: hidden;
-    margin: 0 auto;
-    margin-top: 50px;
+    float: left;
+
+   
     
 
 }
@@ -140,6 +58,5 @@ input[type=submit]:hover {
     object-fit: cover;
     
 }
-p{
-    font-size: 30px;
-}
+
+

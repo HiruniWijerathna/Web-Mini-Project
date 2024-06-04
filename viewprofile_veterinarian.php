@@ -1,23 +1,42 @@
+<?php
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION['username'])) {
+    die("User not logged in. Please log in to access this page.");
+}
+
+// Establish database connection
+$conn = new mysqli('localhost', 'root', '', 'beastbuddy');
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Fetch profiles of users with category "Veterinarian"
+$sql = "SELECT * FROM profile_info WHERE user_id IN (SELECT user_id FROM users WHERE category = 'Veterinarian')";
+$stmt = $conn->prepare($sql);
+$stmt->execute();
+$result = $stmt->get_result();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Veterinarian Profiles | BeastBuddy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="css\viewprofile.css">
-    <link rel="stylesheet" href="css\style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/viewprofile.css">
 
 </head>
+<body>
 
-<body style="background-color: rgb(173, 220, 241);">
-
-<!--.......................... Header................................ -->
-
+  <!--.......................... Header................................ -->
   <?php
 session_start(); // Start the session
 
@@ -42,7 +61,7 @@ if (isset($_SESSION['username'])) {
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
       <li><a href="registerUserHomePage.php" class="nav-link px-2 ">Home</a></li>
         <li><a href="registerUserHomePage.php#ReService" class="nav-link px-2">Services</a></li>
-        <li><a href="about.php" class="nav-link px-2 ">About</a></li>
+        <li><a href="home.php#about" class="nav-link px-2">About</a></li>
         <li><a href="help.php" class="nav-link px-2">Help</a></li>
       </ul>
 
@@ -60,14 +79,11 @@ if (isset($_SESSION['username'])) {
        
         <div class="carousel-inner">
           <div class="carousel-item active hover-item" >
-            <img src="image/vetMain image.jpg" class="d-block w-100" alt="Image 2">
+            <img src="image/veterinarian_viewprofile.jpg" class="d-block w-100" alt="Image 2">
             <div class="container">
             <div class="carousel-caption text-start">
                 <h1 style="color: black">Veterinarian Profiles</h1>
-                <div class="glow">
                 <p class="opacity-75" style="color:black"><b>Discover our compassionate veterinarians dedicated to the health and well-being of rescued animals.</b></p>
-                </div>
-                
             </div>
             </div>
         </div>
@@ -76,61 +92,57 @@ if (isset($_SESSION['username'])) {
    
     </div>
 
-<!--Profile Section-->
 
 <div class="container mt-5">
-        <div class="grid-container">
-            <?php
-            // Database connection details
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $database = "beastbuddy";
-
-            // Create connection
-            $conn = new mysqli($servername, $username, $password, $database);
-
-            // Check connection
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-            }
-
-            // Fetch profiles of users with role "Animal Organization"
-            $sql = "SELECT * FROM profile_info WHERE role = 'Veterinarian'";
-            $result = $conn->query($sql);
-
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    echo "<div class='card mt-3'>";
-                    echo "<div class='card-body'>";
-                    echo "<h5 class='card-title'>" . $row['first_name'] . " " . $row['last_name'] . "</h5>";
-                    // Check if image exists for this profile
-                    if (file_exists("profile_uploads/" . $row['profile_image'])) {
-                        // If image exists, display it
-                        echo "<img src='profile_uploads/" . $row['profile_image'] . "' class='img-fluid' alt='Profile Image'>";
-                    } else {
-                        // If image doesn't exist, display a default image or a placeholder
-                        echo "<img src='image/profilePhotoLogo.jpg' class='img-fluid' alt='Profile Image'>";
-                    }
-                    echo "<br><br>";
-                    echo "<h6 class='card-subtitle mb-2 text-muted'>Phone: " . $row['phone_number'] . "</h6>";
-                    echo "<p class='card-text'>Location: " . $row['location'] . "</p>";
-                    echo "<p class='card-text'>About: " . $row['self_intro'] . "</p>";
-                    echo "</div>";
-                    echo "</div>";
+    <h1>Veterinarian Profiles</h1>
+    <div class="row">
+        <?php
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo "<div class='col-md-4 mb-3'>";
+                echo "<div class='card'>";
+                echo "<div class='card-body'>";
+                echo "<h5 class='card-title'>" . htmlspecialchars($row['name_with_initials']) . "</h5>";
+                echo "<p class='card-text'>Specializations: " . htmlspecialchars($row['specializations']) . "</p>";
+                echo "<p class='card-text'>Clinic Name: " . htmlspecialchars($row['clinic_name']) . "</p>";
+                echo "<p class='card-text'>License Number: " . htmlspecialchars($row['license_number']) . "</p>";
+                echo "<p class='card-text'>Experience: " . htmlspecialchars($row['experience']) . "</p>";
+                echo "<p class='card-text'>Availability: " . htmlspecialchars($row['availability']) . "</p>";
+                echo "<p class='card-text'>Services Offered: " . htmlspecialchars($row['services_offered']) . "</p>";
+                // if (file_exists("profile_uploads/" . $row['profile_image']) && !empty($row['profile_image'])) {
+                //     echo "<img src='profile_uploads/" . htmlspecialchars($row['profile_image']) . "' class='img-fluid' alt='Profile Image'>";
+                // } else {
+                //     echo "<img src='image/profilePhotoLogo.jpg' class='img-fluid' alt='Profile Image'>";
+                // }
+                if (!empty($row['profile_image'])) {
+                    $imageData = base64_encode($row['profile_image']);
+                    $src = 'data:image/jpeg;base64,' . $imageData;
+                    echo "<img src='" . $src . "' class='img-fluid' alt='Profile Image'>";
+                } else {
+                    echo "<img src='image/profilePhotoLogo.jpg' class='img-fluid' alt='Profile Image'>";
                 }
-            } else {
-                echo "No Veterinarian Profiles found.";
+                
+
+                
+                echo "</div>";
+                echo "</div>";
+                echo "</div>";
             }
+        } else {
+            echo "No Veterinarian Profiles found.";
+        }
 
-            // Close connection
-            $conn->close();
-            ?>
-        </div>
+        // Close connection
+        $stmt->close();
+        $conn->close();
+        ?>
     </div>
-    <br><br>
+</div>
 
-   <!--...................... Footer............................................. -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+
+ <!--...................... Footer............................................. -->
 <!-- <div id="footer"></div> -->
 
 <!-- Load Combined JavaScript -->
@@ -185,38 +197,5 @@ if (isset($_SESSION['username'])) {
 
 
 <!-- ........................footer end ..................................-->
-<!--.post color change. -->
-<script>
-    function changePostColors() {
-  const posts = document.querySelectorAll('.card');
-
-  // Choose a logic for color changes (replace with your desired logic)
-  // Here, we use a repeating value based on current time (every 5 seconds)
-  const currentTime = Math.floor(Date.now() / 1000) % 3; // Repeating value between 0, 1, and 2 every 3 seconds
-
-  for (const post of posts) {
-    // Remove existing color classes (optional, ensures only one color is applied)
-    post.classList.remove('card-red', 'card-blue', 'card-green');
-
-    // Apply new color class based on chosen logic
-    if (currentTime === 0) {
-      post.classList.add('card-red');
-    } else if (currentTime === 1) {
-      post.classList.add('card-blue');
-    } else {
-      post.classList.add('card-green');
-    }
-  }
-}
-
-// Call the function initially to set initial colors (if not set by PHP)
-changePostColors();
-
-// Set an interval to call the function repeatedly (adjust the interval as needed)
-setInterval(changePostColors, 5000); // Change color every 5 seconds
-</script>
-<!--.post color change end -->
-
 </body>
-
 </html>
