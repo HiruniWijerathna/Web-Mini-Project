@@ -39,7 +39,6 @@ $result = $stmt->get_result();
 <!-- Add your header here -->
 <!--.......................... Header................................ -->
 <?php
-session_start(); // Start the session
 
 // Check if the username is set in the session
 if (isset($_SESSION['username'])) {
@@ -51,7 +50,7 @@ if (isset($_SESSION['username'])) {
 
    <!-- <div id="header"></div> -->
    <!-- Header -->
- <div class="container-fluid px-4 border-bottom shadow-bottom" style="background-color: #080433">
+ <div class="container-fluid px-4 border-bottom shadow-bottom sticky-top" style="background-color: #080433">
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom ">
       <div class="col-md-3 mb-2 mb-md-0">
         <a href="home.php" class="d-inline-flex link-body-emphasis text-decoration-none">
