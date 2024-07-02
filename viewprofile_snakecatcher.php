@@ -97,7 +97,7 @@ if (isset($_SESSION['username'])) {
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 echo "<div class='col-md-4 mb-3'>";
-                echo "<div class='card'>";
+                echo "<div class='card border-primary'>";
                 echo "<div class='card-body'>";
                 echo "<h5 class='card-title'>" . htmlspecialchars($row['first_name']) . " " . htmlspecialchars($row['last_name']) . "</h5>";
 
