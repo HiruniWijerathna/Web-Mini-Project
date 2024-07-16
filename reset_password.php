@@ -77,7 +77,12 @@ if (isset($_GET['token'])) {
                     $stmt->execute();
 
                     if ($stmt->affected_rows > 0) {
-                        echo "Your password has been reset successfully.";
+                        // echo "Your password has been reset successfully.";
+                        echo "<script>
+                                alert('Your password has been reset successfully.');
+                                window.location.href = 'login.php';
+                              </script>";
+                        exit;
                     } else {
                         echo "Failed to update the password.";
                     }
