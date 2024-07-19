@@ -49,7 +49,7 @@ if (isset($_SESSION['username'])) {
 
    <!-- <div id="header"></div> -->
    <!-- Header -->
- <div class="container-fluid px-4 border-bottom shadow-bottom" style="background-color: #080433">
+ <div class="container-fluid px-4 border-bottom shadow-bottom sticky-top" style="background-color: #080433">
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom ">
       <div class="col-md-3 mb-2 mb-md-0">
         <a href="home.php" class="d-inline-flex link-body-emphasis text-decoration-none">
@@ -93,26 +93,15 @@ if (isset($_SESSION['username'])) {
 
 
 <div class="container mt-5">
-    <h1>Veterinarian Profiles</h1>
     <div class="row">
         <?php
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 echo "<div class='col-md-4 mb-3'>";
-                echo "<div class='card'>";
+                echo "<div class='card border-primary'>";
                 echo "<div class='card-body'>";
                 echo "<h5 class='card-title'>" . htmlspecialchars($row['name_with_initials']) . "</h5>";
-                echo "<p class='card-text'>Specializations: " . htmlspecialchars($row['specializations']) . "</p>";
-                echo "<p class='card-text'>Clinic Name: " . htmlspecialchars($row['clinic_name']) . "</p>";
-                echo "<p class='card-text'>License Number: " . htmlspecialchars($row['license_number']) . "</p>";
-                echo "<p class='card-text'>Experience: " . htmlspecialchars($row['experience']) . "</p>";
-                echo "<p class='card-text'>Availability: " . htmlspecialchars($row['availability']) . "</p>";
-                echo "<p class='card-text'>Services Offered: " . htmlspecialchars($row['services_offered']) . "</p>";
-                // if (file_exists("profile_uploads/" . $row['profile_image']) && !empty($row['profile_image'])) {
-                //     echo "<img src='profile_uploads/" . htmlspecialchars($row['profile_image']) . "' class='img-fluid' alt='Profile Image'>";
-                // } else {
-                //     echo "<img src='image/profilePhotoLogo.jpg' class='img-fluid' alt='Profile Image'>";
-                // }
+
                 if (!empty($row['profile_image'])) {
                     $imageData = base64_encode($row['profile_image']);
                     $src = 'data:image/jpeg;base64,' . $imageData;
@@ -120,7 +109,17 @@ if (isset($_SESSION['username'])) {
                 } else {
                     echo "<img src='image/profilePhotoLogo.jpg' class='img-fluid' alt='Profile Image'>";
                 }
-                
+
+                echo"<br><br>";
+
+                echo"<div class='card-footer'>";
+                    echo "<p class='card-text'>Specializations: " . htmlspecialchars($row['specializations']) . "</p>";
+                    echo "<p class='card-text'>Clinic Name: " . htmlspecialchars($row['clinic_name']) . "</p>";
+                    echo "<p class='card-text'>License Number: " . htmlspecialchars($row['license_number']) . "</p>";
+                    echo "<p class='card-text'>Experience: " . htmlspecialchars($row['experience']) . "</p>";
+                    echo "<p class='card-text'>Availability: " . htmlspecialchars($row['availability']) . "</p>";
+                    echo "<p class='card-text'>Services Offered: " . htmlspecialchars($row['services_offered']) . "</p>";
+                echo"</div>";
 
                 
                 echo "</div>";

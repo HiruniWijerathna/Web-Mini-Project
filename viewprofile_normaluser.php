@@ -93,18 +93,15 @@ if (isset($_SESSION['username'])) {
     </div>
 
 <div class="container mt-5">
-    <h1>Normal User Profiles</h1>
     <div class="row">
         <?php
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 echo "<div class='col-md-4 mb-3'>";
-                echo "<div class='card'>";
+                echo "<div class='card border-primary'>";
                 echo "<div class='card-body'>";
                 echo "<h5 class='card-title'>" . htmlspecialchars($row['first_name']) . " " . htmlspecialchars($row['last_name']) . "</h5>";
-                echo "<p class='card-text'>Phone Number: " . htmlspecialchars($row['phone_number']) . "</p>";
-                echo "<p class='card-text'>Location: " . htmlspecialchars($row['location']) . "</p>";
-                echo "<p class='card-text'>Self Introduction: " . htmlspecialchars($row['self_intro']) . "</p>";
+
                 if (!empty($row['profile_image'])) {
                     $imageData = base64_encode($row['profile_image']);
                     $src = 'data:image/jpeg;base64,' . $imageData;
@@ -112,6 +109,16 @@ if (isset($_SESSION['username'])) {
                 } else {
                     echo "<img src='image/profilePhotoLogo.jpg' class='img-fluid' alt='Profile Image'>";
                 }
+
+                echo"<br><br>";
+
+                echo"<div class='card-footer'>";
+                    echo "<p class='card-text'>Phone Number: " . htmlspecialchars($row['phone_number']) . "</p>";
+                    echo "<p class='card-text'>Location: " . htmlspecialchars($row['location']) . "</p>";
+                    echo "<p class='card-text'>Self Introduction: " . htmlspecialchars($row['self_intro']) . "</p>";
+                echo"</div>";
+                
+                
                 
                 echo "</div>";
                 echo "</div>";
