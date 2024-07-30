@@ -79,7 +79,7 @@ $result = $stmt->get_result();
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 ?>
-                <div class="col-md-4 mb-3">
+                <div class="col-md-3 mb-5">
                     <div class="card border-primary">
                         <div class="card-body">
                         <h5 class="card-title mt-3"><?php echo htmlspecialchars($row['first_name']) . ' ' . htmlspecialchars($row['last_name']); ?></h5>
