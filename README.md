@@ -1,10 +1,11 @@
 # 🐾 BeastBuddy Animal Rescue Web Platform
 
+<p align="center">
+  <img src="2.png" alt="beast buddy Website Banner" width="100%" />
+</p>
+
 BeastBuddy is an online platform designed to connect animal lovers, veterinarians, snake catchers, and animal welfare organizations. This platform serves as a collaborative space where users can register, share posts, comment (with or without an account), and manage their profiles based on their roles.
 
-## 🌐 Live Demo
-
-▶️ [Watch Demo Video]( )
 
 ---
 
